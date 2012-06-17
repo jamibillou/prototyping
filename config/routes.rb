@@ -2,7 +2,19 @@ BootstrapPrototyping::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
-  match '/home' => 'pages#home'
+  match '/dashboard' => 'pages#dashboard'
+  match '/prototypes' => 'pages#prototypes'
+  match '/social_1' => 'pages#social_1'
+  match '/social_2' => 'pages#social_2'
+  match '/social_3' => 'pages#social_3'
+  match '/social_4' => 'pages#social_4'
+  match '/social_5' => 'pages#social_5'
+  match '/social_6' => 'pages#social_6'
+  match '/shareable_1' => 'pages#shareable_1'
+  match '/shareable_2' => 'pages#shareable_2'
+  match '/shareable_3' => 'pages#shareable_3'
+  match '/shareable_4' => 'pages#shareable_4'
+  match '/interviews' => 'pages#interviews'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -46,7 +58,7 @@ BootstrapPrototyping::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'pages#home'
+  root :to => 'pages#dashboard'
 
   # See how all your routes lay out with "rake routes"
 

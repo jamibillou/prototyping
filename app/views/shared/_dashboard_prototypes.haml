@@ -1,0 +1,28 @@
+.row-fluid
+  .span8
+    %table.table-striped
+      %thead
+        %tr
+          %th{style: 'width:50px'} #
+          %th description
+          %th is it prototyped?
+          %th % positive feedback
+          %th go ahead and build MVP?
+      %tbody
+        %tr
+          %td{style: 'width:50px'} 1
+          %th
+            = link_to 'social network', '#'
+          %td
+            %span.badge.badge-success yes
+          %td -
+          %td
+            %span.badge.badge-important no
+        %tr
+          %td{style: 'width:50px'} 2
+          %th
+            = link_to 'sharealbe profile', '#'
+          %td
+            %span.badge.badge-important no
+          %td -
+          %td -

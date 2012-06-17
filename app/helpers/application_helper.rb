@@ -1,7 +1,10 @@
 module ApplicationHelper
   
-  def title 
-    base_title = 'Engaccino | Bootstrap prototyping'
-    @title.nil? ? base_title : "#{base_title} | #{@title}"
+  def page_title 
+    @page_title.nil? ? '' : @page_title
+  end
+  
+  def page_subtitle 
+    @page_subtitle.nil? ? '' : @page_subtitle
   end
 end
