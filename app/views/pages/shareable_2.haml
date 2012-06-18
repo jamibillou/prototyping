@@ -1,1 +1,146 @@
 = render 'layouts/prototypes_menu'
+
+.span12
+  .row
+    .span2
+      .row
+        %ul.nav.nav-list.well
+          %li.nav-header
+            %i.icon-comment
+            Conversations
+          %li
+            %a Coca-Cola
+          %li.active
+            %a Apple Inc.
+          %li
+            %a Uniliver B.V.
+          %li
+            %a P&G
+          %li
+            %a KPN
+          %li
+          %li.nav-header
+            %i.icon-refresh
+            Sharings
+          %li
+            %a Ad
+          %li
+            %a Martijn
+          %li
+            %a Nicole
+          %li
+            %a Dad
+          %li
+            %a Malik
+    .span8
+      .row
+        .span6.offset2
+          .well
+            .row
+              .span1
+                = image_tag 'profile_pic.jpg'
+              .span4
+                %h3 I'd really like to work for you. Can we talk?
+                .btn.btn-large.btn-danger No, not interested
+                .btn.btn-large.btn-success Yes it'd be great!
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag 'ive.jpg'
+              .span3
+                %h5 Jonathan Ive said:
+                %p Well that's rather hard to say, why would I?
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = image_tag 'profile_pic.jpg'
+              .span3
+                %h5 You said:
+                %p My boyfriend's a geek and he says you're great, plus your marketing is mindblowing.
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-info-sign
+              We have hidden a part of the conversation for the sake of readability.
+              %strong
+                = link_to 'Display all', ''
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = image_tag 'profile_pic.jpg'
+              .span3
+                %h5 You said:
+                %p To be frank I also love what you guys do, working for such a creative company would be like a dream come true.
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag 'ive.jpg'
+              .span3
+                %h5 Jonathan Ive said:
+                %p Is that so? I guess I could give a word for you then. My marketing colleagues might be interested.
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag 'ive.jpg'
+              .span3
+                %h5 Jonathan Ive said:
+                %p Shall we sit around a cup of coffee to discuss first?
+                .btn.btn-danger No
+                .btn.btn-success Yes
+      .row
+        .span7.offset1
+          .alert.alert-success
+            %i.icon-ok
+              You have accepted Jonathan Ive's invitation
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = image_tag 'profile_pic.jpg'
+              .span3
+                %h5 You said:
+                %p I'd love to! When is best?
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag 'ive.jpg'
+              .span3
+                %h5 Jonathan Ive said:
+                %p I've got to run but give me your email address and I'll get back to you later today!
+                .input-append
+                  %input.span2{ :size => '16', :type => 'text' }
+                  .btn.btn-primary{ :type => 'button', :style => 'margin-left:-5px' } Send
+      .row
+        .span7.offset1
+          .alert.alert-important
+            %i.icon-exclamation-sign
+              Jonathan Ive has left the conversation
+      .row
+        .span7.offset1
+          .alert.alert-success
+            %i.icon-envelope
+              You have sent your email address to Jonathan Ive
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = image_tag 'profile_pic.jpg'
+              .span3
+                %h5 Type your message:
+                %textarea.input-xlarge{ :rows => '4' }
+                %button.btn.btn-primary{ :type => 'submit' } Send
+                %button.btn Clear  
