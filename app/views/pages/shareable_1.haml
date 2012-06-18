@@ -20,7 +20,7 @@
       .span3
         %h3 Wansa Sooksomwat
         %p Amsterdam, Netherlands
-        %span.label.label-success Available and eager to learn!
+        %span{ :style => 'color:green' } Available and eager to learn!
     %br/
     .row
       .span4.lead
@@ -41,23 +41,24 @@
     %br/
     .row
       .span2
-        %span.label.label-warning MOST RELEVANT EXP.
+        %span.label.label-warning Most relevant experience
+        %br/
         %br/
         .lead Assistant marketing & communication
       .span2
-        %span.label.label-warning HIGHEST EDUCATION
+        %span.label.label-warning Highest education
+        %br/
         %br/
         .lead HBO Bachelor in Communication & Media
     %br/
-    %br/
     .row
       .span2.offset2
-        %span.label.label-warning ELSEWHERE ONLINE
+        %span.label.label-warning Elsewhere online
         %br/
         %br/
-        .btn LinkedIn
-        .btn Tumblr
-        .btn Twitter
-        .btn Instagram
-        .btn Facebook
-          
+        .service
+          = image_tag 'linkedin.jpg'
+        .service
+          = image_tag 'tumblr.png'
+        .service
+          = image_tag 'twitter.png'
