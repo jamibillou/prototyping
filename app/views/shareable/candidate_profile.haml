@@ -1,0 +1,84 @@
+%ul.nav.nav-pills
+  %li.active
+    = link_to 'Profile', candidate_profile_path
+  %li
+    = link_to 'Interactions', candidate_interactions_path
+
+.row
+  .span8
+    .row
+      .span8
+        .hero-unit
+          %h1 “People are capable, at any time in their lives, of doing what they dream of.” 
+          %br/
+          %p ― Paulo Coelho, The Alchemist
+    .row
+      .span4
+        %h3
+          I'd really like to work for you. Can we talk?
+      .span4
+        %a.btn.btn-large.btn-primary.btn-danger{ "data-toggle" => "modal", :href => "#signin-no-modal"} No, not interested
+        %a.btn.btn-large.btn-success{ "data-toggle" => "modal", :href => "#signin-yes-modal"} Yes it'd be great!
+ 
+  .span4
+    .row
+      .span1
+        = image_tag 'profile_pic.jpg'
+      .span3
+        %h3 Wansa Sooksomwat
+        %p Amsterdam, Netherlands
+    %br/
+    .row
+      .span4.lead
+        Junior communication & marketing executive
+    .row
+      .span4
+        %span.label.label-inverse EVENT PLANNING
+        %span.label.label-inverse EXTERNAL COMMUNICATION
+        %span.label.label-inverse WRITING
+        %span.label.label-inverse ATTENTION TO DETAILS
+        %span.label.label-inverse ORGANIZATION
+        %span.label.label-inverse GOOD TEAM MATE
+        %span.label.label-inverse TRAVEL
+        %span.label.label-inverse CINEMA
+        %span.label.label-inverse READING
+    %br/
+    .row
+      .span2
+        %span.label.label-warning Most relevant experience
+        %br/
+        .lead Assistant marketing & communication
+      .span2
+        %span.label.label-warning Highest education
+        %br/
+        .lead HBO Bachelor in Communication & Media
+    .row
+      .span2.offset2
+        %span.label.label-warning Elsewhere online
+        .btn.service LinkedIn
+        .btn.service Twitter
+        .btn.service Tumblr
+
+.modal.fade.hide#signin-yes-modal
+  .modal-header
+    %button.close{ :type => "button", :class => "close", "data-dismiss" => "modal"} ×
+    %h3 Good to hear you want to talk with Wansa!
+  .modal-body
+    %p Please sign in so she sees who you are.
+    %p No reason to panick, all we're showing is your name and picture ;)
+  .modal-footer
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_yes_path } Signin with Google
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_yes_path } Signin with LinkedIn
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_yes_path } Signin with Twitter
+    
+.modal.fade.hide#signin-no-modal
+  .modal-header
+    %button.close{ :type => "button", :class => "close", "data-dismiss" => "modal"} ×
+    %h3 Too bad Wansa's profile doesn't fit your current needs!
+  .modal-body
+    %p Do you mind letting her know why? Just a 3 lines message really ;)
+    %p Please sign in so she sees who you are.
+  .modal-footer
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_no_path } Signin with Google
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_no_path } Signin with LinkedIn
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_no_path } Signin with Twitter

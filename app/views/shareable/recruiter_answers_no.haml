@@ -1,0 +1,51 @@
+%ul.nav.nav-pills
+  %li
+    = link_to 'Profile', ''
+  %li.active
+    = link_to 'Interactions', recruiter_answers_no_path
+
+.span12
+  .row
+    .span2
+      .row
+        %ul.nav.nav-list.well
+          %li.nav-header
+            %i.icon-comment
+            Conversations
+          %li.active
+            %a Wansa Sooksomwat
+          
+    .span8
+      .row
+        .span6.offset1
+          .well
+            .row
+              .span1
+                = link_to image_tag('profile_pic.jpg'), candidate_profile_path
+              .span4
+                %h3 I'd really like to work for you. Can we talk?
+                .btn.btn-large.btn-danger No, not interested
+                .btn.btn-large.btn-success Yes it'd be great!
+      
+      .row
+        .span7.offset1
+          .alert.alert-danger
+            %i.icon-remove
+              You have denied Wansa Sooksomwat's request.
+      .row
+        .span7.offset1
+          .alert.alert-important
+            %i.icon-exclamation-sign
+              Thank you for letting her know. Whatever the feedback is, it's always better than none
+                    
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = image_tag 'dom.jpg'
+              .span3
+                %h5 Type your message:
+                %textarea.input-xlarge{ :rows => '4' }
+                %button.btn.btn-primary{ :type => 'submit' } Send
+                %button.btn Clear  

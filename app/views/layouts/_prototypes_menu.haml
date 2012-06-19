@@ -1,32 +1,15 @@
-.tabbable
-  %ul.nav.nav-tabs
-    %li{ :class => "#{'active' if controller.action_name.include? 'social'}" }
-      %a{ :href => '#tab1', 'data-toggle' => 'tab' } Social network
-    %li{ :class => "#{'active' if controller.action_name.include? 'shareable'}" }
-      %a{ :href => '#tab2', 'data-toggle' => 'tab' } Shareable profile
-  .tab-content
-    .tab-pane#tab1{ :class => "#{'active' if controller.action_name.include? 'social'}" }
-      %ul.nav.nav-pills
-        %li{ :class => "#{'active' if controller.action_name == 'social_1'}" }
-          = link_to 'candidate signup', social_1_path
-        %li{ :class => "#{'active' if controller.action_name == 'social_2'}" }
-          = link_to 'recruiter signup', social_2_path
-        %li{ :class => "#{'active' if controller.action_name == 'social_3'}" }
-          = link_to "candidate's resume", social_3_path
-        %li{ :class => "#{'active' if controller.action_name == 'social_4'}" }
-          = link_to 'company profile', social_4_path
-        %li{ :class => "#{'active' if controller.action_name == 'social_5'}" }
-          = link_to 'recruiter profile', social_5_path
-        %li{ :class => "#{'active' if controller.action_name == 'social_6'}" }
-          = link_to 'messages', social_6_path
-    .tab-pane#tab2{ :class => "#{'active' if controller.action_name.include? 'shareable'}" }
-      %ul.nav.nav-pills
-        %li{ :class => "#{'active' if controller.action_name == 'shareable_1'}" }
-          = link_to 'candidate profile', shareable_1_path
-        %li{ :class => "#{'active' if controller.action_name == 'shareable_2'}" }
-          = link_to 'interactions', shareable_2_path
-        %li{ :class => "#{'active' if controller.action_name == 'shareable_3'}" }
-          = link_to 'company profile', shareable_3_path
-        %li{ :class => "#{'active' if controller.action_name == 'shareable_4'}" }
-          = link_to 'ideal profile', shareable_4_path
+.pagination
+  %ul
+    %li
+      = link_to 'Prev', '#'
+    %li{ :class => active?('shareable_1') }
+      = link_to '1', shareable_1_path
+    %li{ :class => active?('shareable_2') }
+      = link_to '2', shareable_2_path
+    %li{ :class => active?('shareable_3') }
+      = link_to '3', shareable_3_path
+    %li{ :class => active?('shareable_4') }
+      = link_to '4', shareable_4_path
+    %li
+      = link_to 'Next', '#'
 %br/
