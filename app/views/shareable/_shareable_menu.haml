@@ -1,0 +1,11 @@
+%ul.nav.nav-pills
+  %li{ :class => active?('candidate_profile') }
+    = link_to 'Candidate profile', candidate_profile_path
+  %li{ :class => active?('candidate_interactions') }
+    = link_to 'Interactions', candidate_interactions_path
+  %li{ :class => active?('recruiter_answers_yes') }
+    = link_to 'Recruiter answers yes', recruiter_answers_yes_path
+  %li{ :class => active?('recruiter_answers_no') }
+    = link_to 'Recruiter answers no', recruiter_answers_no_path
+  %li{ :class => active?('recruiter_profile') }
+    = link_to 'Recruiter profile', recruiter_profile_path  

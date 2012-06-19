@@ -1,8 +1,4 @@
-%ul.nav.nav-pills
-  %li
-    = link_to 'Profile', candidate_profile_path
-  %li.active
-    = link_to 'Interactions', candidate_interactions_path
+= render 'shareable_menu'
 
 .span12
   .row
@@ -42,7 +38,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('profile_pic.jpg'), candidate_profile_path
+                = link_to image_tag('wansa.jpg'), candidate_profile_path
               .span4
                 %h3 I'd really like to work for you. Can we talk?
                 .btn.btn-large.btn-danger No, not interested
@@ -66,7 +62,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('profile_pic.jpg'), candidate_profile_path
+                = link_to image_tag('wansa.jpg'), candidate_profile_path
               .span3
                 %h5 You said:
                 %p My boyfriend's a geek and he says you're great, plus your marketing is mindblowing.
@@ -82,7 +78,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('profile_pic.jpg'), candidate_profile_path
+                = link_to image_tag('wansa.jpg'), candidate_profile_path
               .span3
                 %h5 You said:
                 %p To be frank I also love what you guys do, working for such a creative company would be like a dream come true.
@@ -116,7 +112,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('profile_pic.jpg'), candidate_profile_path
+                = link_to image_tag('wansa.jpg'), candidate_profile_path
               .span3
                 %h5 You said:
                 %p I'd love to! When is best?
@@ -147,7 +143,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('profile_pic.jpg'), candidate_profile_path
+                = link_to image_tag('wansa.jpg'), candidate_profile_path
               .span3
                 %h5 Type your message:
                 %textarea.input-xlarge{ :rows => '4' }

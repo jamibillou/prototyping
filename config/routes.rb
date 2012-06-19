@@ -3,9 +3,10 @@ BootstrapPrototyping::Application.routes.draw do
   # first created -> highest priority.
   
   match 'candidate_profile' => 'shareable#candidate_profile'
+  match 'candidate_interactions' => 'shareable#candidate_interactions'
   match 'recruiter_answers_yes' => 'shareable#recruiter_answers_yes'
   match 'recruiter_answers_no' => 'shareable#recruiter_answers_no'
-  match 'candidate_interactions' => 'shareable#candidate_interactions'
+  match 'recruiter_profile' => 'shareable#recruiter_profile'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

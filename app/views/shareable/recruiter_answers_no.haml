@@ -1,8 +1,4 @@
-%ul.nav.nav-pills
-  %li
-    = link_to 'Profile', ''
-  %li.active
-    = link_to 'Interactions', recruiter_answers_no_path
+= render 'shareable_menu'
 
 .span12
   .row
@@ -21,7 +17,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('profile_pic.jpg'), candidate_profile_path
+                = link_to image_tag('wansa.jpg'), candidate_profile_path
               .span4
                 %h3 I'd really like to work for you. Can we talk?
                 .btn.btn-large.btn-danger No, not interested
@@ -43,7 +39,7 @@
           .well
             .row
               .span1
-                = image_tag 'dom.jpg'
+                = link_to image_tag('dom.jpg'), recruiter_profile_path
               .span3
                 %h5 Type your message:
                 %textarea.input-xlarge{ :rows => '4' }
