@@ -1,0 +1,81 @@
+= render 'shareable_menu'
+
+.row
+  .span8
+    .row
+      .span8
+        .hero-unit
+          %h1 “I'm keen to work for your company and would really love it if we could go over a few ideas together soon.”
+          %br/
+          %br/
+          %span.pull-right
+            %a.btn.btn-large.btn-primary.btn-danger{ "data-toggle" => "modal", :href => "#signin-no-modal"} No, not interested
+            %a.btn.btn-large.btn-success{ "data-toggle" => "modal", :href => "#signin-yes-modal"} Yes it'd be great!
+          %br/
+ 
+  .span3
+    .row
+      .span1
+        = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+      .span2
+        %h3 Wansa Sooksomwat
+        %p Amsterdam, Netherlands
+    %br/
+    .row
+      .span3.lead
+        Junior Communication Medwerker
+    .row
+      .span3
+        %span.label.label-inverse EXTERNAL COMMUNICATION
+        %span.label.label-inverse EVENT PLANNING
+        %span.label.label-inverse WRITING
+        %span.label.label-inverse ATTENTION TO DETAILS
+        %span.label.label-inverse ORGANIZATION
+        %span.label.label-inverse GOOD TEAM MATE
+        %span.label.label-inverse TRAVEL
+        %span.label.label-inverse CINEMA
+        %span.label.label-inverse READING
+    %br/
+    .row
+      .span2
+        %span.label.label-warning Most relevant experience
+        %br/
+        .lead Communication & Marketing Assistant
+    .row
+      .span2
+        %span.label.label-warning Highest education
+        %br/
+        .lead HBO Bachelor in Communication & Media
+    .row
+      .span3
+        %span.label.label-warning Elsewhere online
+        %br/
+        .btn.service LinkedIn
+        .btn.service Twitter
+        .btn.service Tumblr
+
+.modal.fade.hide#signin-yes-modal
+  .modal-header
+    %button.close{ :type => "button", :class => "close", "data-dismiss" => "modal"} ×
+    %h3 Good to hear you want to talk with Wansa!
+  .modal-body
+    %p Please sign in so she sees who you are.
+  .modal-footer
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_yes_path } Signin with Google
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_yes_path } Signin with LinkedIn
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_yes_path } Signin with Twitter
+    
+.modal.fade.hide#signin-no-modal
+  .modal-header
+    %button.close{ :type => "button", :class => "close", "data-dismiss" => "modal"} ×
+    %h3 Too bad Wansa's profile doesn't fit your current needs!
+  .modal-body
+    %p Do you mind letting her know why?
+    .control-group
+      .controls
+        %textarea.input-xlarge#textarea{ rows: '3' } We don't hire dolls, sorry about that.
+    %p If so, sign in so she sees who you are.
+  .modal-footer
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_no_path } Signin with Google
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_no_path } Signin with LinkedIn
+    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_no_path } Signin with Twitter

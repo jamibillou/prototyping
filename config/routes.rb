@@ -2,7 +2,8 @@ BootstrapPrototyping::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
-  match 'candidate_profile' => 'shareable#candidate_profile'
+  match 'candidate_profile_public' => 'shareable#candidate_profile_public'
+  match 'candidate_profile_sent' => 'shareable#candidate_profile_sent'
   match 'candidate_interactions' => 'shareable#candidate_interactions'
   match 'recruiter_answers_yes' => 'shareable#recruiter_answers_yes'
   match 'recruiter_answers_no' => 'shareable#recruiter_answers_no'

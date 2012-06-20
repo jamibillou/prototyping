@@ -1,6 +1,11 @@
 class ShareableController < ApplicationController
   
-  def candidate_profile
+  def candidate_profile_public
+    @page_title = 'Prototypes'
+    @page_subtitle = 'sharable profile'
+  end
+  
+  def candidate_profile_sent
     @page_title = 'Prototypes'
     @page_subtitle = 'sharable profile'
   end

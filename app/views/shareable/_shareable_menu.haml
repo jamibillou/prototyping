@@ -1,17 +1,19 @@
 %ul.nav.nav-pills
-  %li{ :class => active?('candidate_profile') }
-    = link_to 'Candidate profile', candidate_profile_path
+  %li{ :class => active?('candidate_profile_public') }
+    = link_to 'C. profile (public)', candidate_profile_public_path
+  %li{ :class => active?('candidate_profile_sent') }
+    = link_to 'C. profile (sent)', candidate_profile_sent_path
   %li{ :class => active?('candidate_interactions') }
     = link_to 'Interactions', candidate_interactions_path
   %li{ :class => active?('recruiter_answers_yes') }
-    = link_to 'Recruiter answers yes', recruiter_answers_yes_path
+    = link_to 'R. answers yes', recruiter_answers_yes_path
   %li{ :class => active?('recruiter_answers_no') }
-    = link_to 'Recruiter answers no', recruiter_answers_no_path
+    = link_to 'R. answers no', recruiter_answers_no_path
   %li{ :class => active?('recruiter_profile') }
-    = link_to 'Recruiter profile', recruiter_profile_path
+    = link_to 'R. profile', recruiter_profile_path
   %li{ :class => active?('candidate_matches') }
-    = link_to 'Candidate matches', candidate_matches_path
+    = link_to 'C. matches', candidate_matches_path
   %li{ :class => active?('candidate_matches_because') }
-    = link_to 'Candidate matches because...', candidate_matches_because_path
+    = link_to 'C. matches because...', candidate_matches_because_path
   
   
