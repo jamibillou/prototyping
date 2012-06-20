@@ -24,4 +24,14 @@ class ShareableController < ApplicationController
     @page_title = 'Prototypes'
     @page_subtitle = 'sharable profile'
   end
+  
+  def candidate_matches
+    @page_title = 'Prototypes'
+    @page_subtitle = 'candidate matches'
+  end
+  
+  def candidate_matches_because
+    @page_title = 'Prototypes'
+    @page_subtitle = 'candidate matches because...'
+  end
 end

@@ -5,9 +5,7 @@
     .row
       .span8
         .hero-unit
-          %h1 “People are capable, at any time in their lives, of doing what they dream of.” 
-          %br/
-          %p ― Paulo Coelho, The Alchemist
+          %h1 “Communications isn't what a company says, it's everything else it does.” 
     .row
       .span4
         %h3
@@ -26,11 +24,11 @@
     %br/
     .row
       .span3.lead
-        Junior communication & marketing executive
+        Junior Communication Medwerker
     .row
       .span3
-        %span.label.label-inverse EVENT PLANNING
         %span.label.label-inverse EXTERNAL COMMUNICATION
+        %span.label.label-inverse EVENT PLANNING
         %span.label.label-inverse WRITING
         %span.label.label-inverse ATTENTION TO DETAILS
         %span.label.label-inverse ORGANIZATION
@@ -40,17 +38,19 @@
         %span.label.label-inverse READING
     %br/
     .row
-      .span1
-        %span.label.label-warning Experience
+      .span2
+        %span.label.label-warning Most relevant experience
         %br/
-        .lead Junior
+        .lead Communication & Marketing Assistant
+    .row
       .span2
         %span.label.label-warning Highest education
         %br/
         .lead HBO Bachelor in Communication & Media
     .row
-      .span2.offset1
+      .span3
         %span.label.label-warning Elsewhere online
+        %br/
         .btn.service LinkedIn
         .btn.service Twitter
         .btn.service Tumblr
@@ -61,7 +61,6 @@
     %h3 Good to hear you want to talk with Wansa!
   .modal-body
     %p Please sign in so she sees who you are.
-    %p No reason to panick, all we're showing is your name and picture ;)
   .modal-footer
     %a.btn.btn-large.btn-primary{ :href => recruiter_answers_yes_path } Signin with Google
     %a.btn.btn-large.btn-primary{ :href => recruiter_answers_yes_path } Signin with LinkedIn
@@ -72,8 +71,11 @@
     %button.close{ :type => "button", :class => "close", "data-dismiss" => "modal"} ×
     %h3 Too bad Wansa's profile doesn't fit your current needs!
   .modal-body
-    %p Do you mind letting her know why? Just a 3 lines message really ;)
-    %p Please sign in so she sees who you are.
+    %p Do you mind letting her know why?
+    .control-group
+      .controls
+        %textarea.input-xlarge#textarea{ rows: '3' } We don't hire dolls, sorry about that.
+    %p If so, sign in so she sees who you are.
   .modal-footer
     %a.btn.btn-large.btn-primary{ :href => recruiter_answers_no_path } Signin with Google
     %a.btn.btn-large.btn-primary{ :href => recruiter_answers_no_path } Signin with LinkedIn

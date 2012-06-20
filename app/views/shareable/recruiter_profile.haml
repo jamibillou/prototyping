@@ -5,9 +5,7 @@
     .row
       .span8
         .hero-unit
-          %h2 “Software should focus on solving complicated problems with simple solutions.” 
-          %br/
-          %p ― Dominic Matheron
+          %h1 “Love software and startups? Let's talk!”
   .span3
     .row
       .span1
@@ -63,17 +61,17 @@
     %br/
     .row
       .span1
-        %span.label.label-success Experience
+        %span.label.label-warning Experience
         %br/
         .lead 5 yrs or so
       .span2
-        %span.label.label-success Education
+        %span.label.label-warning Education
         %br/
         .lead HBO
     .row
       .span4
         .btn I might match because...
-        .btn.btn-danger I match!
+        .btn.btn-success I match!
   .span3.offset1
     .row
       .span1
@@ -85,25 +83,25 @@
     .row
       .span3
         %span.label.label-inverse iOS
-        %span.label.label-inverse Android
+        %span.label.label-inverse ANDROID
         %span.label.label-inverse MOBILE JQUERY
         %span.label.label-inverse EXTREMELY RIGOUROUS
-        %span.label.label-inverse DEV = PASSION
+        %span.label.label-inverse PASSION FOR PROGRAMMING
         %span.label.label-inverse VISUAL EYE
     %br/
     .row
       .span1
-        %span.label.label-success Experience
+        %span.label.label-warning Experience
         %br/
         .lead 2 yrs at least
       .span2
-        %span.label.label-success Education
+        %span.label.label-warning Education
         %br/
         .lead Bachelor in some serious school
     .row
       .span4
         .btn I might match because...
-        .btn.btn-danger I match!
+        .btn.btn-success I match!
   .span3.offset1
     .row
       .span1
@@ -123,15 +121,40 @@
     %br/
     .row
       .span1
-        %span.label.label-success Experience
+        %span.label.label-warning Experience
         %br/
         .lead 5-8 yrs
       .span2
-        %span.label.label-success Education
+        %span.label.label-warning Education
         %br/
         .lead Experience matters the most here
     .row
       .span4
-        .btn I might match because...
-        .btn.btn-danger I match!
-  
+        %a.btn{ "data-toggle" => "modal", :href => "#candidate-matches-because-modal"} I might match because...
+        %a.btn.btn-success{ "data-toggle" => "modal", :href => "#candidate-matches-modal"} I match!
+        
+.modal.fade.hide#candidate-matches-modal
+  .modal-header
+    %button.close{ :type => "button", :class => "close", "data-dismiss" => "modal"} ×
+    %h3 Good to hear you want to work for Viadeo!
+  .modal-body
+    %p Please sign in so Dominic knows who you are.
+  .modal-footer
+    %a.btn.btn-large.btn-primary{ :href => candidate_matches_path } Signin with Google
+    %a.btn.btn-large.btn-primary{ :href => candidate_matches_path } Signin with LinkedIn
+    %a.btn.btn-large.btn-primary{ :href => candidate_matches_path } Signin with Twitter
+    
+.modal.fade.hide#candidate-matches-because-modal
+  .modal-header
+    %button.close{ :type => "button", :class => "close", "data-dismiss" => "modal"} ×
+    %h3 Good to hear you want to work for Viadeo!
+  .modal-body
+    %p Please tell Dominic why you might match the profile
+    .control-group
+      .controls
+        %textarea.input-xlarge#textarea{ rows: '3' } I'm a cute doll, that's it!
+    %p ...and sign in so he knows who you are.
+  .modal-footer
+    %a.btn.btn-large.btn-primary{ :href => candidate_matches_because_path} Signin with Google
+    %a.btn.btn-large.btn-primary{ :href => candidate_matches_because_path} Signin with LinkedIn
+    %a.btn.btn-large.btn-primary{ :href => candidate_matches_because_path} Signin with Twitter

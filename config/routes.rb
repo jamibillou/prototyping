@@ -7,6 +7,8 @@ BootstrapPrototyping::Application.routes.draw do
   match 'recruiter_answers_yes' => 'shareable#recruiter_answers_yes'
   match 'recruiter_answers_no' => 'shareable#recruiter_answers_no'
   match 'recruiter_profile' => 'shareable#recruiter_profile'
+  match 'candidate_matches' => 'shareable#candidate_matches'
+  match 'candidate_matches_because' => 'shareable#candidate_matches_because'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
