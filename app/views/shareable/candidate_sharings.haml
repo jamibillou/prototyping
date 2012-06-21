@@ -1,0 +1,68 @@
+= render 'shareable_menu'
+
+.span12
+  .row
+    .span2
+      .row
+        %ul.nav.nav-list.well
+          %li.nav-header
+            %i.icon-comment
+            Conversations
+          %li
+            %a{ :href => candidate_discussions_path } Jonathan Ive
+          %li
+            %a{ :href => candidate_discussions2_path } Franck Sabattier
+          %li
+            %a{ :href => candidate_discussions3_path } Patrick Charre
+          %li
+            %a{ :href => candidate_discussions4_path } Florin Buduroi
+          %br/
+          %li.nav-header
+            %i.icon-retweet
+            Sharings
+          %li.active
+            %a{ :href => candidate_sharings_path } Franck Sabattier
+          %li
+            %a{ :href => candidate_sharings2_path } Xavier Dupuis
+          %li
+            %a{ :href => candidate_sharings3_path } Dominic Matheron
+
+    .span8
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-share
+              Franck Sabattier
+              %strong
+                = link_to '@fsabattier', 'https://twitter.com/#!/fsabattier', :target => '_blank'
+              has tweeted your profile.
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-share
+              Franck Sabattier has shared you profile on
+              %strong
+                = link_to('LinkedIn', 'http://fr.linkedin.com/in/francksabattier/en', :target => '_blank')+'.'
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-globe
+              %strong
+                = link_to 'Joel Laumans', 'https://twitter.com/#!/piksels', :target => '_blank'
+              @piksel has visited your profile from Twitter.
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-globe
+              %strong
+                = link_to 'Xavier Dupuis', 'http://fr.linkedin.com/pub/xavier-dupuis/49/971/a92', :target => '_blank'
+              has visited your profile from LinkedIn.
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-retweet
+              %strong
+                = link_to 'Xavier Dupuis', 'http://fr.linkedin.com/pub/xavier-dupuis/49/971/a92', :target => '_blank'
+              has reshared your profile on LinkedIn.
+	  
+      

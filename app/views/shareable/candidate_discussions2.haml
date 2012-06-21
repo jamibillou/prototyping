@@ -1,0 +1,205 @@
+= render 'shareable_menu'
+
+.span12
+  .row
+    .span2
+      .row
+        %ul.nav.nav-list.well
+          %li.nav-header
+            %i.icon-comment
+            Conversations
+          %li
+            %a{ :href => candidate_discussions_path } Jonathan Ive
+          %li.active
+            %a{ :href => candidate_discussions2_path } Franck Sabattier
+          %li
+            %a{ :href => candidate_discussions3_path } Patrick Charre
+          %li
+            %a{ :href => candidate_discussions4_path } Florin Buduroi
+          %br/
+          %li.nav-header
+            %i.icon-retweet
+            Sharings
+          %li
+            %a{ :href => candidate_sharings_path } Franck Sabattier
+          %li
+            %a{ :href => candidate_sharings2_path } Xavier Dupuis
+          %li
+            %a{ :href => candidate_sharings3_path } Dominic Matheron
+        
+    .span8
+      .row
+        .span6.offset2
+          .well
+            .row
+              .span1
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+              .span4
+                %h5 You said:
+                %br/
+                %h3  I'm keen to work for your company and would really love it if we could go over a few ideas together soon.
+                %br/
+                .btn.btn-large.btn-danger No, not interested
+                .btn.btn-large.btn-success Yes it'd be great!
+
+      .row
+        .span7.offset1
+          .alert.alert-danger
+            %i.icon-remove
+              Franck Sabattier has denied your request.
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('loubi.jpg')
+              .span3
+                %h5 Franck Sabattier said:
+                %p Hello Wansa! Thanks for you message. I don't think you match any of the profiles we are looking for though.
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('loubi.jpg')
+              .span3
+                %h5 Franck Sabattier said:
+                %p  What I mean is that I don't see how we could use you skills.
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('loubi.jpg')
+              .span3
+                %h5 Franck Sabattier said:
+                %p We basically only need programmers and designers here.
+      
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+              .span3
+                %h5 You said:
+                %p Oh ok, I thought you might have openings for a communication related position.
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('loubi.jpg')
+              .span3
+                %h5 Franck Sabattier said:
+                %p No we don't, sorry about that.
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = image_tag 'wansa.jpg'
+              .span3
+                %h5 You said:
+                %p Alright, no problem! Do you by any chance know anyone who could be interested?
+                .btn.btn-danger No
+                .btn.btn-success Yes
+      .row
+        .span7.offset1
+          .alert.alert-success
+            %i.icon-ok
+              Franck Sabattier answered "yes" to your question.
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('loubi.jpg')
+              .span3
+                %h5 Franck Sabattier said:
+                %p I'm not sure but I'll see if anyone wants to have a look. Do you have a CV that I could pass around?
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+              .span3
+                %h5 You said:
+                %p Of course, you can get it here
+                .btn-group
+                  .btn
+                    %i.icon-download
+                    Download my CV
+                
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+              .span3
+                %h5 You said:
+                %p Or just use this site since it's quite convenient.
+                .btn-group
+                  %a.btn.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#' }
+                    %i.icon-share
+                    Share my profile
+                    %span.caret
+                  %ul.dropdown-menu
+                    %li
+                      = link_to 'by email', '#'
+                    %li
+                      = link_to 'on LinkedIn', '#'
+                    %li
+                      = link_to 'on Twitter', '#'
+                    %li
+                      = link_to 'on Facebook', '#'
+                    %li
+                      = link_to 'on Google+', '#'
+      
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('loubi.jpg')
+              .span3
+                %h5 Franck Sabattier said:
+                %p Great, this looks easy. Nice talking to you, I'll share your profile immediately. Bye!
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-share
+              Franck Sabattier
+              %strong
+                = link_to '@fsabattier', 'https://twitter.com/#!/fsabattier', :target => '_blank'
+              has tweeted your profile.
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+              .span3
+                %h5 You said:
+                %p Thank you very much for that!
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-share
+              Franck Sabattier has shared you profile on
+              %strong
+                = link_to('LinkedIn', 'http://fr.linkedin.com/in/francksabattier/en', :target => '_blank')+'.'
+      .row
+        = render 'candidate_toolbox'
+        .span5
+          .well
+            .row
+              .span1
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+              .span3
+                %h5 Type your message:
+                %textarea.input-xlarge{ :rows => '4' }
+                %button.btn.btn-primary{ :type => 'submit' } Send
+                %button.btn Clear
