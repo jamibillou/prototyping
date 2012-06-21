@@ -86,31 +86,5 @@
         %h3
           Interested by Wansa's profile? You can start talking to her right here!
       .span4
-        %a.btn.btn-large.btn-danger{ "data-toggle" => "modal", :href => "#signin-no-modal"} Not interested
-        %a.btn.btn-large.btn-success{ "data-toggle" => "modal", :href => "#signin-yes-modal"} Start a discussion!
-
-.modal.fade.hide#signin-yes-modal
-  .modal-header
-    %button.close{ :type => "button", :class => "close", "data-dismiss" => "modal"} ×
-    %h3 Good to hear you want to talk with Wansa!
-  .modal-body
-    %p Please sign in so she sees who you are.
-  .modal-footer
-    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_yes_path } Signin with Google
-    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_yes_path } Signin with LinkedIn
-    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_yes_path } Signin with Twitter
-    
-.modal.fade.hide#signin-no-modal
-  .modal-header
-    %button.close{ :type => "button", :class => "close", "data-dismiss" => "modal"} ×
-    %h3 Too bad Wansa's profile doesn't fit your current needs!
-  .modal-body
-    %p Do you mind letting her know why?
-    .control-group
-      .controls
-        %textarea.input-xlarge#textarea{ rows: '3' } We don't hire dolls, sorry about that.
-    %p If so, sign in so she sees who you are.
-  .modal-footer
-    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_no_path } Signin with Google
-    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_no_path } Signin with LinkedIn
-    %a.btn.btn-large.btn-primary{ :href => recruiter_answers_no_path } Signin with Twitter
+        %a.btn.btn-large.btn-danger{ :href => recruiter_isnt_interested_path } Not interested
+        %a.btn.btn-large.btn-success{ :href => recruiter_starts_discussion_path } Start a discussion!

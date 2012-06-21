@@ -1,37 +1,44 @@
 class ShareableController < ApplicationController
   
+  before_filter :set_titles
+  
   def candidate_profile_public
-    @page_title = 'Prototypes'
-    @page_subtitle = 'sharable profile'
+  end
+  
+  def recruiter_starts_discussion
+  end
+  
+  def recruiter_isnt_interested
   end
   
   def candidate_profile_sent
-    @page_title = 'Prototypes'
-    @page_subtitle = 'sharable profile'
-  end
-  
-  def candidate_interactions
-    @page_title = 'Prototypes'
-    @page_subtitle = 'sharable profile'
   end
   
   def recruiter_answers_yes
-    @page_title = 'Prototypes'
-    @page_subtitle = 'sharable profile'
   end
   
   def recruiter_answers_no
-    @page_title = 'Prototypes'
-    @page_subtitle = 'sharable profile'
+  end
+  
+  def candidate_interactions
   end
   
   def recruiter_profile
-    @page_title = 'Prototypes'
-    @page_subtitle = 'sharable profile'
   end
   
   def candidate_matches
-    @page_title = 'Prototypes'
-    @page_subtitle = 'candidate matches'
   end
+  
+  def candidate_matches2
+  end
+  
+  def candidate_matches3
+  end
+  
+  private
+  
+    def set_titles
+      @page_title = 'Prototypes'
+      @page_subtitle = 'sharable profile'
+    end
 end

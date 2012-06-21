@@ -2,13 +2,17 @@ BootstrapPrototyping::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
-  match 'candidate_profile_public' => 'shareable#candidate_profile_public'
-  match 'candidate_profile_sent' => 'shareable#candidate_profile_sent'
-  match 'candidate_interactions' => 'shareable#candidate_interactions'
-  match 'recruiter_answers_yes' => 'shareable#recruiter_answers_yes'
-  match 'recruiter_answers_no' => 'shareable#recruiter_answers_no'
-  match 'recruiter_profile' => 'shareable#recruiter_profile'
-  match 'candidate_matches' => 'shareable#candidate_matches'
+  match 'candidate_profile_public'    => 'shareable#candidate_profile_public'
+  match 'recruiter_starts_discussion' => 'shareable#recruiter_starts_discussion'
+  match 'recruiter_isnt_interested'   => 'shareable#recruiter_isnt_interested'
+  match 'candidate_profile_sent'      => 'shareable#candidate_profile_sent'
+  match 'recruiter_answers_yes'       => 'shareable#recruiter_answers_yes'
+  match 'recruiter_answers_no'        => 'shareable#recruiter_answers_no'
+  match 'candidate_interactions'      => 'shareable#candidate_interactions'
+  match 'recruiter_profile'           => 'shareable#recruiter_profile'
+  match 'candidate_matches'           => 'shareable#candidate_matches'
+  match 'candidate_matches2'          => 'shareable#candidate_matches2'
+  match 'candidate_matches3'          => 'shareable#candidate_matches3'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

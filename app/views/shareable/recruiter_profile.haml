@@ -106,7 +106,7 @@
               = link_to 'on Facebook', ''
             %li
               = link_to 'on Google+', ''
-        %a.btn.btn-success{ "data-toggle" => "modal", :href => "#candidate-matches-modal", :style => 'margin-top:-20px' } I match!
+        %a.btn.btn-success{ :href => candidate_matches_path, :style => 'margin-top:-20px' } I match!
     
   .span3.offset1
     .row
@@ -152,7 +152,7 @@
               = link_to 'on Facebook', ''
             %li
               = link_to 'on Google+', ''
-        %a.btn.btn-success{ "data-toggle" => "modal", :href => "#candidate-matches-modal", :style => 'margin-top:-20px' } I match!
+        %a.btn.btn-success{ :href => candidate_matches2_path, :style => 'margin-top:-20px' } I match!
         
   .span3.offset1
     .row
@@ -198,19 +198,4 @@
               = link_to 'on Facebook', ''
             %li
               = link_to 'on Google+', ''
-        %a.btn.btn-success{ "data-toggle" => "modal", :href => "#candidate-matches-modal", :style => 'margin-top:-20px' } I match!
-    
-.modal.fade.hide#candidate-matches-modal
-  .modal-header
-    %button.close{ :type => "button", :class => "close", "data-dismiss" => "modal"} ×
-    %h3 Good to hear you want to work for Viadeo!
-  .modal-body
-    %p You can also tell Dominic why you match the profile
-    .control-group
-      .controls
-        %textarea.input-xlarge#textarea{ rows: '3' }
-    %p Sign in so he knows who you are.
-  .modal-footer
-    %a.btn.btn-large.btn-primary{ :href => candidate_matches_path} Signin with Google
-    %a.btn.btn-large.btn-primary{ :href => candidate_matches_path} Signin with LinkedIn
-    %a.btn.btn-large.btn-primary{ :href => candidate_matches_path} Signin with Twitter
+        %a.btn.btn-success{ :href => candidate_matches3_path, :style => 'margin-top:-20px' } I match!
