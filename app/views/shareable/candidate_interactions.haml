@@ -10,7 +10,7 @@
             Conversations
           %li.active
             %a Jonathan Ive, Apple
-    .span8
+    .span10
       .row
         .span6.offset2
           .well
@@ -121,4 +121,6 @@
                 %h5 Type your message:
                 %textarea.input-xlarge{ :rows => '4' }
                 %button.btn.btn-primary{ :type => 'submit' } Send
-                %button.btn Clear  
+                %button.btn Clear
+                
+        = render 'candidate_toolbox'
