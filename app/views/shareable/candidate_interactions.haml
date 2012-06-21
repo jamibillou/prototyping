@@ -10,7 +10,7 @@
             Conversations
           %li.active
             %a Jonathan Ive, Apple
-    .span10
+    .span8
       .row
         .span6.offset2
           .well
@@ -115,8 +115,11 @@
           .alert.alert-success
             %i.icon-envelope
               You have sent your email address to Jonathan Ive
+      %br/
+      %br/
       .row
-        .span5.offset3
+        = render 'candidate_toolbox'
+        .span5
           .well
             .row
               .span1
@@ -126,5 +129,3 @@
                 %textarea.input-xlarge{ :rows => '4' }
                 %button.btn.btn-primary{ :type => 'submit' } Send
                 %button.btn Clear
-                
-        = render 'candidate_toolbox'
