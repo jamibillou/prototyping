@@ -8,6 +8,6 @@
         = link_to 'public', candidate_profile_public_path
       %li
         = link_to 'sent to recruiter', candidate_profile_sent_path
-  %li{ :class => active?('candidate_discussions') }
+  %li{ :class => "#{active?('candidate_discussions')}#{active?('candidate_matches1')}#{active?('candidate_matches2')}#{active?('candidate_matches3')}" }
     = link_to 'Interactions', candidate_discussions_path
   

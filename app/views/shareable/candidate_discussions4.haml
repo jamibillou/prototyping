@@ -4,28 +4,7 @@
   .row
     .span2
       .row
-        %ul.nav.nav-list.well
-          %li.nav-header
-            %i.icon-comment
-            Conversations
-          %li
-            %a{ :href => candidate_discussions_path } Jonathan Ive
-          %li
-            %a{ :href => candidate_discussions2_path } Franck Sabattier
-          %li
-            %a{ :href => candidate_discussions3_path } Patrick Charre
-          %li.active
-            %a{ :href => candidate_discussions4_path } Florin Buduroi
-          %br/
-          %li.nav-header
-            %i.icon-retweet
-            Sharings
-          %li
-            %a{ :href => candidate_sharings_path } Franck Sabattier
-          %li
-            %a{ :href => candidate_sharings2_path } Xavier Dupuis
-          %li
-            %a{ :href => candidate_sharings3_path } Dominic Matheron
+        = render 'menu_candidate_interactions'
           
     .span8
       
