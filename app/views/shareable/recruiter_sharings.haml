@@ -5,3 +5,51 @@
     .span2
       .row
         = render 'menu_recruiter_interactions'
+
+    .span8
+      .row
+        .span7.offset1
+          .alert.alert-info
+            .pull-right.italic
+              5 days ago
+            %i.icon-share
+              Franck Sabattier has shared you offer on
+              %strong
+                = link_to('LinkedIn', 'http://fr.linkedin.com/in/francksabattier/en', :target => '_blank')+'.'
+      .row
+        .span6.offset2
+          .alert.alert-info
+            .pull-right.italic
+              2 days ago
+            %i.icon-globe
+              %strong
+                = link_to 'Gaëtan Charrier', 'http://www.linkedin.com/profile/view?id=55331163', :target => '_blank'
+              has visited your offer from LinkedIn.
+      .row
+        .span6.offset2
+          .alert.alert-info
+            .pull-right.italic
+              2 days ago
+            %i.icon-retweet
+              %strong
+                = link_to 'Gaëtan', 'http://www.linkedin.com/profile/view?id=55331163', :target => '_blank'
+              has reshared your offer on LinkedIn.
+      .row
+        .span7.offset1
+          .alert.alert-info
+            .pull-right.italic
+              2 days ago
+            %i.icon-share
+              Franck Sabattier
+              %strong
+                = link_to '@fsabattier', 'https://twitter.com/#!/fsabattier', :target => '_blank'
+              has tweeted your offer.
+      .row
+        .span6.offset2
+          .alert.alert-info
+            .pull-right.italic
+              3 hours ago
+            %i.icon-globe
+              %strong
+                = link_to 'Maxime Bozzi', 'https://twitter.com/#!/MaxooGP', :target => '_blank'
+              @MaxooGP has visited your offer from Twitter.

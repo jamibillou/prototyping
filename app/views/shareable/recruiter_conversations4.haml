@@ -1,0 +1,50 @@
+= render 'menu_recruiter'
+
+.span12
+  .row
+    .span2
+      .row
+        = render 'menu_recruiter_interactions'
+          
+    .span8
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('vincent.jpeg')
+              .span3
+                %h5 Vincent Vachez said:
+                %p Hey! I have just discovered this website, and I randomly went to your profile. My profile doesn't match to any of your vacancies, but I would like to know if you would be interested by a BI expert. I have got a lot of experience in a famouse company in Chambéry, France.
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = link_to image_tag('dom.jpg'), recruiter_profile_path
+              .span3
+                %h5 You said:
+                %p Hello. Well, it's hard for us to hire someone like you, because BI is a kind of a mystery for a lot of people. To be honest, I can't really see what you exactly do when you work in this domain...
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('vincent.jpeg')
+              .span3
+                %h5 Vincent Vachez said:
+                %p Oh a lot of things: you get a lot of data, write of lot of fantastic PL/SQL requests, and then you take advantage of the results to make important decisions for your company!
+       
+      .row
+        = render 'candidate_toolbox'
+        .span5
+          .well
+            .row
+              .span1
+                = link_to image_tag('dom.jpg'), recruiter_profile_path
+              .span3
+                %h5 Type your message:
+                %textarea.input-xlarge{ :rows => '4' }
+                %button.btn.btn-primary{ :type => 'submit' } Send
+                %button.btn Clear
+      
