@@ -2,5 +2,5 @@
   %li{ :class => active?('recruiter_profile') }
     = link_to 'Profile', recruiter_profile_path
   %li{ :class => "#{active?('recruiter_answers_yes')}#{active?('recruiter_answers_no') }#{active?('recruiter_starts_discussion') }#{active?('recruiter_isnt_interested') }" }
-    = link_to 'Interactions', 'Implement_me!'
+    = link_to 'Interactions', recruiter_conversations_path
   

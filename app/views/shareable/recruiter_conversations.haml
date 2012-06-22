@@ -1,0 +1,114 @@
+= render 'menu_recruiter'
+
+.span12
+  .row
+    .span2
+      .row
+        = render 'menu_recruiter_interactions'
+
+    .span9
+      #accordion.accordion
+        .accordion-group
+          .accordion-heading
+            .label.label-success.pull-right
+              Accepted
+            = link_to 'Carole Dhelens','#collapse1', :class => 'accordion-toggle', :data => {:toggle => 'collapse', :parent => '#accordion'}
+          #collapse1.accordion-body.collapse
+            .accordion-inner
+              .row
+                .span5.offset3
+                  .well
+                    .row
+                      .span1
+                        = image_tag('carole.jpg')
+                      .span3
+                        %h5 Carole said:
+                        %p Hello, I just saw your profile about a graphic designer, I think I've got a few experiences matching it. Please have a look at my page!
+              .row
+                .span5.offset1
+                  .well
+                    .row
+                      .span1
+                        = link_to image_tag('dom.jpg'), recruiter_profile_path
+                      .span3
+                        %h5 You said:
+                        %p You're right, your profile can be really worthy! When can we met?
+              .row
+                .span7.offset1
+                  .alert.alert-success
+                    %i.icon-ok
+                      You have accepted Carole's request.
+        .accordion-group
+          .accordion-heading
+            .label.pull-right
+              Pending
+            = link_to 'Caroline Berne','#collapse2', :class => 'accordion-toggle', :data => {:toggle => 'collapse', :parent => '#accordion'}
+          #collapse2.accordion-body.collapse.in
+            .accordion-inner
+              .row
+                .span5.offset3
+                  .well
+                    .row
+                      .span1
+                        = image_tag('caroline.jpg')
+                      .span3
+                        %h5 Caroline said:
+                        %p Hello, I would be interested by your profile, I've just finished my studies, and I speak 5 languages, could you be interested?
+              .row
+                .span5
+                  .well
+                    .row
+                      .span1
+                        = link_to image_tag('dom.jpg'), recruiter_profile_path
+                      .span3
+                        %h5 Type your message:
+                        %textarea.input-xlarge{ :rows => '4' }
+                        .btn-group{ :data => { :toggle => 'buttons-radio' }}
+                          %button.btn
+                            Accept
+                          %button.btn
+                            Wait
+                          %button.btn
+                            Reject
+                        %br/
+                        %button.btn.btn-primary{ :type => 'submit' } Send
+                        %button.btn Clear
+        .accordion-group
+          .accordion-heading
+            .label.label-important.pull-right
+              Refused
+            = link_to 'Mathieu Tessier','#collapse3', :class => 'accordion-toggle', :data => {:toggle => 'collapse', :parent => '#accordion'}
+          #collapse3.accordion-body.collapse.in
+            .accordion-inner
+              .row
+                .span5.offset3
+                  .well
+                    .row
+                      .span1
+                        = image_tag('mathieu.jpg')
+                      .span3
+                        %h5 Mathieu said:
+                        %p Good afternoon, I've just read your vacancy, and I think I'm the perfect guy for this job, what do you think?
+              .row
+                .span5.offset1
+                  .well
+                    .row
+                      .span1
+                        = link_to image_tag('dom.jpg'), recruiter_profile_path
+                      .span3
+                        %h5 You said:
+                        %p Hmm, I'm sorry but we would prefer someone speaking several languages, and your profile says that you speak only French...
+              .row
+                .span7.offset1
+                  .alert.alert-danger
+                    %i.icon-remove
+                      You have rejected Mathieu's request.
+              .row
+                .span5.offset3
+                  .well
+                    .row
+                      .span1
+                        = image_tag('mathieu.jpg')
+                      .span3
+                        %h5 Mathieu said:
+                        %p Oh, I'm a bit surprised, French is not supposed to be THE language to speak??

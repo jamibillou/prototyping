@@ -40,10 +40,31 @@ class ShareableController < ApplicationController
   
   def candidate_sharings3
   end
-  
+
   def recruiter_profile
   end
+
+  def recruiter_conversations
+  end
   
+  def recruiter_conversations2
+  end
+  
+  def recruiter_conversations3
+  end
+  
+  def recruiter_conversations4
+  end
+  
+  def recruiter_sharings
+  end
+  
+  def recruiter_sharings2
+  end
+  
+  def recruiter_sharings3
+  end
+
   def candidate_matches
   end
   

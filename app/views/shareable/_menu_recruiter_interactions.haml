@@ -1,6 +1,33 @@
 %ul.nav.nav-list.well
   %li.nav-header
-    %i.icon-comment
-    Conversations
-  %li.active
-    %a Wansa Sooksomwat
+    %i.icon-user
+    Profiles
+  %li
+    %strong
+      Graphic designer (NL)
+  %ul.nav.nav-list
+    %li{ :class => active?('recruiter_conversations') }
+      %a{ :href => recruiter_conversations_path } Conversations
+    %li{ :class => active?('recruiter_sharings') }
+      %a{ :href => recruiter_sharings_path } Sharings
+  %li
+    %strong      
+      Mobile developer (NL)
+  %ul.nav.nav-list
+    %li{ :class => active?('recruiter_conversations2') }
+      %a{ :href => recruiter_conversations2_path } Conversations
+    %li{ :class => active?('recruiter_sharings2') }
+      %a{ :href => recruiter_sharings2_path } Sharings
+  %li
+    %strong
+      Project manager (FR)
+  %ul.nav.nav-list
+    %li{ :class => active?('recruiter_conversations3') }
+      %a{ :href => recruiter_conversations3_path } Conversations
+    %li{ :class => active?('recruiter_sharings3') }
+      %a{ :href => recruiter_sharings3_path } Sharings
+  %li.nav-header
+    %i.icon-comments
+    Others conversations
+  %li{ :class => active?('recruiter_conversations4') }
+    %a{ :href => recruiter_conversations4_path } Vincent Vachez
