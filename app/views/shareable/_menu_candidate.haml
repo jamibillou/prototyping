@@ -1,0 +1,6 @@
+%ul.nav.nav-pills
+  %li{ :class => active?('candidate_profile_public') }
+    = link_to 'Profile', candidate_profile_public_path
+  %li{ :class => active?('candidate_discussions') }
+    = link_to 'Interactions', candidate_discussions_path
+  

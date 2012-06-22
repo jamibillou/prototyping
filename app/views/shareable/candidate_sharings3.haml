@@ -1,0 +1,75 @@
+= render 'menu_candidate'
+
+.span12
+  .row
+    .span2
+      .row
+        %ul.nav.nav-list.well
+          %li.nav-header
+            %i.icon-comment
+            Conversations
+          %li
+            %a{ :href => candidate_discussions_path } Jonathan Ive
+          %li
+            %a{ :href => candidate_discussions2_path } Franck Sabattier
+          %li
+            %a{ :href => candidate_discussions3_path } Patrick Charre
+          %li
+            %a{ :href => candidate_discussions4_path } Florin Buduroi
+          %br/
+          %li.nav-header
+            %i.icon-retweet
+            Sharings
+          %li
+            %a{ :href => candidate_sharings_path } Franck Sabattier
+          %li
+            %a{ :href => candidate_sharings2_path } Xavier Dupuis
+          %li.active
+            %a{ :href => candidate_sharings3_path } Dominic Matheron
+          
+    .span8
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-retweet
+              %strong
+                = link_to 'Dominic Matheron', 'http://nl.linkedin.com/in/dominicm', :target => '_blank'
+              has reshared your profile on LinkedIn.
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-retweet
+              %strong
+                = link_to 'Dominic Matheron', 'https://twitter.com/#!/dominic_m', :target => '_blank'
+              has retweeted your profile.
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-retweet
+              %strong
+                = link_to 'Dominic Matheron', 'http://facebook.com/dominic.matheron', :target => '_blank'
+              has reshared your profile on Facebook.
+      .row
+        .span7.offset1
+          .alert.alert-info
+            %i.icon-globe
+              %strong
+                = link_to 'Florin Buduroi', 'http://nl.linkedin.com/in/florinbuduroi', :target => '_blank'
+              has visited your profile from LinkedIn.
+      .row
+        .span7.offset1
+          .alert.alert-success
+            %i.icon-ok
+              %strong
+                = link_to 'Florin Buduroi', 'http://nl.linkedin.com/in/florinbuduroi', :target => '_blank'
+              is interested in your profile.
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('florin.jpg')
+              .span3
+                %h5 Florin Buduroi said:
+                %p Good morning Wansa! Just stumbled upon your profile, can talk soon? I have a few positions I'd like you to look at.
+      

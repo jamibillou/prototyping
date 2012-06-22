@@ -1,4 +1,4 @@
-= render 'shareable_menu'
+= render 'menu_candidate'
 
 .span12
   .row
@@ -9,8 +9,25 @@
             %i.icon-comment
             Conversations
           %li.active
-            %a Jonathan Ive, Apple
-    .span10
+            %a{ :href => candidate_discussions_path } Jonathan Ive
+          %li
+            %a{ :href => candidate_discussions2_path } Franck Sabattier
+          %li
+            %a{ :href => candidate_discussions3_path } Patrick Charre
+          %li
+            %a{ :href => candidate_discussions4_path } Florin Buduroi
+          %br/
+          %li.nav-header
+            %i.icon-retweet
+            Sharings
+          %li
+            %a{ :href => candidate_sharings_path } Franck Sabattier
+          %li
+            %a{ :href => candidate_sharings2_path } Xavier Dupuis
+          %li
+            %a{ :href => candidate_sharings3_path } Dominic Matheron
+          
+    .span8
       .row
         .span6.offset2
           .well
@@ -20,7 +37,7 @@
               .span4
                 %h5 You said:
                 %br/
-                %h3  I'm keen to work for your company and would really love it if we could go over a few ideas together soon.
+                %h3  I'd really like to work for you. Can we talk?
                 %br/
                 .btn.btn-large.btn-danger No, not interested
                 .btn.btn-large.btn-success Yes it'd be great!
@@ -38,7 +55,7 @@
                 = image_tag 'ive.jpg'
               .span3
                 %h5 Jonathan Ive said:
-                %p Ok, but why should we hire you?
+                %p Ok sure, but why should we hire you?
       .row
         .span5.offset3
           .well
@@ -48,13 +65,6 @@
               .span3
                 %h5 You said:
                 %p My boyfriend's a geek and he says you're great, plus your marketing is mindblowing.
-      .row
-        .span7.offset1
-          .alert.alert-info
-            %i.icon-info-sign
-              We have hidden a part of the conversation for the sake of readability.
-              %strong
-                = link_to 'Display all', ''
       .row
         .span5.offset3
           .well
@@ -88,7 +98,7 @@
         .span7.offset1
           .alert.alert-success
             %i.icon-ok
-              You have accepted Jonathan Ive's invitation
+              You have answered "yes" to your Jonathan Ive's question.
       .row
         .span5.offset3
           .well
@@ -114,9 +124,10 @@
         .span7.offset1
           .alert.alert-success
             %i.icon-envelope
-              You have sent your email address to Jonathan Ive
+              You have sent "wansa@example.com" to Jonathan Ive
       .row
-        .span5.offset3
+        = render 'candidate_toolbox'
+        .span5
           .well
             .row
               .span1
@@ -126,5 +137,3 @@
                 %textarea.input-xlarge{ :rows => '4' }
                 %button.btn.btn-primary{ :type => 'submit' } Send
                 %button.btn Clear
-                
-        = render 'candidate_toolbox'

@@ -1,0 +1,75 @@
+= render 'menu_candidate'
+
+.span12
+  .row
+    .span2
+      .row
+        %ul.nav.nav-list.well
+          %li.nav-header
+            %i.icon-comment
+            Conversations
+          %li
+            %a{ :href => candidate_discussions_path } Jonathan Ive
+          %li
+            %a{ :href => candidate_discussions2_path } Franck Sabattier
+          %li.active
+            %a{ :href => candidate_discussions3_path } Patrick Charre
+          %li
+            %a{ :href => candidate_discussions4_path } Florin Buduroi
+          %br/
+          %li.nav-header
+            %i.icon-retweet
+            Sharings
+          %li
+            %a{ :href => candidate_sharings_path } Franck Sabattier
+          %li
+            %a{ :href => candidate_sharings2_path } Xavier Dupuis
+          %li
+            %a{ :href => candidate_sharings3_path } Dominic Matheron
+          
+    .span8
+      .row
+        .span7.offset1
+          .alert.alert-danger
+            %i.icon-remove
+              Patrick Charre is not interested in your profile.
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('default_user.jpg')
+              .span3
+                %h5 Patrick Charre said:
+                %p I was having a quick look at your profile but we're looking for someone more experience really.
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+              .span3
+                %h5 You said:
+                %p Ok I understand, thanks for your answer anyway.
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('default_user.jpg')
+              .span3
+                %h5 Patrick Charre said:
+                %p You're welcome!
+       
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+              .span3
+                %h5 Type your message:
+                %textarea.input-xlarge{ :rows => '4' }
+                %button.btn.btn-primary{ :type => 'submit' } Send
+                %button.btn Clear
+      
