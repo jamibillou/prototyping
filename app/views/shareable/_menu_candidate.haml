@@ -1,6 +1,13 @@
 %ul.nav.nav-pills
-  %li{ :class => active?('candidate_profile_public') }
-    = link_to 'Profile', candidate_profile_public_path
-  %li{ :class => active?('candidate_discussions') }
-    = link_to 'Interactions', candidate_discussions_path
+  %li.dropdown{ :class => "#{active?('candidate_profile_public')}#{active?('candidate_profile_sent')}" }
+    %a.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#' }
+      Profile
+      %b.caret
+    %ul.dropdown-menu
+      %li
+        = link_to 'public', candidate_profile_public_path
+      %li
+        = link_to 'sent to recruiter', candidate_profile_sent_path
+  %li{ :class => "#{active?('candidate_conversations')}#{active?('candidate_conversations2')}#{active?('candidate_conversations3')}#{active?('candidate_conversations4')}#{active?('candidate_sharings')}#{active?('candidate_sharings2')}#{active?('candidate_sharings3')}#{active?('candidate_matches')}#{active?('candidate_matches2')}#{active?('candidate_matches3')}" }
+    = link_to 'Interactions', candidate_conversations_path
   

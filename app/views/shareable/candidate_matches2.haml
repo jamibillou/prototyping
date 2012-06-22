@@ -4,12 +4,7 @@
   .row
     .span2
       .row
-        %ul.nav.nav-list.well
-          %li.nav-header
-            %i.icon-comment
-            Conversations
-          %li.active
-            %a Dominic Matheron, Viadeo
+        = render 'menu_candidate_interactions'
           
     .span10
       .row
@@ -56,7 +51,8 @@
               
       
       .row
-        .span5.offset3
+        = render 'candidate_toolbox'
+        .span5
           .well
             .row
               .span1

@@ -1,0 +1,24 @@
+%ul.nav.nav-list.well
+  %li.nav-header
+    %i.icon-comment
+    Conversations
+  %li{ :class => active?('candidate_conversations') }
+    %a{ :href => candidate_conversations_path } Jonathan Ive
+  %li{ :class => active?('candidate_conversations2') }
+    %a{ :href => candidate_conversations2_path } Franck Sabattier
+  %li{ :class => active?('candidate_conversations3') }
+    %a{ :href => candidate_conversations3_path } Patrick Charre
+  %li{ :class => "#{active?('candidate_matches')}#{active?('candidate_matches2')}#{active?('candidate_matches3')}" }
+    %a{ :href => candidate_matches2_path } Dominic Matheron
+  %li{ :class => active?('candidate_conversations4') }
+    %a{ :href => candidate_conversations4_path } Florin Buduroi
+  %br/
+  %li.nav-header
+    %i.icon-retweet
+    Sharings
+  %li{ :class => active?('candidate_sharings') }
+    %a{ :href => candidate_sharings_path } Franck Sabattier
+  %li{ :class => active?('candidate_sharings2') }
+    %a{ :href => candidate_sharings2_path } Xavier Dupuis
+  %li{ :class => active?('candidate_sharings3') }
+    %a{ :href => candidate_sharings3_path } Dominic Matheron
