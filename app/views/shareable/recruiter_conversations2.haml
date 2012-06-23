@@ -1,0 +1,39 @@
+= render 'menu_recruiter'
+
+.span12
+  .row
+    .span2
+      .row
+        = render 'menu_recruiter_interactions'
+        
+    .span8
+      .row
+        .span7.offset1
+          .alert.alert-success
+            %i.icon-ok
+              Caroline Berne sent you an open application.
+      .row
+        .span5.offset1
+          .well
+            .row
+              .span1
+                = image_tag('caroline.jpg')
+              .span3
+                %h5 Caroline Berne said:
+                %p Hello, I would be interested by your profile, I've just finished my studies, and I speak 5 languages, could you be interested?
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = link_to image_tag('dom.jpg'), recruiter_profile_path
+              .span3
+                %button.btn.btn-success Accept application
+                %button.btn.btn-danger Reject application
+                %br/
+                %br/
+                %h5 Type your message:
+                %textarea.input-xlarge{ :rows => '4' }
+                %br/
+                %button.btn.btn-primary{ :type => 'submit' } Send
+                %button.btn Clear
