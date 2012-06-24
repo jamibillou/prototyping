@@ -1,3 +1,11 @@
+@switch_mode = (mode) ->
+	$.ajax '/ajax/switch_mode',
+	dataType: 'html'
+	data: { mode: mode }
+	type: 'GET'
+	success: (data) ->
+	  location.reload()
+
 @add_message = (picture) ->
   $('#dynamic_content').html($('#dynamic_content').html()+"
     <div class='row'>
@@ -52,5 +60,6 @@
 		when 'email'	then message = "<div class='input-append'><input class='span2' size='16' type='text'><div class='btn btn-primary' style='margin-left:-5px' type='button'>Send</div></div>"
 		when 'cv'			then message = "<div class='btn-group'><div class='btn'><i class='icon-download'></i> Download my CV</div></div>"
 		when 'share' then message = "<div class='btn-group'><a class='btn dropdown-toggle' data-toggle='dropdown' href='#'><i class='icon-share'></i> Share my profile <span class='caret'></span></a><ul class='dropdown-menu'><li><a href='#'>by email</a></li><li><a href='#'>on LinkedIn</a></li><li><a href='#'>on Twitter</a></li><li><a href='#'>on Facebook</a></li><li><a href='#'>on Google+</a></li></ul></div>"
+		when 'link' then message = "<a target='_new' href='http://www.engaccino.com'>Engaccino</a>"
 	$('#message').val($('#message').val()+message)
 
