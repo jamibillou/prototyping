@@ -6,24 +6,24 @@
     %br/
     %li
       %a
-        .btn.btn-small.btn-danger No
-        .btn.btn-small.btn-success Yes
+        .btn.btn-small.btn-danger{  :onclick => "add_tool('choice')" } No
+        .btn.btn-small.btn-success{ :onclick => "add_tool('choice')" } Yes
     %br/
     %li
       %a
         .input-append{ :style => 'margin:0' }
           %input.span1{ :type => 'text' }
-          .btn.btn-small.btn-primary{ :type => 'button', :style => 'margin-left:-5px' } Send
+          .btn.btn-small.btn-primary{ :type => 'button', :style => 'margin-left:-5px', :onclick => "add_tool('email')" } Send
     %br/
     %li
       %a
-        .btn.btn-small
+        .btn.btn-small{ :onclick => "add_tool('cv')" }
           %i.icon-download
           Download my CV
     %br/
     %li
       %a
-        .btn.btn-small
+        .btn.btn-small{ :onclick => "add_tool('share')" }
           %i.icon-share
           Share my profile
     %br/

@@ -1,4 +1,4 @@
-@addMessage = (picture) ->
+@add_message = (picture) ->
   $('#dynamic_content').html($('#dynamic_content').html()+"
     <div class='row'>
       <div class='span5 offset3'>
@@ -45,3 +45,12 @@
 
 @clean = ->
 	$('#message').val('')
+
+@add_tool = (tool) ->
+	switch tool
+		when 'choice' then message = "<div class='btn btn-danger'>No</div> <div class='btn btn-success'>Yes</div>"
+		when 'email'	then message = "<div class='input-append'><input class='span2' size='16' type='text'><div class='btn btn-primary' style='margin-left:-5px' type='button'>Send</div></div>"
+		when 'cv'			then message = "<div class='btn-group'><div class='btn'><i class='icon-download'></i> Download my CV</div></div>"
+		when 'share' then message = "<div class='btn-group'><a class='btn dropdown-toggle' data-toggle='dropdown' href='#'><i class='icon-share'></i> Share my profile <span class='caret'></span></a><ul class='dropdown-menu'><li><a href='#'>by email</a></li><li><a href='#'>on LinkedIn</a></li><li><a href='#'>on Twitter</a></li><li><a href='#'>on Facebook</a></li><li><a href='#'>on Google+</a></li></ul></div>"
+	$('#message').val($('#message').val()+message)
+
