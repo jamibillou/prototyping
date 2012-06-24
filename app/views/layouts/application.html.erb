@@ -20,9 +20,12 @@
   
   <body>
     <% if session[:mode] == 'demo' %>
-      <div class='row'>
-        <div class='span2 offset11'>
-          <%= link_to 'Back to normal mode', '#', :onclick => "switch_mode('normal')" %>
+      <div class='navbar-fixed-top'>
+    		<div class='pull-right'>
+    	    <a href='#', onclick="switch_mode('normal')">
+    	      <i class="icon-resize-full"></i>
+    		    full app
+    	    </a>
         </div>
       </div>
     <% else %>  
@@ -41,7 +44,10 @@
             </ul>
             <ul class="nav pull-right">
               <li>
-                <%= link_to 'Demo mode', '#', :onclick => "switch_mode('demo')" %>
+				<a href='#', onclick="switch_mode('demo')">
+				  <i class="icon-resize-small icon-white"></i>
+				  demo
+				</a>
               </li>
             </ul>
           </div>
