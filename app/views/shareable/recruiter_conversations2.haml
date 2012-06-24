@@ -21,6 +21,7 @@
               .span3
                 %h5 Caroline Berne said:
                 %p Hello, I would be interested by your profile, I've just finished my studies, and I speak 5 languages, could you be interested?
+      #dynamic_content
       .row
         .span5.offset3
           .well
@@ -28,12 +29,13 @@
               .span1
                 = link_to image_tag('dom.jpg'), recruiter_profile_path
               .span3
-                %button.btn.btn-success Accept application
-                %button.btn.btn-danger Reject application
-                %br/
-                %br/
+                #buttons
+                  %button.btn.btn-success{ :onclick => "accept('Caroline')" } Accept application
+                  %button.btn.btn-danger{  :onclick => "reject('Caroline')" } Reject application
+                  %br/
+                  %br/
                 %h5 Type your message:
-                %textarea.input-xlarge{ :rows => '4' }
+                %textarea#message.input-xlarge{ :rows => '4' }
                 %br/
-                %button.btn.btn-primary{ :type => 'submit' } Send
-                %button.btn Clear
+                %button.btn.btn-primary{ :type => 'submit', :onclick => "addMessage('dom.jpg')" } Send
+                %button.btn{ :onclick => 'clean()' } Clear

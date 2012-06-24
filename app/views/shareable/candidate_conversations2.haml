@@ -170,15 +170,17 @@
               Franck Sabattier has shared you profile on
               %strong
                 = link_to('LinkedIn', 'http://fr.linkedin.com/in/francksabattier/en', :target => '_blank')+'.'
+      #dynamic_content
       .row
         = render 'candidate_toolbox'
         .span5
           .well
             .row
               .span1
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                = link_to image_tag('wansa.jpg'), recruiter_profile_path
               .span3
                 %h5 Type your message:
-                %textarea.input-xlarge{ :rows => '4' }
-                %button.btn.btn-primary{ :type => 'submit' } Send
-                %button.btn Clear
+                %textarea#message.input-xlarge{ :rows => '4' }
+                %br/
+                %button.btn.btn-primary{ :type => 'submit', :onclick => "addMessage('wansa.jpg')" } Send
+                %button.btn{ :onclick => 'clean()' } Clear

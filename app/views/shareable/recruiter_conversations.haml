@@ -71,7 +71,7 @@
           .alert.alert-success
             %i.icon-ok
               You accepted Carole Delhens's application.
-
+      #dynamic_content
       .row
         .span5.offset3
           .well
@@ -80,7 +80,7 @@
                 = link_to image_tag('dom.jpg'), recruiter_profile_path
               .span3
                 %h5 Type your message:
-                %textarea.input-xlarge{ :rows => '4' }
+                %textarea#message.input-xlarge{ :rows => '4' }
                 %br/
-                %button.btn.btn-primary{ :type => 'submit' } Send
-                %button.btn Clear
+                %button.btn.btn-primary{ :type => 'submit', :onclick => "addMessage('dom.jpg')" } Send
+                %button.btn{ :onclick => 'clean()' } Clear
