@@ -4,7 +4,10 @@
 	data: { mode: mode }
 	type: 'GET'
 	success: (data) ->
-	  location.reload()
+	  if mode is 'sharable' 
+      window.location = '/candidate_profile_public'
+    else
+      window.location = '/' 
 
 @add_message = (picture) ->
   unless $('#message').val() is ''
