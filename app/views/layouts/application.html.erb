@@ -29,36 +29,47 @@
         </div>
       </div>
     <% else %>  
-      <div class='navbar navbar-fixed-top'>
-        <div class='navbar-inner'>
-          <div class='container-fluid'>
-            <%= link_to 'Engaccino', root_path, :class => 'brand' %>
-            <ul class="nav">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shareable profiles<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<%= candidate_profile_public_path %>" >Candidate</a></li>
-                  <li><a href="<%= recruiter_profile_path %>" >Recruiter</a></li>
-                </ul>
+
+    <% end %>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container-fluid'>
+          <% if session[:mode] == 'sharable' %>
+            <span class='brand'><%= page_title+"-"+page_subtitle %></span>
+            <ul class='nav'>
+              <li <%= "class='active'" if request.fullpath.include?('candidate') %>>
+                <%= link_to 'Candidate', candidate_profile_public_path %>
+              </li>
+              <li <%= "class='active'" if request.fullpath.include?('recruiter') %>>
+                <%= link_to 'Recruiter', recruiter_profile_path %>
               </li>
             </ul>
             <ul class="nav pull-right">
               <li>
-				<a href='#', onclick="switch_mode('demo')">
-				  <i class="icon-resize-small icon-white"></i>
-				  demo
-				</a>
+                <a href='#', onclick="switch_mode('normal')">
+                  <i class="icon-resize-small icon-white"></i>
+                  full app
+                </a>
               </li>
             </ul>
-          </div>
+          <% else %>
+            <%= link_to 'Engaccino', root_path, :class => 'brand' %>
+            <ul class='nav pull-right'>
+              <li class='dropdown'>
+                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>protos<b class='caret'></b></a>
+                <ul class='dropdown-menu'>  
+                  <li>
+                    <a href='#', onclick="switch_mode('sharable')">sharable profile</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          <% end %>
         </div>
       </div>
-    <% end %>
+    </div>
 
     <div class='container-fluid'>
-      <div class='page-header'>
-        <h1><%= page_title %> <small><%= page_subtitle %></small></h1>
-      </div>
       <%= yield %>
     </div>
 
