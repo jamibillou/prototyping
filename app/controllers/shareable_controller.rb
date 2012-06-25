@@ -6,6 +6,6 @@ class ShareableController < ApplicationController
   
     def set_titles
       @page_title = 'Prototypes'
-      @page_subtitle = 'sharable profile'
+      @page_subtitle = 'shareable profile'
     end
 end
