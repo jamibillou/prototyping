@@ -1,13 +1,10 @@
 @switch_mode = (mode) ->
-	$.ajax '/ajax/switch_mode',
-	dataType: 'html'
-	data: { mode: mode }
-	type: 'GET'
-	success: (data) ->
-	  if mode is 'sharable' 
-      window.location = '/candidate_profile_public'
-    else
-      window.location = '/' 
+  $.ajax '/ajax/switch_mode',
+  dataType: 'html'
+  type: 'GET'
+  data: {mode:mode}
+  success: (data) ->
+    location.reload()
 
 @add_message = (picture) ->
   unless $('#message').val() is ''
@@ -76,3 +73,6 @@
   tools = [ {regex: /\*No \/ Yes\*/g, code: "<div class='btn btn-danger'>No</div> <div class='btn btn-success'>Yes</div>"}, {regex: /\*Send\*/g, code: "<div class='input-append'><input class='span2' size='16' type='text'><div class='btn btn-primary' style='margin-left:-5px' type='button'>Send</div></div>"}, {regex: /\*Download my CV\*/g, code: "<div class='btn-group'><div class='btn'><i class='icon-download'></i> Download my CV</div></div>"}, {regex: /\*Share my profile\*/g, code: "<div class='btn-group'><a class='btn dropdown-toggle' data-toggle='dropdown' href='#'><i class='icon-share'></i> Share my profile <span class='caret'></span></a><ul class='dropdown-menu'><li><a href='#'>by email</a></li><li><a href='#'>on LinkedIn</a></li><li><a href='#'>on Twitter</a></li><li><a href='#'>on Facebook</a></li><li><a href='#'>on Google+</a></li></ul></div>"} ]
   message = message.replace(tool.regex, tool.code) for tool in tools
   return message
+
+@filter_role = ->
+  #to be completed...
