@@ -1,21 +1,21 @@
 %ul.nav.nav-list.well
   .control-group
     .controls
-      %select#select01.span2
-        %option All roles
-        %option Graphic designer
-        %option Mobile developer
-        %option Project manager
+      %select#select01.span2{ :onchange => "filter_role()"}
+        %option{ :value =>'0' } All roles
+        %option{ :value =>'1'} Graphic designer
+        %option{ :value =>'2'} Mobile developer
+        %option{ :value =>'3'} Project manager
   %li.nav-header
     %i.icon-comment
     Conversations
-    %li{ :class => active?('recruiter_conversations') }
+    %li#carole_d{ :class => active?('recruiter_conversations') }
       %a{ :href => recruiter_conversations_path } Carole Delhens
-    %li{ :class => active?('recruiter_conversations2') }
+    %li#caroline_b{ :class => active?('recruiter_conversations2') }
       %a{ :href => recruiter_conversations2_path } Caroline Berne
-    %li{ :class => active?('recruiter_conversations3') }
+    %li#mathieu_t{ :class => active?('recruiter_conversations3') }
       %a{ :href => recruiter_conversations3_path } Mathieu Tessier
-    %li{ :class => active?('recruiter_conversations4') }
+    %li#vincent_v{ :class => active?('recruiter_conversations4') }
       %a{ :href => recruiter_conversations4_path } Vincent Vachez
   %li.nav-header
     %i.icon-retweet

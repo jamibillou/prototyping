@@ -18,52 +18,69 @@
     <link href='images/apple-touch-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
   </head>
   
-  <body>
-    <% if session[:mode] == 'demo' %>
-      <div class='navbar-fixed-top'>
-    		<div class='pull-right'>
-    	    <a href='#', onclick="switch_mode('normal')">
-    	      <i class="icon-resize-full"></i>
-    		    full app
-    	    </a>
-        </div>
-      </div>
-    <% else %>  
-
-    <% end %>
+  <body>  
     <div class='navbar navbar-fixed-top'>
       <div class='navbar-inner'>
         <div class='container-fluid'>
-          <% if session[:mode] == 'sharable' %>
-            <span class='brand'><%= page_title+"-"+page_subtitle %></span>
+          <%= link_to 'Engaccino', root_path, :class => 'brand' %>
+          <% if session[:mode] == 'demo' %>
             <ul class='nav'>
-              <li <%= "class='active'" if request.fullpath.include?('candidate') %>>
-                <%= link_to 'Candidate', candidate_profile_public_path %>
-              </li>
-              <li <%= "class='active'" if request.fullpath.include?('recruiter') %>>
-                <%= link_to 'Recruiter', recruiter_profile_path %>
-              </li>
+              <% if request.fullpath.include?('candidate') %>
+                <li class="dropdown <%= 'active' if request.fullpath.include?('candidate_profile') %>">
+                  <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Profile<b class='caret'></b></a>
+                  <ul class='dropdown-menu'>  
+                    <li>
+                      <%= link_to 'public', candidate_profile_public_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'sent to recruiter', candidate_profile_sent_path %>
+                    </li>
+                  </ul>
+                </li>
+                <li <%= "class='active'" unless request.fullpath.include?('candidate_profile') %>>
+                  <%= link_to 'Interactions', candidate_conversations_path %>
+                </li>
+              <% else %>
+                <li <%= "class='active'" if request.fullpath == '/recruiter_profile' %>>
+                  <%= link_to 'Profile', recruiter_profile_path %>
+                </li>
+                <li <%= "class='active'" if request.fullpath != '/recruiter_profile' %>>
+                  <%= link_to 'Interactions', recruiter_conversations_path %>
+                </li>
+              <% end %>
             </ul>
             <ul class="nav pull-right">
               <li>
-                <a href='#', onclick="switch_mode('normal')">
+                <a href='#', onclick="switch_mode('dev')">
                   <i class="icon-resize-small icon-white"></i>
-                  full app
+                  dev
                 </a>
               </li>
             </ul>
           <% else %>
-            <%= link_to 'Engaccino', root_path, :class => 'brand' %>
-            <ul class='nav pull-right'>
+            <ul class='nav'>
               <li class='dropdown'>
-                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>protos<b class='caret'></b></a>
+                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>sharable profile<b class='caret'></b></a>
                 <ul class='dropdown-menu'>  
                   <li>
-                    <a href='#', onclick="switch_mode('sharable')">sharable profile</a>
+                    <%= link_to 'candidate', candidate_profile_public_path %>
+                  </li>
+                  <li>
+                    <%= link_to 'recruiter', recruiter_profile_path %>
                   </li>
                 </ul>
               </li>
             </ul>
+            <% if request.fullpath != root_path %>
+              <ul class="nav pull-right">
+                <li>
+                  <a href='#', onclick="switch_mode('demo')">
+                    <i class="icon-resize-small icon-white"></i>
+                    demo
+                  </a>
+                </li>
+              </ul>
+            <% end %>
           <% end %>
         </div>
       </div>
