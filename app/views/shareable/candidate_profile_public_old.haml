@@ -1,0 +1,89 @@
+= render 'menu_candidate'
+
+.row
+  .span4
+    %br/
+    %br/
+    %br/
+    .row
+      .span1
+        = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+      .span3
+        %h3 Wansa Sooksomwat
+        %p Amsterdam, Netherlands
+    %br/
+    .row
+      .span4.lead
+        Junior Communication Medwerker
+    .row
+      .span4
+        %span.label.label-inverse EXTERNAL COMMUNICATION
+        %span.label.label-inverse EVENT PLANNING
+        %span.label.label-inverse WRITING
+        %span.label.label-inverse ATTENTION TO DETAILS
+        %span.label.label-inverse ORGANIZATION
+        %span.label.label-inverse GOOD TEAM MATE
+        %span.label.label-inverse TRAVEL
+        %span.label.label-inverse CINEMA
+        %span.label.label-inverse READING
+    %br/
+    .row
+      .span2
+        %span.label.label-warning Most relevant experience
+        %br/
+        .lead Communication & Marketing Assistant
+      .span2
+        %span.label.label-warning Highest education
+        %br/
+        .lead HBO Bachelor in Communication & Media
+  
+  .span8
+    .row
+      .span5.offset3
+        .pull-right
+          %ul.nav.nav-pills
+            %li
+              %a{ :href => '#' }
+                %i.icon-download
+                Download CV
+              
+            %li.dropdown
+              %a.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#' }
+                %i.icon-globe
+                Elsewhere online
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  = link_to 'LinkedIn', '#'
+                %li
+                  = link_to 'Twitter', '#'
+                %li
+                  = link_to 'Tumblr', '#'
+            %li.dropdown
+              %a.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#' }
+                %i.icon-share
+                Share this profile
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  = link_to 'by email', '#'
+                %li
+                  = link_to 'on LinkedIn', '#'
+                %li
+                  = link_to 'on Twitter', '#'
+                %li
+                  = link_to 'on Facebook', '#'
+                %li
+                  = link_to 'on Google+', '#'
+             
+    .row
+      .span8
+        .hero-unit
+          %h1 "Communications isn't what a company says, it's everything else it does."
+    .row
+      .span4
+        %h3
+          Interested by Wansa's profile? You can start talking to her right here!
+      .span4
+        %a.btn.btn-large.btn-danger{ :href => recruiter_isnt_interested_path } Not interested
+        %a.btn.btn-large.btn-success{ :href => recruiter_starts_discussion_path } Start a discussion!

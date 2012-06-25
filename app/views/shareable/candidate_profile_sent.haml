@@ -1,46 +1,79 @@
 = render 'menu_candidate'
 
 .row
-
-  .span4
-    %br/
-    %br/
-    %br/
-    .row
-      .span1
-        = link_to image_tag('wansa.jpg'), candidate_profile_public_path
-      .span3
-        %h3 Wansa Sooksomwat
-        %p Amsterdam, Netherlands
-    %br/
-    .row
-      .span4.lead
-        Junior Communication Medwerker
-    .row
-      .span3
-        %span.label.label-inverse EXTERNAL COMMUNICATION
-        %span.label.label-inverse EVENT PLANNING
-        %span.label.label-inverse WRITING
-        %span.label.label-inverse ATTENTION TO DETAILS
-        %span.label.label-inverse ORGANIZATION
-        %span.label.label-inverse GOOD TEAM MATE
-        %span.label.label-inverse TRAVEL
-        %span.label.label-inverse CINEMA
-        %span.label.label-inverse READING
-    %br/
-    .row
-      .span2
-        %span.label.label-warning Most relevant experience
-        %br/
-        .lead Communication & Marketing Assistant
-      .span2
-        %span.label.label-warning Highest education
-        %br/
-        .lead HBO Bachelor in Communication & Media
+  .span5.offset1
+    .card
+      .row
+        .span4.well
+          .row
+            .span1
+              = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+            .span3
+              %h3 Wansa Sooksomwat
+              %p 25 yrs old, located in Amsterdam
+              .icon-flag
+                Dutch, English
+      .row
+        .span1.well
+          %h6
+            Experience
+          .gigantic 1 yr
+        .span3.well{ :style => 'padding-right:0' }
+          %h6 
+            Education
+          .lead{ :style => 'margin-bottom:0' } HBO Bachelor in Communication & Media
+      .row
+        .span4.well{ style: 'padding-bottom:0' }
+          %h6
+            Professional skills
+          .lead
+            .row
+              .span3
+                External communication
+              .span1
+                .progress.progress-striped.progress-success
+                  .bar{ :style => 'width:80%' }
+            .row
+              .span3
+                Event planning
+                .icon-star
+              .span1
+                .progress.progress-striped.progress-success
+                  .bar{ :style => 'width:80%' }
+            .row
+              .span3
+                Writing
+              .span1
+                .progress.progress-striped
+                  .bar{ :style => 'width:60%' }
+            
+      .row
+        .span4.well{ style: 'padding-bottom:0' }
+          %h6 
+            Interpersonal skills
+          .lead
+            .row
+              .span3
+                Good team mate
+              .span1
+                .progress.progress-striped.progress-warning
+                  .bar{ :style => 'width:100%' }
+            .row
+              .span3
+                Attention to details
+              .span1
+                .progress.progress-striped
+                  .bar{ :style => 'width:60%' }
+            .row
+              .span3
+                Organization
+              .span1
+                .progress.progress-striped
+                  .bar{ :style => 'width:60%' }
   
-  .span8
+  .span5
     .row
-      .span5.offset3
+      .span5
         .pull-right
           %ul.nav.nav-pills
             %li
@@ -76,13 +109,21 @@
                   = link_to 'on Facebook', '#'
                 %li
                   = link_to 'on Google+', '#'
-          
-      .span8
-        .hero-unit
-          %h1 "I'm keen to work for your company and would really love it if we could go over a few ideas together soon."
-          %br/
-          %br/
-          %span.pull-right
-            %a.btn.btn-large.btn-primary.btn-danger{ :href => recruiter_answers_no_path } No, not interested
-            %a.btn.btn-large.btn-success{ :href => recruiter_answers_yes_path } Yes it'd be great!
-          %br/
+    %br/
+    %br/
+    %br/
+    %br/   
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    .row
+      .span5
+        %h2{ :style => 'text-align:right' } "I'm keen to work for your company and would really love to go over a few ideas together soon."
+        %br/
+        %br/
+        .pull-right
+          %a.btn.btn-gigantic.btn-danger{ :href => recruiter_isnt_interested_path } Not interested
+          %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path } Start a discussion!
