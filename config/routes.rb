@@ -3,7 +3,6 @@ BootstrapPrototyping::Application.routes.draw do
   get 'ajax/switch_mode'
   
   match 'candidate_profile_public'     => 'shareable#candidate_profile_public'
-  match 'candidate_profile_public_old' => 'shareable#candidate_profile_public_old'
   match 'recruiter_starts_discussion'  => 'shareable#recruiter_starts_discussion'
   match 'recruiter_isnt_interested'    => 'shareable#recruiter_isnt_interested'
   match 'candidate_profile_sent'       => 'shareable#candidate_profile_sent'
