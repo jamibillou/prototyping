@@ -19,6 +19,7 @@ BootstrapPrototyping::Application.routes.draw do
   match 'candidate_matches'            => 'shareable#candidate_matches'
   match 'candidate_matches2'           => 'shareable#candidate_matches2'
   match 'candidate_matches3'           => 'shareable#candidate_matches3'
+  match 'candidate_matches4'           => 'shareable#candidate_matches4'
   match 'recruiter_conversations'      => 'shareable#recruiter_conversations'
   match 'recruiter_conversations2'     => 'shareable#recruiter_conversations2'
   match 'recruiter_conversations3'     => 'shareable#recruiter_conversations3'
