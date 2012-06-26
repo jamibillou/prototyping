@@ -9,13 +9,35 @@
         = render 'menu_recruiter_interactions'
 
     .span8
+
+      .row
+        .span4.offset5
+          .card{ :style => 'margin: -4px 0 12px -15px' }
+            .row
+              .span3.well
+                .row
+                  .span1
+                    = link_to image_tag('default_user.jpg'), candidate_profile_public_path
+                  .span2
+                    %h3 Project Manager
+                    %p Paris, France
+            .row
+              .span1.well
+                %h6
+                  Experience
+                .gigantic
+                  5-8y
+              .span2.well{ :style => 'padding-right:0' }
+                %h6 
+                  Education
+                .lead Experience is the key here
       .row
         .span7.offset1
           .alert.alert-info
             .pull-right.italic
               5 days ago
             %i.icon-share
-              Franck Sabattier has shared you offer on
+              Franck Sabattier has shared your Project Manager role, on
               %strong
                 = link_to('LinkedIn', 'http://fr.linkedin.com/in/francksabattier/en', :target => '_blank')+'.'
       .row
@@ -26,7 +48,7 @@
             %i.icon-globe
               %strong
                 = link_to 'Gaëtan Charrier', 'http://www.linkedin.com/profile/view?id=55331163', :target => '_blank'
-              has visited your offer from LinkedIn.
+              has visited your Project Manager role, from LinkedIn.
       .row
         .span6.offset2
           .alert.alert-info
@@ -35,7 +57,27 @@
             %i.icon-retweet
               %strong
                 = link_to 'Gaëtan Charrier', 'http://www.linkedin.com/profile/view?id=55331163', :target => '_blank'
-              has reshared your offer on LinkedIn.
+              has reshared your Project Manager role, on LinkedIn.
+      .row
+        .span4.offset5
+          .card{ :style => 'margin: -4px 0 12px -15px' }
+            .row
+              .span3.well
+                .row
+                  .span1
+                    = link_to image_tag('default_user.jpg'), candidate_profile_public_path
+                  .span2
+                    %h3 Graphic Designer
+                    %p Amsterdam, Netherlands
+            .row
+              .span1.well
+                %h6
+                  Experience
+                .gigantic 5yrs
+              .span2.well{ :style => 'padding-right:0' }
+                %h6 
+                  Education
+                .lead HBO or similar degree
       .row
         .span7.offset1
           .alert.alert-info
@@ -44,7 +86,7 @@
             %i.icon-share
               %strong
                 = link_to 'Franck Sabattier', 'https://twitter.com/#!/fsabattier', :target => '_blank'
-              @fsabattier has retweeted your offer.
+              @fsabattier has share your Graphic Designer role, on Twitter.
       .row
         .span6.offset2
           .alert.alert-info
@@ -53,4 +95,4 @@
             %i.icon-globe
               %strong
                 = link_to 'Maxime Bozzi', 'https://twitter.com/#!/MaxooGP', :target => '_blank'
-              @MaxooGP has visited your offer from Twitter.
+              has visited your Graphic Designer role, from Twitter.
