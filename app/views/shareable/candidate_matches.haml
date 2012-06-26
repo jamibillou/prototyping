@@ -11,17 +11,12 @@
           
     .span9
       .row
-        .span5.offset1
-          .well
-            .row
-              .span1
-                = link_to image_tag('dom.jpg'), recruiter_profile_path
-              .span3
-                %h5 Dominic Matheron is looking for:
-                %p Graphic Designer in Amsterdam with 5 yrs experience and HBO level.
-      .row
-        .span4.offset1
-          .card{ :style => 'margin: -4px 0 12px 25px' }
+        .span4
+          .alert.alert-success
+            %i.icon-ok
+              You told Dominic Matheron that you match this profile.
+        .span4
+          .card.pull-right{ :style => 'margin: -4px -5px 12px 0' }
             .row
               .span3.well
                 .row
@@ -49,12 +44,6 @@
                   Interaction Design
                   %br/
                   Quick Prototyping
-                 
-      .row
-        .span7.offset1
-          .alert.alert-success
-            %i.icon-ok
-              You told Dominic Matheron that you match this profile.
               
       #dynamic_content
       .row
