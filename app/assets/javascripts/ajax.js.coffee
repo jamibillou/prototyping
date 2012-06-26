@@ -75,4 +75,10 @@
   return message
 
 @filter_role = ->
-  #to be completed...
+  array_div = [ ['#carole_d','#caroline_b','#mathieu_t','#vincent_v'], ['#caroline_b','#vincent_v'], ['#carole_d'], [], ['#mathieu_t'] ]
+  for div_id in array_div[0]
+    do (div_id) ->
+      $(div_id).hide()
+  for div_id in array_div[$('#select01').val()]
+    do (div_id) ->
+      $(div_id).show()

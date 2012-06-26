@@ -9,18 +9,12 @@
         = render 'menu_recruiter_interactions'
         
     .span9
-    
       .row
-        .span5.offset3
-          .well
-            .row
-              .span1
-                = link_to image_tag('dom.jpg'), recruiter_profile_path
-              .span3
-                %h5 You are looking for:
-                %p Project Manager in Paris with 5 to 8 yrs experience.
-      .row
-        .span4.offset4
+        .span4
+          .alert.alert-success
+            %i.icon-ok
+              Mathieu Tessier said he matches this profile.
+        .span4
           .card.pull-right{ :style => 'margin: -4px -5px 12px 0' }
             .row
               .span3.well
@@ -52,11 +46,6 @@
                   Open to oustide input
                   .icon-star
       
-      .row
-        .span7.offset1
-          .alert.alert-success
-            %i.icon-ok
-              Mathieu Tessier said he matches this profile.
       .row
         .span5.offset1
           .well
