@@ -1,0 +1,121 @@
+%h1
+  Welcome to Engaccino, please sign up!
+%br/
+%form{ :action => candidate_profile_public_path }
+  .row
+    .span5.offset1
+      .card
+        .row
+          .span4.well
+            .row
+              .span1
+                = image_tag('default_user.jpg')
+              .span3
+                %input{ :type => 'text', :placeholder => 'Full name' }
+                %br/
+                %input.input-small{ :type => 'text', :placeholder => 'City' }
+                %input.input-small{ :type => 'text', :placeholder => 'Country' }
+        .row
+          .span1.well
+            %h6
+              Experience
+            %h3
+              %input{ :type => 'text', :placeholder => '0', :style => 'height:30px;width:30px;font-size:16pt;' }
+              Yr(s)
+          .span3.well{ :style => 'padding-right:0' }
+            %h6 
+              Education
+            %textarea{ :placeholder => 'Put your most valuable education', :rows => 3, :style => 'margin-bottom: 12px;width:240px;' }
+            %br/
+        .row
+          .span4.well{ style: 'padding-bottom:0' }
+            %h6
+              Professional skills
+            .lead
+              .row
+                .span3
+                  %input{ :type => 'text' }
+                  .icon-star-empty
+                .span1
+                  %select.select-level
+                    %option Beginner
+                    %option Intermediate
+                    %option Advanced
+                    %option Expert
+              .row
+                .span3
+                  %input{ :type => 'text' }
+                  .icon-star-empty
+                .span1
+                  %select.select-level
+                    %option Beginner
+                    %option Intermediate
+                    %option Advanced
+                    %option Expert
+              .row
+                .span3
+                  %input{ :type => 'text' }
+                  .icon-star-empty
+                .span1
+                  %select.select-level
+                    %option Beginner
+                    %option Intermediate
+                    %option Advanced
+                    %option Expert
+              
+        .row
+          .span4.well{ style: 'padding-bottom:0' }
+            %h6 
+              Interpersonal skills
+            .lead
+              .row
+                .span3
+                  %input{ :type => 'text' }
+                  .icon-star-empty
+                .span1
+                  %select.select-level
+                    %option Beginner
+                    %option Intermediate
+                    %option Advanced
+                    %option Expert
+              .row
+                .span3
+                  %input{ :type => 'text' }
+                  .icon-star-empty
+                .span1
+                  %select.select-level
+                    %option Beginner
+                    %option Intermediate
+                    %option Advanced
+                    %option Expert
+              .row
+                .span3
+                  %input{ :type => 'text' }
+                  .icon-star-empty
+                .span1
+                  %select.select-level
+                    %option Beginner
+                    %option Intermediate
+                    %option Advanced
+                    %option Expert
+    
+    .span5
+      %input.btn.btn-gigantic{ :type => 'button', :value => 'Import from Linkedin', :onclick => "alert('not developed yet...')" } 
+      %br/
+      %br/
+      %br/   
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/       
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      .row
+        .span5
+          %textarea{ :placeholder => 'Describe yourself in a catchphrase', :rows => 4, :style => 'width:440px;font-size:23pt;line-height:1em;' }
+          %button.btn.btn-gigantic{ :type => 'submit', :style => 'width:450px;' } Save your profile
+            

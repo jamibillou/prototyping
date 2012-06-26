@@ -2,6 +2,7 @@ BootstrapPrototyping::Application.routes.draw do
 
   get 'ajax/switch_mode'
   
+  match 'candidate_signup'             => 'shareable#candidate_signup'
   match 'candidate_profile_public'     => 'shareable#candidate_profile_public'
   match 'recruiter_starts_discussion'  => 'shareable#recruiter_starts_discussion'
   match 'recruiter_isnt_interested'    => 'shareable#recruiter_isnt_interested'
