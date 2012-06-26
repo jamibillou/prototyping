@@ -82,3 +82,33 @@
   for div_id in array_div[$('#select01').val()]
     do (div_id) ->
       $(div_id).show()
+
+@starred = (id,way) ->
+  if way is 'star'
+    $('#'+id).addClass('icon-star').removeClass('icon-star-empty')
+    $('#'+id).click -> starred(id,'unstar')
+  else
+    $('#'+id).addClass('icon-star-empty').removeClass('icon-star')
+    $('#'+id).click -> starred(id,'star')
+
+@import_linkedin = (type) ->
+  $('#'+type+'_full_name').val('John Macey')
+  $('#'+type+'_city').val('London')
+  $('#'+type+'_country').val('England')
+  $('#'+type+'_experience').val('5')
+  $('#'+type+'_education').val('Master Degree in network & telecoms')
+  $('#'+type+'_catchphrase').val('Looking for a long-term challenge after a couple of small experiences!')
+  $('#'+type+'_pro_skill_1').val('Team work')
+  $('#'+type+'_pro_skill_2').val('Telecoms')
+  $('#'+type+'_pro_skill_3').val('Project management')
+  $('#'+type+'_pro_skill_level_1').val('advanced')
+  $('#'+type+'_pro_skill_level_2').val('expert')
+  $('#'+type+'_pro_skill_level_3').val('advanced')
+  $('#'+type+'_inter_skill_1').val('Perfectionnist')
+  $('#'+type+'_inter_skill_2').val('Open-minded')
+  $('#'+type+'_inter_skill_3').val('Traveller')
+  $('#'+type+'_inter_skill_level_1').val('beginner')
+  $('#'+type+'_inter_skill_level_2').val('expert')
+  $('#'+type+'_inter_skill_level_3').val('intermediate')
+  starred(type+'_pro_skill_star_2','star')
+  starred(type+'_inter_skill_star_3','star')
