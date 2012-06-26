@@ -7,28 +7,38 @@
     .span2
       .row
         = render 'menu_candidate_interactions'
-          
+
     .span8
       .row
-        .span7.offset1
-          .alert.alert-info
-            .pull-right.italic
-              3 days ago
-            %i.icon-retweet
-              %strong
-                = link_to 'Dominic Matheron', 'http://nl.linkedin.com/in/dominicm', :target => '_blank'
-              has reshared your profile, on LinkedIn.
+        .span1.offset1.well
+          = image_tag 'dom.jpg'
+        .span1{ :style => 'width:45px; margin: 40px 58px 0 57px' }
+          .label.label-linkedin
+            shared
+        .span4
+          .card{ :style => 'margin: -4px 0 12px -15px' }
+            .row
+              .span4.well
+                .label.label-linkedin.pull-right{ style: 'margin: -19px -19px 0 0' }
+                  on LinkedIn
+                .row
+                  .span1
+                    = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                  .span3
+                    %h3 Wansa Sooksomwat
+                    .lead
+                      1yr experience, HBO Bachelor
       .row
-        .span6.offset2
+        .span7.offset1
           .alert.alert-info
             .pull-right.italic
               Yesterday
             %i.icon-globe
               %strong
                 = link_to 'Florin Buduroi', 'http://nl.linkedin.com/in/florinbuduroi', :target => '_blank'
-              has visited your profile, from LinkedIn.
+              visited your profile.
       .row
-        .span6.offset2
+        .span7.offset1
           .alert.alert-success
             .pull-right.italic
               Yesterday
@@ -37,30 +47,49 @@
                 = link_to 'Florin Buduroi', 'http://nl.linkedin.com/in/florinbuduroi', :target => '_blank'
               is interested in your profile.
       .row
-        .span6.offset2
-          .well
+        .span7.offset1
+          .alert.alert-success
+            .pull-right.italic
+              Yesterday
+            %i.icon-comment
+              %strong
+                = link_to 'Florin Buduroi', 'http://nl.linkedin.com/in/florinbuduroi', :target => '_blank'
+              sent you a message.
+      .row
+        .span1.offset1.well
+          = image_tag 'dom.jpg'
+        .span1{ :style => 'width:45px; margin: 40px 58px 0 57px' }
+          .label.label-twitter
+            shared
+        .span4
+          .card{ :style => 'margin: -4px 0 12px -15px' }
             .row
-              .span1
-                = image_tag('florin.jpg')
-              .span3
-                %h5 Florin Buduroi said:
-                %p Good morning Wansa! Just stumbled upon your profile, can talk soon? I have a few positions I'd like you to look at.
+              .span4.well
+                .label.label-twitter.pull-right{ style: 'margin: -19px -19px 0 0' }
+                  on Twitter
+                .row
+                  .span1
+                    = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                  .span3
+                    %h3 Wansa Sooksomwat
+                    .lead
+                      1yr experience, HBO Bachelor
       .row
-        .span7.offset1
-          .alert.alert-info
-            .pull-right.italic
-              3 days ago
-            %i.icon-retweet
-              %strong
-                = link_to 'Dominic Matheron', 'https://twitter.com/#!/dominic_m', :target => '_blank'
-              has reshared your profile, on Twitter.
-      .row
-        .span7.offset1
-          .alert.alert-info
-            .pull-right.italic
-              2 days ago
-            %i.icon-retweet
-              %strong
-                = link_to 'Dominic Matheron', 'http://facebook.com/dominic.matheron', :target => '_blank'
-              has reshared your profile, on Facebook.
-      
+        .span1.offset1.well
+          = image_tag 'dom.jpg'
+        .span1{ :style => 'width:45px; margin: 40px 58px 0 57px' }
+          .label.label-facebook
+            shared
+        .span4
+          .card{ :style => 'margin: -4px 0 12px -15px' }
+            .row
+              .span4.well
+                .label.label-facebook.pull-right{ style: 'margin: -19px -19px 0 0' }
+                  on Facebook
+                .row
+                  .span1
+                    = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                  .span3
+                    %h3 Wansa Sooksomwat
+                    .lead
+                      1yr experience, HBO Bachelor

@@ -10,50 +10,67 @@
 
     .span8
       .row
+        .span1.offset1.well
+          = image_tag 'loubi.jpg'
+        .span1{ :style => 'width:45px; margin: 40px 58px 0 57px' }
+          .label.label-twitter
+            shared
+        .span4
+          .card{ :style => 'margin: -4px 0 12px -15px' }
+            .row
+              .span4.well
+                .label.label-twitter.pull-right{ style: 'margin: -19px -19px 0 0' }
+                  on Twitter
+                .row
+                  .span1
+                    = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                  .span3
+                    %h3 Wansa Sooksomwat
+                    .lead
+                      1yr experience, HBO Bachelor
+      .row    
         .span7.offset1
-          .alert.alert-info
-            .pull-right.italic
-              5 days ago
-            %i.icon-share
-              Franck Sabattier
-              %strong
-                = link_to '@fsabattier', 'https://twitter.com/#!/fsabattier', :target => '_blank'
-              has shared your profile, on Twitter.
-      .row
-        .span6.offset2
           .alert.alert-info
             .pull-right.italic
               3 days ago
             %i.icon-globe
               %strong
                 = link_to 'Joel Laumans', 'https://twitter.com/#!/piksels', :target => '_blank'
-              @piksel has visited your profile, from Twitter.
+              @piksel visited your profile.
+      .row
+        .span1.offset1.well
+          = image_tag 'loubi.jpg'
+        .span1{ :style => 'width:45px; margin: 40px 58px 0 57px' }
+          .label.label-linkedin
+            shared
+        .span4
+          .card{ :style => 'margin: -4px 0 12px -15px' }
+            .row
+              .span4.well
+                .label.label-linkedin.pull-right{ style: 'margin: -19px -19px 0 0' }
+                  on LinkedIn
+                .row
+                  .span1
+                    = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                  .span3
+                    %h3 Wansa Sooksomwat
+                    .lead
+                      1yr experience, HBO Bachelor
       .row
         .span7.offset1
           .alert.alert-info
             .pull-right.italic
-              5 days ago
-            %i.icon-share
-              Franck Sabattier has shared you profile, on
-              %strong
-                = link_to('LinkedIn', 'http://fr.linkedin.com/in/francksabattier/en', :target => '_blank')+'.'
-      .row
-        .span6.offset2
-          .alert.alert-info
-            .pull-right.italic
-              Yesterday
+              1 day ago
             %i.icon-globe
               %strong
-                = link_to 'Xavier Dupuis', 'http://fr.linkedin.com/pub/xavier-dupuis/49/971/a92', :target => '_blank'
-              has visited your profile, from LinkedIn.
+                = link_to link_to 'Xavier Dupuis', 'http://fr.linkedin.com/pub/xavier-dupuis/49/971/a92', :target => '_blank'
+              visited your profile.
       .row
-        .span6.offset2
-          .alert.alert-info
+        .span7.offset1
+          .alert.alert-success
             .pull-right.italic
               10 minutes ago
             %i.icon-retweet
               %strong
                 = link_to 'Xavier Dupuis', 'http://fr.linkedin.com/pub/xavier-dupuis/49/971/a92', :target => '_blank'
-              has reshared your profile, on LinkedIn.
-	  
-      
+              reshared your profile.
