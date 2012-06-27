@@ -1,7 +1,7 @@
 = render 'menu_candidate'
 
 .row
-  .span5.offset1
+  .span5
     .card
       .row
         %ul.nav.nav-pills{ :style => 'margin-bottom:10px' }
@@ -105,7 +105,7 @@
                 .progress.progress-striped
                   .bar{ :style => 'width:60%' }
   
-  .span5
+  .span5.offset1
     %br/
     %br/
     %br/
@@ -120,12 +120,11 @@
     %br/
     %br/
     %br/
-    .row
-      .span5
-        %h2{ :style => 'text-align:right' } "Communications isn't what a company says, it's everything else it does."
-        %br/
-        %br/
-        .pull-right
-          %a.btn.btn-gigantic.btn-danger{ :href => recruiter_isnt_interested_path } Not interested
-          %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path } Start a discussion!
+  
+    %h2{ :style => 'text-align:right' } "Communications isn't what a company says, it's everything else it does."
+    %br/
+    %br/
+    .pull-right
+      %a.btn.btn-gigantic.btn-danger{ :href => recruiter_isnt_interested_path } Not interested
+      %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path } Start a discussion!
             
