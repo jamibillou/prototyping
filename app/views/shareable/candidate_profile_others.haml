@@ -88,14 +88,18 @@
               .span1
                 .progress.progress-striped
                   .bar{ :style => 'width:60%' }
-  
-  .span5.offset1
-  
+  .span7
     %br/
     %br/
     %br/
-    %br/   
-    %br/
+    .row
+      .span3.offset4
+        .row
+          .span1
+            = image_tag 'loubi.jpg'
+          .span1
+            %p{ :style => 'margin-top:-2px' } shared by:
+            %h3{ :style => 'line-height:24px' } Franck Sabattier
     %br/
     %br/
     %br/
@@ -104,34 +108,17 @@
     %br/
     %br/
     %br/
-
-    %h2{ :style => 'text-align:right' }
-      .i.icon-comment
-      &nbsp;
-      Hi, I'm really keen to work for your company and would love to go over a few ideas together soon.
-    %br/
-    %br/
-    .pull-right
-      %a.btn.btn-gigantic.btn-danger{ :href => recruiter_answers_no_path } Not interested
-      %a.btn.btn-gigantic.btn-success{ :href => recruiter_answers_yes_path, :style => 'margin-right:0' } Start a discussion!
-      
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      
-      .pull-right
-        %p{ :style => 'font-size:14px; display:inline-block' } you can also
-        %a.btn{ :style => 'margin: -5px 10px 0 10px' }
-          .icon-share
-          Share my profile
-          %span.caret
-        
+    .row
+      .span5.offset1
+        %h2{ :style => 'text-align:right' }
+          .i.icon-comment
+          &nbsp;
+          Hey dude, I ran into this profile and thought you might be interested, she'd be perfect for everything PR!
+        %br/
+        %br/
+        .pull-right
+          %a.btn.btn-gigantic
+            .icon-share
+            Share profile
+            %span.caret
+          %a.btn.btn-gigantic.btn-primary{ :href => recruiter_starts_discussion_path, :style => 'margin-right:0' } Start a discussion!

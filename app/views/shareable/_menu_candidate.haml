@@ -1,6 +1,6 @@
 - if session[:mode] == 'dev'
   %ul.nav.nav-pills
-    %li.dropdown{ :class => "#{active?('candidate_profile_public')}#{active?('candidate_profile_public_old')}#{active?('candidate_profile_sent')}" }
+    %li.dropdown{ :class => "#{active?('candidate_profile_public')}#{active?('candidate_profile_public_old')}#{active?('candidate_profile_you')}" }
       %a.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#' }
         Profile
         %b.caret
@@ -8,8 +8,8 @@
         %li
           = link_to 'public', candidate_profile_public_path
         %li
-          = link_to 'sent by you', candidate_profile_sent_path
+          = link_to 'sent by you', candidate_profile_you_path
         %li
-          = link_to 'sent by others', '#'
+          = link_to 'sent by others', candidate_profile_others_path
     %li{ :class => "#{active?('candidate_conversations')}#{active?('candidate_conversations2')}#{active?('candidate_conversations3')}#{active?('candidate_conversations4')}#{active?('candidate_sharings')}#{active?('candidate_sharings2')}#{active?('candidate_sharings3')}#{active?('candidate_matches')}#{active?('candidate_matches2')}#{active?('candidate_matches3')}" }
       = link_to 'Interactions', candidate_conversations_path
