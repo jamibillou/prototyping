@@ -31,7 +31,8 @@
           .well
             .row
               .span1
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
               .span3
                 %h5 You said:
                 %p Great! I am free every Wednesday and Thursday mornings. When can we meet?
@@ -41,7 +42,8 @@
           .well
             .row
               .span1
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
               .span3
                 %h5 You said:
                 %p By the way, do you mind telling me a bit about those openings you mentioned?
@@ -52,7 +54,8 @@
           .well
             .row
               .span1
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
               .span3
                 %h5 Type your message:
                 %textarea#message.input-xlarge{ :rows => '4' }

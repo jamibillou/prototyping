@@ -1,4 +1,4 @@
-- if session[:mode] == 'dev'
+- if session[:mode] != 'demo'
   %ul.nav.nav-pills
     %li.dropdown{ :class => "#{active?('candidate_profile_public')}#{active?('candidate_profile_public_old')}#{active?('candidate_profile_sent')}" }
       %a.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#' }

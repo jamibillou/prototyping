@@ -1,4 +1,4 @@
-- if session[:mode] == 'dev'
+- if session[:mode] != 'demo'
 	%ul.nav.nav-pills
 		%li{ :class => active?('recruiter_profile') }
 			= link_to 'Profile', recruiter_profile_path

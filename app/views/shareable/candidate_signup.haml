@@ -13,20 +13,20 @@
               .span1
                 = image_tag('default_user.jpg', :id => 'candidate_picture')
               .span3
-                %input#candidate_full_name{ :type => 'text', :placeholder => 'Full name', :style => 'height:20px; font-size:18px; font-weight:bold' }
+                %input#candidate_full_name{ :type => 'text', :placeholder => 'Full name', :style => 'height:20px; font-size:18px; font-weight:bold', :name => 'candidate_full_name' }
                 %br/
-                %input#candidate_city.input-small{    :type => 'text', :placeholder => 'City', :style => 'height:14px; margin-top: -4px; font-size:12px;' }
-                %input#candidate_country.input-small{ :type => 'text', :placeholder => 'Country', :style => 'width: 105px; height:14px; margin-top: -4px; font-size:12px;' }
+                %input#candidate_city.input-small{    :type => 'text', :placeholder => 'City', :style => 'height:14px; margin-top: -4px; font-size:12px;', :name => 'candidate_city' }
+                %input#candidate_country.input-small{ :type => 'text', :placeholder => 'Country', :style => 'width: 105px; height:14px; margin-top: -4px; font-size:12px;', :name => 'candidate_country' }
         .row
           .span1.well
             %h6
               Experience
-            %input#candidate_experience{ :type => 'text', :placeholder => '0', :style => 'height:30px; width:40px; margin-bottom:0;  font-size:30px; font-weight:bold' }
+            %input#candidate_experience{ :type => 'text', :placeholder => '0', :style => 'height:30px; width:40px; margin-bottom:0;  font-size:30px; font-weight:bold', :name => 'candidate_experience' }
             %h2 yrs
           .span3.well{ :style => 'padding-right:0' }
             %h6 
               Education
-            %textarea#candidate_education.lead{ :placeholder => 'Highest degree or diploma', :rows => 2, :style => 'margin-bottom:12px; width:240px;' }
+            %textarea#candidate_education.lead{ :placeholder => 'Highest degree or diploma', :rows => 2, :style => 'margin-bottom:12px; width:240px;', :name => 'candidate_education' }
             %br/
         .row
           .span4.well{ style: 'padding-bottom:0' }
@@ -35,30 +35,30 @@
             .lead
               .row
                 .span3
-                  %input#candidate_pro_skill_1{ :type => 'text' }
+                  %input#candidate_pro_skill_1{ :type => 'text', :name => 'candidate_pro_skill_1' }
                   .icon-star-empty#candidate_pro_skill_star_1
                 .span1
-                  %select#candidate_pro_skill_level_1.select-level
+                  %select#candidate_pro_skill_level_1.select-level{ :name => 'candidate_pro_skill_level_1'}
                     %option{ :value => 'beginner' } Beginner
                     %option{ :value => 'intermediate' } Intermediate
                     %option{ :value => 'advanced' } Advanced
                     %option{ :value => 'expert' } Expert
               .row
                 .span3
-                  %input#candidate_pro_skill_2{ :type => 'text' }
+                  %input#candidate_pro_skill_2{ :type => 'text', :name => 'candidate_pro_skill_2' }
                   .icon-star-empty#candidate_pro_skill_star_2
                 .span1
-                  %select#candidate_pro_skill_level_2.select-level
+                  %select#candidate_pro_skill_level_2.select-level{ :name => 'candidate_pro_skill_level_2'}
                     %option{ :value => 'beginner' } Beginner
                     %option{ :value => 'intermediate' } Intermediate
                     %option{ :value => 'advanced' } Advanced
                     %option{ :value => 'expert' } Expert
               .row
                 .span3
-                  %input#candidate_pro_skill_3{ :type => 'text' }
+                  %input#candidate_pro_skill_3{ :type => 'text', :name => 'candidate_pro_skill_3' }
                   .icon-star-empty#candidate_pro_skill_star_3
                 .span1
-                  %select#candidate_pro_skill_level_3.select-level
+                  %select#candidate_pro_skill_level_3.select-level{ :name => 'candidate_pro_skill_level_3'}
                     %option{ :value => 'beginner' } Beginner
                     %option{ :value => 'intermediate' } Intermediate
                     %option{ :value => 'advanced' } Advanced
@@ -71,30 +71,30 @@
             .lead
               .row
                 .span3
-                  %input#candidate_inter_skill_1{ :type => 'text' }
+                  %input#candidate_inter_skill_1{ :type => 'text', :name => 'candidate_inter_skill_1' }
                   .icon-star-empty#candidate_inter_skill_star_1
                 .span1
-                  %select#candidate_inter_skill_level_1.select-level
+                  %select#candidate_inter_skill_level_1.select-level{ :name => 'candidate_inter_skill_level_1' }
                     %option{ :value => 'beginner' } Beginner
                     %option{ :value => 'intermediate' } Intermediate
                     %option{ :value => 'advanced' } Advanced
                     %option{ :value => 'expert' } Expert
               .row
                 .span3
-                  %input#candidate_inter_skill_2{ :type => 'text' }
+                  %input#candidate_inter_skill_2{ :type => 'text', :name => 'candidate_inter_skill_2' }
                   .icon-star-empty#candidate_inter_skill_star_2
                 .span1
-                  %select#candidate_inter_skill_level_2.select-level
+                  %select#candidate_inter_skill_level_2.select-level{ :name => 'candidate_inter_skill_level_2'}
                     %option{ :value => 'beginner' } Beginner
                     %option{ :value => 'intermediate' } Intermediate
                     %option{ :value => 'advanced' } Advanced
                     %option{ :value => 'expert' } Expert
               .row
                 .span3
-                  %input#candidate_inter_skill_3{ :type => 'text' }
+                  %input#candidate_inter_skill_3{ :type => 'text', :name => 'candidate_inter_skill_3' }
                   .icon-star-empty#candidate_inter_skill_star_3
                 .span1
-                  %select#candidate_pro_skill_level_1.select-level
+                  %select#candidate_pro_skill_level_1.select-level{ :name => 'candidate_inter_skill_level_3'}
                     %option{ :value => 'beginner' } Beginner
                     %option{ :value => 'intermediate' } Intermediate
                     %option{ :value => 'advanced' } Advanced
@@ -120,7 +120,7 @@
       %br/
       .row
         .span5
-          %textarea#candidate_catchphrase.lead{ :placeholder => 'Catch phrase describe your goals, or your motto.', :rows => 4, :style => 'width:450px;' }
+          %textarea#candidate_catchphrase.lead{ :placeholder => 'Catch phrase describe your goals, or your motto.', :rows => 4, :style => 'width:450px;', :name => 'candidate_catchphrase' }
           .pull-right
             %button.btn.btn-gigantic.btn-primary{ :type => 'submit' } Save your profile!
             

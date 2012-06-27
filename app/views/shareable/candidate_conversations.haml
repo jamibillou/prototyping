@@ -14,7 +14,8 @@
           .well
             .row
               .span1
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
               .span4
                 %h5 You said:
                 %br/
@@ -42,7 +43,8 @@
           .well
             .row
               .span1
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
               .span3
                 %h5 You said:
                 %p My boyfriend's a geek and he says you're great, plus your marketing is mindblowing.
@@ -51,7 +53,8 @@
           .well
             .row
               .span1
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
               .span3
                 %h5 You said:
                 %p To be frank I also love what you guys do, working for such a creative company would be like a dream come true.
@@ -85,7 +88,8 @@
           .well
             .row
               .span1
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
               .span3
                 %h5 You said:
                 %p I'd love to! When is best?
@@ -113,7 +117,8 @@
           .well
             .row
               .span1
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
               .span3
                 %h5 Type your message:
                 %textarea#message.input-xlarge{ :rows => '4' }
