@@ -22,22 +22,6 @@
                 = link_to 'Twitter', '#'
               %li
                 = link_to 'Tumblr', '#'
-          %li.dropdown
-            %a.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#' }
-              %i.icon-share
-              Share this profile
-              %b.caret
-            %ul.dropdown-menu
-              %li
-                = link_to 'by email', '#'
-              %li
-                = link_to 'on LinkedIn', '#'
-              %li
-                = link_to 'on Twitter', '#'
-              %li
-                = link_to 'on Facebook', '#'
-              %li
-                = link_to 'on Google+', '#'
       .row
         .span4.well
           .row
@@ -106,7 +90,7 @@
                   .bar{ :style => 'width:60%' }
   
   .span5.offset1
-    %br/
+
     %br/
     %br/
     %br/   
@@ -120,11 +104,18 @@
     %br/
     %br/
     %br/
+    %br/
   
-    %h2{ :style => 'text-align:right' } "Communications isn't what a company says, it's everything else it does."
+    %h2{ :style => 'text-align:right' }
+      .i.icon-comment
+      &nbsp;
+      Communications isn't what a company says, it's everything else it does.
     %br/
     %br/
     .pull-right
-      %a.btn.btn-gigantic.btn-danger{ :href => recruiter_isnt_interested_path } Not interested
-      %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path } Start a discussion!
+      %a.btn.btn-gigantic
+        .icon-share
+        Share profile
+        %span.caret
+      %a.btn.btn-gigantic.btn-primary{ :href => recruiter_starts_discussion_path, :style => 'margin-right:0' } Start a discussion!
             
