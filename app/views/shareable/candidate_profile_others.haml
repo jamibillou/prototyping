@@ -27,19 +27,28 @@
         .span4.well
           .row
             .span1
-              = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+              = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
+              = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
             .span3
-              %h3 Wansa Sooksomwat
-              %p Retail Sales at Esprit, Amsterdam
+              %h3 
+                = session[:candidate_full_name].nil? ? 'Wansa Sooksomwat' : session[:candidate_full_name]
+              %p
+                = session[:candidate_city].nil? ? 'Amsterdam,' : session[:candidate_city]+','
+                = session[:candidate_country].nil? ? 'Netherlands' : session[:candidate_country]
+              %p
+                = session[:candidate_role].nil? ? 'Retail Sales' : session[:candidate_role]
+                = session[:candidate_company].nil? ? 'at Esprit' : 'at '+session[:candidate_company]
       .row
         .span1.well
           %h6
             Experience
-          .gigantic 1 yr
+          .gigantic 
+            = session[:candidate_experience].nil? || session[:candidate_experience] == 1.to_s ? '1 yr' : session[:candidate_experience].to_s+'yrs'
         .span3.well{ :style => 'padding-right:0' }
           %h6 
             Education
-          .lead HBO Bachelor in Communication & Media
+          .lead 
+            = session[:candidate_education].nil? ? 'HBO Bachelor in Communication & Media' : session[:candidate_education]
       .row
         .span4.well{ style: 'padding-bottom:0' }
           %h6
@@ -47,23 +56,32 @@
           .lead
             .row
               .span3
-                External communication
+                = session[:candidate_pro_skill_1].nil? ? 'External communication' : session[:candidate_pro_skill_1]
               .span1
-                .progress.progress-striped.progress-success
-                  .bar{ :style => 'width:80%' }
+                - unless session[:candidate_pro_skill_level_1].nil?
+                  = render 'progress_bar', :level => session[:candidate_pro_skill_level_1]
+                - else
+                  .progress.progress-striped.progress-success
+                    .bar{ :style => 'width:80%' }
             .row
               .span3
-                Event planning
+                = session[:candidate_pro_skill_2].nil? ? 'Event planning' : session[:candidate_pro_skill_2]
                 .icon-star
               .span1
-                .progress.progress-striped.progress-success
-                  .bar{ :style => 'width:80%' }
+                - unless session[:candidate_pro_skill_level_2].nil?
+                  = render 'progress_bar', :level => session[:candidate_pro_skill_level_2]
+                - else              
+                  .progress.progress-striped.progress-success
+                    .bar{ :style => 'width:80%' }
             .row
               .span3
-                Writing
+                = session[:candidate_pro_skill_3].nil? ? 'Writing' : session[:candidate_pro_skill_3]
               .span1
-                .progress.progress-striped
-                  .bar{ :style => 'width:60%' }
+                - unless session[:candidate_pro_skill_level_3].nil?
+                  = render 'progress_bar', :level => session[:candidate_pro_skill_level_3]
+                - else              
+                  .progress.progress-striped
+                    .bar{ :style => 'width:60%' }
             
       .row
         .span4.well{ style: 'padding-bottom:0' }
@@ -72,22 +90,32 @@
           .lead
             .row
               .span3
-                Good team mate
+                = session[:candidate_inter_skill_1].nil? ? 'Good team mate' : session[:candidate_inter_skill_1]
               .span1
-                .progress.progress-striped.progress-warning
-                  .bar{ :style => 'width:100%' }
+                - unless session[:candidate_inter_skill_level_1].nil?
+                  = render 'progress_bar', :level => session[:candidate_inter_skill_level_1]
+                - else              
+                  .progress.progress-striped.progress-warning
+                    .bar{ :style => 'width:100%' }
             .row
               .span3
-                Attention to details
+                = session[:candidate_inter_skill_2].nil? ? 'Attention to details' : session[:candidate_inter_skill_2]
               .span1
-                .progress.progress-striped
-                  .bar{ :style => 'width:60%' }
+                - unless session[:candidate_inter_skill_level_2].nil?
+                  = render 'progress_bar', :level => session[:candidate_inter_skill_level_2]
+                - else               
+                  .progress.progress-striped
+                    .bar{ :style => 'width:60%' }
             .row
               .span3
-                Organization
+                = session[:candidate_inter_skill_3].nil? ? 'Organization' : session[:candidate_inter_skill_3]
               .span1
-                .progress.progress-striped
-                  .bar{ :style => 'width:60%' }
+                - unless session[:candidate_inter_skill_level_3].nil?
+                  = render 'progress_bar', :level => session[:candidate_inter_skill_level_3]
+                - else               
+                  .progress.progress-striped
+                    .bar{ :style => 'width:60%' }
+      
   .span7
     %br/
     %br/

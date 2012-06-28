@@ -32,16 +32,17 @@
               %h3 
                 = session[:candidate_full_name].nil? ? 'Wansa Sooksomwat' : session[:candidate_full_name]
               %p
-                = session[:candidate_city].nil? ? 'Amsterdam' : session[:candidate_city]
-                ,
+                = session[:candidate_city].nil? ? 'Amsterdam,' : session[:candidate_city]+','
                 = session[:candidate_country].nil? ? 'Netherlands' : session[:candidate_country]
-              %p Retail Sales at Esprit, Amsterdam
+              %p
+                = session[:candidate_role].nil? ? 'Retail Sales' : session[:candidate_role]
+                = session[:candidate_company].nil? ? 'at Esprit' : 'at '+session[:candidate_company]
       .row
         .span1.well
           %h6
             Experience
           .gigantic 
-            = session[:candidate_experience].nil? ? '1 yr' : session[:candidate_experience].to_s+'yr(s)'
+            = session[:candidate_experience].nil? || session[:candidate_experience] == 1.to_s ? '1 yr' : session[:candidate_experience].to_s+'yrs'
         .span3.well{ :style => 'padding-right:0' }
           %h6 
             Education

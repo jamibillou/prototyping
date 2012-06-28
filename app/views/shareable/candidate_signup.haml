@@ -13,10 +13,13 @@
               .span1
                 = image_tag('default_user.jpg', :id => 'candidate_picture')
               .span3
-                %input#candidate_full_name{ :type => 'text', :placeholder => 'Full name', :style => 'height:20px; font-size:18px; font-weight:bold', :name => 'candidate_full_name' }
+                %input#candidate_full_name{ :type => 'text', :placeholder => 'Full name', :style => 'height:13px; font-size:17px; font-weight:bold', :name => 'candidate_full_name' }
                 %br/
-                %input#candidate_city.input-small{    :type => 'text', :placeholder => 'City', :style => 'height:14px; margin-top: -4px; font-size:12px;', :name => 'candidate_city' }
-                %input#candidate_country.input-small{ :type => 'text', :placeholder => 'Country', :style => 'width: 105px; height:14px; margin-top: -4px; font-size:12px;', :name => 'candidate_country' }
+                %input#candidate_city.input-small{    :type => 'text', :placeholder => 'City', :style => 'height:9px; margin-top: -4px; font-size:15px;', :name => 'candidate_city' }
+                %input#candidate_country.input-small{ :type => 'text', :placeholder => 'Country', :style => 'width: 105px; height:9px; margin-top: -4px; font-size:15px;', :name => 'candidate_country' }
+                %input#candidate_role.input-small{    :type => 'text', :placeholder => 'Role', :style => 'height:9px; margin-top: -4px; font-size:15px;', :name => 'candidate_role' }
+                %input#candidate_company.input-small{ :type => 'text', :placeholder => 'Company', :style => 'width: 105px; height:9px; margin-top: -4px; font-size:15px;', :name => 'candidate_company' }
+                
         .row
           .span1.well
             %h6
@@ -35,7 +38,7 @@
             .lead
               .row
                 .span3
-                  %input#candidate_pro_skill_1{ :type => 'text', :name => 'candidate_pro_skill_1' }
+                  %input#candidate_pro_skill_1{ :type => 'text', :name => 'candidate_pro_skill_1', :style => 'font-size:15px' }
                   .icon-star-empty#candidate_pro_skill_star_1
                 .span1
                   %select#candidate_pro_skill_level_1.select-level{ :name => 'candidate_pro_skill_level_1'}
@@ -45,7 +48,7 @@
                     %option{ :value => 'expert' } Expert
               .row
                 .span3
-                  %input#candidate_pro_skill_2{ :type => 'text', :name => 'candidate_pro_skill_2' }
+                  %input#candidate_pro_skill_2{ :type => 'text', :name => 'candidate_pro_skill_2', :style => 'font-size:15px' }
                   .icon-star-empty#candidate_pro_skill_star_2
                 .span1
                   %select#candidate_pro_skill_level_2.select-level{ :name => 'candidate_pro_skill_level_2'}
@@ -55,7 +58,7 @@
                     %option{ :value => 'expert' } Expert
               .row
                 .span3
-                  %input#candidate_pro_skill_3{ :type => 'text', :name => 'candidate_pro_skill_3' }
+                  %input#candidate_pro_skill_3{ :type => 'text', :name => 'candidate_pro_skill_3', :style => 'font-size:15px' }
                   .icon-star-empty#candidate_pro_skill_star_3
                 .span1
                   %select#candidate_pro_skill_level_3.select-level{ :name => 'candidate_pro_skill_level_3'}
@@ -71,7 +74,7 @@
             .lead
               .row
                 .span3
-                  %input#candidate_inter_skill_1{ :type => 'text', :name => 'candidate_inter_skill_1' }
+                  %input#candidate_inter_skill_1{ :type => 'text', :name => 'candidate_inter_skill_1', :style => 'font-size:15px' }
                   .icon-star-empty#candidate_inter_skill_star_1
                 .span1
                   %select#candidate_inter_skill_level_1.select-level{ :name => 'candidate_inter_skill_level_1' }
@@ -81,7 +84,7 @@
                     %option{ :value => 'expert' } Expert
               .row
                 .span3
-                  %input#candidate_inter_skill_2{ :type => 'text', :name => 'candidate_inter_skill_2' }
+                  %input#candidate_inter_skill_2{ :type => 'text', :name => 'candidate_inter_skill_2', :style => 'font-size:15px' }
                   .icon-star-empty#candidate_inter_skill_star_2
                 .span1
                   %select#candidate_inter_skill_level_2.select-level{ :name => 'candidate_inter_skill_level_2'}
@@ -91,7 +94,7 @@
                     %option{ :value => 'expert' } Expert
               .row
                 .span3
-                  %input#candidate_inter_skill_3{ :type => 'text', :name => 'candidate_inter_skill_3' }
+                  %input#candidate_inter_skill_3{ :type => 'text', :name => 'candidate_inter_skill_3', :style => 'font-size:15px' }
                   .icon-star-empty#candidate_inter_skill_star_3
                 .span1
                   %select#candidate_pro_skill_level_1.select-level{ :name => 'candidate_inter_skill_level_3'}
@@ -106,9 +109,9 @@
         %strong LinkedIn
         or
         %strong Facebook
-      %input.btn.btn-large{ :type => 'button', :value => 'Import from Linkedin', :onclick => "import_linkedin('candidate')" }
+      %input.btn.btn-large{ :type => 'button', :value => 'Import from Linkedin', :onclick => "import_data('candidate')" }
       &nbsp;
-      %input.btn.btn-large{ :type => 'button', :value => 'Import from Facebook', :onclick => "import_linkedin('candidate')" }
+      %input.btn.btn-large{ :type => 'button', :value => 'Import from Facebook', :onclick => "import_data('candidate')" }
       %br/
       %br/
       %br/   

@@ -25,10 +25,10 @@
                 .btn.btn-large.btn-success Yes it'd be great!
 
       .row
-        .span7.offset1
-          .alert.alert-success
-            %i.icon-ok
-              Jonathan Ive has accepted your request.
+        .span7.offset1.success
+          %i.icon-ok
+            Jonathan Ive has accepted your request.
+      %br/
       .row
         .span5.offset1
           .well
@@ -79,10 +79,10 @@
                 .btn.btn-danger No
                 .btn.btn-success Yes
       .row
-        .span7.offset1
-          .alert.alert-success
-            %i.icon-ok
-              You have answered "yes" to your Jonathan Ive's question.
+        .span5.offset3.success
+          %i.icon-ok
+            You have answered "yes" to your Jonathan Ive's question.
+      %br/
       .row
         .span5.offset3
           .well
@@ -106,10 +106,10 @@
                   %input.span2{ :size => '16', :type => 'text' }
                   .btn.btn-primary{ :type => 'button', :style => 'margin-left:-5px' } Send
       .row
-        .span7.offset1
-          .alert.alert-success
-            %i.icon-envelope
-              You have sent "wansa@example.com" to Jonathan Ive
+        .span5.offset3.success
+          %i.icon-envelope
+            You have sent "wansa@example.com" to Jonathan Ive
+      %br/
       #dynamic_content
       .row
         = render 'candidate_toolbox'

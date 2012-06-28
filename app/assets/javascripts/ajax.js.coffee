@@ -91,10 +91,12 @@
     $('#'+id).addClass('icon-star-empty').removeClass('icon-star')
     $('#'+id).click -> starred(id,'star')
 
-@import_linkedin = (type) ->
+@import_data = (type) ->
   $('#'+type+'_full_name').val('John Macey')
   $('#'+type+'_city').val('London')
   $('#'+type+'_country').val('England')
+  $('#'+type+'_role').val('Professor')
+  $('#'+type+'_company').val('Imperial College')
   $('#'+type+'_experience').val('5')
   $('#'+type+'_education').val('Master Degree in network & telecoms')
   $('#'+type+'_catchphrase').val('Looking for a long-term challenge after a couple of small experiences!')
