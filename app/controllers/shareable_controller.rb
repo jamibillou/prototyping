@@ -7,9 +7,7 @@ class ShareableController < ApplicationController
   private
   
   	def candidate_signup
-      if params[:candidate]
-        session[:candidate] = params[:candidate]
-      end
+      session[:candidate] = params[:candidate] if params[:candidate]
     end
 
     def set_titles

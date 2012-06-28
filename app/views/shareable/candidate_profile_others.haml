@@ -57,7 +57,7 @@
               .span3
                 = session[:candidate][:pro_skill_1][:name].empty? ? 'External communication' : session[:candidate][:pro_skill_1][:name]
               .span1
-                - unless session[:candidate][:pro_skill_1][:level].empty?
+                - if candidate_signed?
                   = render 'progress_bar', :level => session[:candidate][:pro_skill_1][:level]
                 - else
                   .progress.progress-striped.progress-success
@@ -67,7 +67,7 @@
                 = session[:candidate][:pro_skill_2][:name].empty? ? 'Event planning' : session[:candidate][:pro_skill_2][:name]
                 .icon-star
               .span1
-                - unless session[:candidate][:pro_skill_2][:level].empty?
+                - if candidate_signed?
                   = render 'progress_bar', :level => session[:candidate][:pro_skill_2][:level]
                 - else              
                   .progress.progress-striped.progress-success
@@ -76,7 +76,7 @@
               .span3
                 = session[:candidate][:pro_skill_3][:name].empty? ? 'Writing' : session[:candidate][:pro_skill_3][:name]
               .span1
-                - unless session[:candidate][:pro_skill_3][:level].empty?
+                - if candidate_signed?
                   = render 'progress_bar', :level => session[:candidate][:pro_skill_3][:level]
                 - else              
                   .progress.progress-striped
@@ -91,7 +91,7 @@
               .span3
                 = session[:candidate][:inter_skill_1][:name].empty? ? 'Good team mate' : session[:candidate][:inter_skill_1][:name]
               .span1
-                - unless session[:candidate][:inter_skill_1][:level].empty?
+                - if candidate_signed?
                   = render 'progress_bar', :level => session[:candidate][:inter_skill_1][:level]
                 - else              
                   .progress.progress-striped.progress-warning
@@ -100,7 +100,7 @@
               .span3
                 = session[:candidate][:inter_skill_2][:name].empty? ? 'Attention to details' : session[:candidate][:inter_skill_2][:name]
               .span1
-                - unless session[:candidate][:inter_skill_2][:level].empty?
+                - if candidate_signed?
                   = render 'progress_bar', :level => session[:candidate][:inter_skill_2][:level]
                 - else               
                   .progress.progress-striped
@@ -109,7 +109,7 @@
               .span3
                 = session[:candidate][:inter_skill_3][:name].empty? ? 'Organization' : session[:candidate][:inter_skill_3][:name]
               .span1
-                - unless session[:candidate][:inter_skill_3][:level].empty?
+                - if candidate_signed?
                   = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
                 - else               
                   .progress.progress-striped
