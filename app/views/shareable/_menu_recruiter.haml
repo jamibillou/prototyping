@@ -8,11 +8,9 @@
         %li
           = link_to 'full profile', recruiter_profile_path
         %li
-          = link_to 'graphic designer role public', recruiter_profile_gd_public_path
+          = link_to 'sent by you', recruiter_profile_gd_you_path
         %li
-          = link_to 'graphic designer role sent by you', recruiter_profile_gd_you_path
-        %li
-          = link_to 'graphic designer role sent by others', recruiter_profile_gd_others_path
+          = link_to 'sent by others', recruiter_profile_gd_others_path
     %li{ :class => "#{active?('recruiter_says_yes')}#{active?('recruiter_says_no') }#{active?('recruiter_starts_discussion') }#{active?('recruiter_isnt_interested') }" }
       = link_to 'Interactions', recruiter_conversations_path
   

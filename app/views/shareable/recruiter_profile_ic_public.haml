@@ -31,32 +31,32 @@
     .span3.well
       .row
         .span1
-          = image_tag('default_user.jpg')
+          = link_to image_tag('default_user.jpg'), candidate_profile_public_path
         .span2
-          %h3 Graphic Designer
-          %p Amsterdam, Netherlands
+          %h3 Italien Copywriter
+          %p Paris, France
   .row
     .span1.well
       %h6
         Experience
-      .gigantic 5yrs
+      .gigantic 1 yr
     .span2.well{ :style => 'padding-right:0' }
       %h6 
         Education
-      .lead HBO or similar degree
+      .lead Master in Translation
   .row
     .span3.well
       %h6
         Skills
       .lead
-        Visual Design
+        Native Speaker
+        .icon-star
         %br/
-        Interaction Design
+        Intelligent
         %br/
-        Quick Prototyping
+        Flexible
 
 .span7
-  %br/
   %br/
   %br/
   %br/
@@ -68,37 +68,20 @@
   %br/
   %br/
   %br/
+  %br/
+  %br/
+  %br/
   .row
     .span5.offset1
       %h2{ :style => 'text-align:right' }
         .i.icon-comment
         &nbsp;
-        Hi there, I'd really like you to come on board. Is this a role you'd be interested in?
+        We are badly in need of an Italian person. Our translating team is filled with nice people. Join us! 
       %br/
       %br/
       .pull-right
-        %a.btn.btn-gigantic.btn-danger{ :href => recruiter_says_no_path } Not interested
-        %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path, :style => 'margin-right:0' } I match!
-          
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-        
-      .pull-right
-        %p{ :style => 'font-size:14px; display:inline-block' } you can also
-        %a.btn{ :style => 'margin: -5px 10px 0 10px' }
+        %a.btn.btn-gigantic
           .icon-share
-          Share this role
+          Share
           %span.caret
-      
+        %a.btn.btn-gigantic.btn-success{ :href => candidate_matches4_path, :style => 'margin-right:0' } I match!

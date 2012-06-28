@@ -31,7 +31,7 @@
     .span3.well
       .row
         .span1
-          = link_to image_tag('default_user.jpg'), candidate_profile_public_path
+          = image_tag('default_user.jpg')
         .span2
           %h3 Graphic Designer
           %p Amsterdam, Netherlands
@@ -76,6 +76,7 @@
   %br/
   %br/
   %br/
+  
   .row
     .span5.offset1
       %h2{ :style => 'text-align:right' }
@@ -85,8 +86,26 @@
       %br/
       %br/
       .pull-right
-        %a.btn.btn-gigantic
-          .icon-share
-          Share
-          %span.caret
+        .btn.btn-gigantic.btn-danger Not interested
         %a.btn.btn-gigantic.btn-success{ :href => candidate_matches_path, :style => 'margin-right:0' } I match!
+          
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+        
+      .pull-right
+        %p{ :style => 'font-size:14px; display:inline-block' } you can also
+        %a.btn{ :style => 'margin: -5px 10px 0 10px' }
+          .icon-share
+          Share this role
+          %span.caret
+      
