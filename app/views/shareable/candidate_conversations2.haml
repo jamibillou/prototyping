@@ -25,10 +25,12 @@
                 .btn.btn-large.btn-success Yes it'd be great!
 
       .row
-        .span7.offset1
-          .alert.alert-danger
-            %i.icon-remove
-              Franck Sabattier has denied your request.
+        .span7.offset1.danger
+          %i.icon-remove
+            Franck Sabattier has denied your request.
+          .pull-right.italic
+            5 days ago
+      %br/
       .row
         .span5.offset1
           .well
@@ -89,10 +91,12 @@
                 .btn.btn-danger No
                 .btn.btn-success Yes
       .row
-        .span7.offset1
-          .alert.alert-success
-            %i.icon-ok
-              Franck Sabattier answered "yes" to your question.
+        .span7.offset1.success
+          %i.icon-ok
+            Franck Sabattier answered "yes" to your question.
+          .pull-right.italic
+            2 days ago
+      %br/          
       .row
         .span5.offset1
           .well
@@ -154,13 +158,15 @@
                 %h5 Franck Sabattier said:
                 %p Great, this looks easy. Nice talking to you, I'll share your profile immediately. Bye!
       .row
-        .span7.offset1
-          .alert.alert-info
-            %i.icon-share
-              Franck Sabattier
-              %strong
-                = link_to '@fsabattier', 'https://twitter.com/#!/fsabattier', :target => '_blank'
-              has tweeted your profile.
+        .span7.offset1.info
+          %i.icon-share
+            Franck Sabattier
+            %strong
+              = link_to '@fsabattier', 'https://twitter.com/#!/fsabattier', :target => '_blank'
+            has tweeted your profile.
+          .pull-right.italic
+            a day ago
+      %br/
       .row
         .span5.offset3
           .well
@@ -172,16 +178,17 @@
                 %h5 You said:
                 %p Thank you very much for that!
       .row
-        .span7.offset1
-          .alert.alert-info
-            %i.icon-share
-              Franck Sabattier has shared you profile on
-              %strong
-                = link_to('LinkedIn', 'http://fr.linkedin.com/in/francksabattier/en', :target => '_blank')+'.'
+        .span7.offset1.info
+          %i.icon-share
+            Franck Sabattier has shared you profile on
+            %strong
+              = link_to('LinkedIn', 'http://fr.linkedin.com/in/francksabattier/en', :target => '_blank')+'.'
+          .pull-right.italic
+            7 hours ago
+      %br/
       #dynamic_content
       .row
-        = render 'candidate_toolbox'
-        .span5
+        .span5.offset3
           .well
             .row
               .span1

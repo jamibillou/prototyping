@@ -11,11 +11,12 @@
     .span8
       
       .row
-        .span7.offset1
-          .alert.alert-success
-            %i.icon-ok
-              Florin Buduroi is interested in your profile.
-      
+        .span7.offset1.success
+          %i.icon-ok
+            Florin Buduroi is interested in your profile.
+          .pull-right.italic
+            5 hours ago
+      %br/
       .row
         .span5.offset1
           .well
@@ -49,8 +50,7 @@
                 %p By the way, do you mind telling me a bit about those openings you mentioned?
       #dynamic_content
       .row
-        = render 'candidate_toolbox'
-        .span5
+        .span5.offset3
           .well
             .row
               .span1

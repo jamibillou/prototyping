@@ -13,8 +13,8 @@
         .span1.offset1.well
           = image_tag 'wansa.jpg'
         .span1{ :style => 'width: 98px; margin: 40px 37px 0 25px' }
-          .lead.success
-            .icon-ok
+          .lead
+            .icon-ok.success
               matches
         .span4
           .card{ :style => 'margin: -4px 0 12px -15px' }
@@ -25,13 +25,12 @@
                     = link_to image_tag('default_user.jpg'), candidate_profile_public_path
                   .span3
                     %h3 Graphic Designer
-                    .lead 5 yrs experience, HBO       
+                    .lead 5 yrs experience, HBO
       .row
-        .span7.offset1
-          .alert.alert-success
-            %i.icon-ok
-              You told Dominic Matheron that you match this profile.
-        
+        .span7.offset1.success
+          .pull-right.italic
+            a few seconds ago
+      %br/
       #dynamic_content
       .row
         .span5.offset3

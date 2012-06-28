@@ -10,10 +10,12 @@
           
     .span8
       .row
-        .span7.offset1
-          .alert.alert-danger
-            %i.icon-remove
-              Patrick Charre is not interested in your profile.
+        .span7.offset1.danger
+          %i.icon-remove
+            Patrick Charre is not interested in your profile.
+          .pull-right.italic
+            about a day ago
+      %br/
       .row
         .span5.offset1
           .well
@@ -44,8 +46,7 @@
                 %p You're welcome!
       #dynamic_content
       .row
-        = render 'candidate_toolbox'
-        .span5
+        .span5.offset3
           .well
             .row
               .span1
