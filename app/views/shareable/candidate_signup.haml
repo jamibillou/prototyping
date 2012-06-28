@@ -13,7 +13,7 @@
               .span1
                 = image_tag('default_user.jpg', :id => 'candidate_picture')
               .span3
-                %input#candidate_full_name{ :type => 'text', :placeholder => 'Full name', :style => 'height:13px; font-size:17px; font-weight:bold', :name => 'candidate_full_name' }
+                %input#candidate_full_name{ :type => 'text', :placeholder => 'Full name', :style => 'height:13px; font-size:15px', :name => 'candidate_full_name' }
                 %br/
                 %input#candidate_city.input-small{    :type => 'text', :placeholder => 'City', :style => 'height:9px; margin-top: -4px; font-size:15px;', :name => 'candidate_city' }
                 %input#candidate_country.input-small{ :type => 'text', :placeholder => 'Country', :style => 'width: 105px; height:9px; margin-top: -4px; font-size:15px;', :name => 'candidate_country' }
@@ -24,12 +24,12 @@
           .span1.well
             %h6
               Experience
-            %input#candidate_experience{ :type => 'text', :placeholder => '0', :style => 'height:30px; width:40px; margin-bottom:0;  font-size:30px; font-weight:bold', :name => 'candidate_experience' }
+            %input#candidate_experience{ :type => 'text', :style => 'height:30px; width:40px; margin-bottom:0;  font-size:30px; font-weight:bold', :name => 'candidate_experience' }
             %h2 yrs
           .span3.well{ :style => 'padding-right:0' }
             %h6 
-              Education
-            %textarea#candidate_education.lead{ :placeholder => 'Highest degree or diploma', :rows => 2, :style => 'margin-bottom:12px; width:240px;', :name => 'candidate_education' }
+              Highest Education
+            %textarea#candidate_education.lead{ :rows => 2, :style => 'margin-bottom:12px; width:240px;', :name => 'candidate_education' }
             %br/
         .row
           .span4.well{ style: 'padding-bottom:0' }
@@ -105,7 +105,7 @@
     
     .span5.offset1
       .lead
-        Speed up this step, import your information from
+        Import your information from
         %strong LinkedIn
         or
         %strong Facebook
@@ -121,9 +121,11 @@
       %br/
       %br/
       %br/
+      %br/
+      %br/
       .row
         .span5
-          %textarea#candidate_catchphrase.lead{ :placeholder => 'Catch phrase describe your goals, or your motto.', :rows => 4, :style => 'width:450px;', :name => 'candidate_catchphrase' }
+          %textarea#candidate_catchphrase.lead{ :placeholder => 'Describe your goals, or your motto.', :rows => 4, :style => 'width:450px;', :name => 'candidate_catchphrase' }
           .pull-right
             %button.btn.btn-gigantic.btn-primary{ :type => 'submit' } Save your profile!
             
