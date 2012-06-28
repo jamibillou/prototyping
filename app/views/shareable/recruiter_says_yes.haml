@@ -1,0 +1,45 @@
+= render 'menu_recruiter'
+
+%br/
+
+.span12
+  .row
+    .span2
+      .row
+        = render 'menu_recruiter_interactions'
+          
+    .span8
+      .row
+        .span6.offset1
+          .well
+            .row
+              .span1
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+              .span4
+                %h5 Wansa Sooksomwat said:
+                %br/
+                %h3 I'm keen to work for your company and would really love to go over a few ideas together soon.
+                %br/
+                .btn.btn-large.btn-danger No, not interested
+                .btn.btn-large.btn-success Yes it'd be great!
+      
+      .row
+        .span7.offset1.success
+          %i.icon-ok
+            You have accepted Wansa Sooksomwat's request.
+          .pull-right.italic
+            a few seconds ago
+      %br/
+      #dynamic_content
+      .row
+        .span5.offset3
+          .well
+            .row
+              .span1
+                = link_to image_tag('dom.jpg'), recruiter_profile_path
+              .span3
+                %h5 Type your message:
+                %textarea#message.input-xlarge{ :rows => '4' }
+                %br/
+                %button.btn.btn-primary{ :type => 'submit', :onclick => "add_message('dom.jpg')" } Send
+                %button.btn{ :onclick => 'clean()' } Clear
