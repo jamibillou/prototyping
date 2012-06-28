@@ -109,9 +109,9 @@
         %strong LinkedIn
         or
         %strong Facebook
-      %input.btn.btn-large{ :type => 'button', :value => 'Import from Linkedin', :onclick => "import_data('candidate')" }
+      %a.btn.btn-large{ "data-toggle" => 'modal', :href => '#linkedin-modal' } Import from Linkedin
       &nbsp;
-      %input.btn.btn-large{ :type => 'button', :value => 'Import from Facebook', :onclick => "import_data('candidate')" }
+      %a.btn.btn-large{ "data-toggle" => 'modal', :href => '#facebook-modal' } Import from Facebook
       %br/
       %br/
       %br/   
@@ -128,4 +128,28 @@
           %textarea#candidate_catchphrase.lead{ :placeholder => 'Describe your goals, or your motto.', :rows => 4, :style => 'width:450px;', :name => '[candidate][catchphrase]' }
           .pull-right
             %button.btn.btn-gigantic.btn-primary{ :type => 'submit' } Save your profile!
-            
+
+.modal.hide#facebook-modal
+  .modal-header
+    %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
+    %h2 Import from Facebook
+  .modal-body
+    %input{ :type => 'text', :placeholder => 'Email address', :style => 'width:250px; height:30px; font-size:15px' }
+    %br/
+    %input{ :type => 'password', :placeholder => 'Password', :style => 'width:250px; height:30px; font-size:15px' }
+  .modal-footer
+    %a.btn.btn-large{ :href => '#', "data-dismiss" => 'modal' } Close
+    %a.btn.btn-large.btn-primary{ :href => '#', :onclick => "$('#facebook-modal').modal('hide'); import_data('candidate')" } Signin
+    
+.modal.hide#linkedin-modal
+  .modal-header
+    %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
+    %h2 Import from LinkedIn
+  .modal-body
+    %input{ :type => 'text', :placeholder => 'Email address', :style => 'width:250px; height:30px; font-size:15px' }
+    %br/
+    %input{ :type => 'password', :placeholder => 'Password', :style => 'width:250px; height:30px; font-size:15px' }
+  .modal-footer
+    %a.btn.btn-large{ :href => '#', "data-dismiss" => 'modal' } Close
+    %a.btn.btn-large.btn-primary{ :href => '#', :onclick => "$('#linkedin-modal').modal('hide'); import_data('candidate')" } Signin
+  
