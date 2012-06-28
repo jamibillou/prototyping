@@ -11,7 +11,8 @@
     .span9
       .row
         .span1.offset1.well
-          = image_tag 'wansa.jpg'
+          = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
+          = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
         .span1{ :style => 'width: 98px; margin: 40px 37px 0 25px' }
           .lead.success
             .icon-ok
@@ -22,7 +23,7 @@
               .span4.well
                 .row
                   .span1
-                    = link_to image_tag('default_user.jpg'), candidate_profile_public_path
+                    = image_tag('default_user.jpg')
                   .span3
                     %h3 Mobile Developer
                     .lead 2 yrs experience, Bachelor's
@@ -37,7 +38,8 @@
           .well
             .row
               .span1
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
+                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
               .span3
                 %h5 Type your message:
                 %textarea#message.input-xlarge{ :rows => '4' }
