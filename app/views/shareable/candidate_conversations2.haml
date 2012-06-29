@@ -14,8 +14,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
+                = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
               .span4
                 %h5 You said:
                 %br/
@@ -54,8 +53,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
+                = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
               .span3
                 %h5 You said:
                 %p Oh ok, I thought you might have openings for positions that I could fit in.
@@ -73,8 +71,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
+                = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
               .span3
                 %h5 You said:
                 %p Alright, no problem! Do you by any chance know anyone who could be interested?
@@ -101,8 +98,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
+                = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
               .span3
                 %h5 You said:
                 %p Of course, you can get it here
@@ -116,8 +112,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
+                = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
               .span3
                 %h5 You said:
                 %p Or just use this site since it's quite convenient.
@@ -162,8 +157,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
+                = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
               .span3
                 %h5 You said:
                 %p Thank you very much for that!
@@ -182,8 +176,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
+                = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
               .span3
                 %h5 Type your message:
                 %textarea#message.input-xlarge{ :rows => '4' }
