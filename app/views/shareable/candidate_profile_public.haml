@@ -26,28 +26,26 @@
         .span4.well
           .row
             .span1
-              = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
-              = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
+              = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
             .span3
               %h3 
-                = session[:candidate][:full_name].empty? ? 'Wansa Sooksomwat' : session[:candidate][:full_name]
+                = session[:candidate][:full_name]
               %p
-                = session[:candidate][:city].empty? ? 'Amsterdam,' : session[:candidate][:city]+','
-                = session[:candidate][:country].empty? ? 'Netherlands' : session[:candidate][:country]
+                = session[:candidate][:city]+','
+                = session[:candidate][:country]
               %p
-                = session[:candidate][:role].empty? ? 'Retail Sales' : session[:candidate][:role]
-                = session[:candidate][:company].empty? ? 'at Esprit' : 'at '+session[:candidate][:company]
+                = session[:candidate][:role].to_s+' at '+session[:candidate][:company]
       .row
         .span1.well
           %h6
             Experience
           .gigantic 
-            = session[:candidate][:experience].empty? || session[:candidate][:experience] == 1.to_s ? '1 yr' : session[:candidate][:experience].to_s+'yrs'
+            = session[:candidate][:experience] == 1.to_s ? '1 yr' : session[:candidate][:experience].to_s+'yrs'
         .span3.well{ :style => 'padding-right:0' }
           %h6 
             Education
           .lead 
-            = session[:candidate][:education].empty? ? 'HBO Bachelor in Communication & Media' : session[:candidate][:education]
+            = session[:candidate][:education]
       .row
         .span4.well{ style: 'padding-bottom:0' }
           %h6
@@ -55,33 +53,19 @@
           .lead
             .row
               .span3
-                = session[:candidate][:pro_skill_1][:name].empty? ? 'External communication' : session[:candidate][:pro_skill_1][:name]
+                = session[:candidate][:pro_skill_1][:name]
               .span1
-                - if candidate_signed?
-                  = render 'progress_bar', :level => session[:candidate][:pro_skill_1][:level]
-                - else
-                  .progress.progress-striped.progress-success
-                    .bar{ :style => 'width:80%' }
+                = render 'progress_bar', :level => session[:candidate][:pro_skill_1][:level]
             .row
               .span3
-                = session[:candidate][:pro_skill_2][:name].empty? ? 'Event planning' : session[:candidate][:pro_skill_2][:name]
-                .icon-star
+                = session[:candidate][:pro_skill_2][:name]
               .span1
-                - if candidate_signed?
-                  = render 'progress_bar', :level => session[:candidate][:pro_skill_2][:level]
-                - else              
-                  .progress.progress-striped.progress-success
-                    .bar{ :style => 'width:80%' }
+                = render 'progress_bar', :level => session[:candidate][:pro_skill_2][:level]
             .row
               .span3
-                = session[:candidate][:pro_skill_3][:name].empty? ? 'Writing' : session[:candidate][:pro_skill_3][:name]
+                = session[:candidate][:pro_skill_3][:name]
               .span1
-                - if candidate_signed?
-                  = render 'progress_bar', :level => session[:candidate][:pro_skill_3][:level]
-                - else              
-                  .progress.progress-striped
-                    .bar{ :style => 'width:60%' }
-            
+                = render 'progress_bar', :level => session[:candidate][:pro_skill_3][:level]
       .row
         .span4.well{ style: 'padding-bottom:0' }
           %h6 
@@ -89,31 +73,19 @@
           .lead
             .row
               .span3
-                = session[:candidate][:inter_skill_1][:name].empty? ? 'Good team mate' : session[:candidate][:inter_skill_1][:name]
+                = session[:candidate][:inter_skill_1][:name]
               .span1
-                - if candidate_signed?
-                  = render 'progress_bar', :level => session[:candidate][:inter_skill_1][:level]
-                - else              
-                  .progress.progress-striped.progress-warning
-                    .bar{ :style => 'width:100%' }
+                = render 'progress_bar', :level => session[:candidate][:inter_skill_1][:level]
             .row
               .span3
-                = session[:candidate][:inter_skill_2][:name].empty? ? 'Attention to details' : session[:candidate][:inter_skill_2][:name]
+                = session[:candidate][:inter_skill_2][:name]
               .span1
-                - if candidate_signed?
-                  = render 'progress_bar', :level => session[:candidate][:inter_skill_2][:level]
-                - else               
-                  .progress.progress-striped
-                    .bar{ :style => 'width:60%' }
+                = render 'progress_bar', :level => session[:candidate][:inter_skill_2][:level]
             .row
               .span3
-                = session[:candidate][:inter_skill_3][:name].empty? ? 'Organization' : session[:candidate][:inter_skill_3][:name]
+                = session[:candidate][:inter_skill_3][:name]
               .span1
-                - if candidate_signed?
-                  = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
-                - else               
-                  .progress.progress-striped
-                    .bar{ :style => 'width:60%' }
+                = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
   
   .span5.offset1
 
@@ -135,7 +107,7 @@
     %h2{ :style => 'text-align:right' }
       .i.icon-comment
       &nbsp;
-      = session[:candidate][:catchphrase].empty? ? "Communications isn't what a company says, it's everything else it does." : session[:candidate][:catchphrase]
+      = session[:candidate][:catchphrase]
     %br/
     %br/
     .pull-right
