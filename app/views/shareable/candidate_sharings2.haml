@@ -24,17 +24,14 @@
                   LinkedIn
                 .row
                   .span1
-                    = link_to image_tag('default_user.jpg'), candidate_profile_public_path if candidate_signed?
-                    = link_to image_tag('wansa.jpg'), candidate_profile_public_path unless candidate_signed?
+                    = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
                   .span3
                     %h3 
                       = session[:candidate][:full_name].empty? ? 'Wansa Sooksomwat' : session[:candidate][:full_name]
                     %p
-                      = session[:candidate][:city].empty? ? 'Amsterdam,' : session[:candidate][:city]+','
-                      = session[:candidate][:country].empty? ? 'Netherlands' : session[:candidate][:country]
+                      = session[:candidate][:city]+','+session[:candidate][:country]
                     %p
-                      = session[:candidate][:role].empty? ? 'Retail Sales' : session[:candidate][:role]
-                      = session[:candidate][:company].empty? ? 'at Esprit' : 'at '+session[:candidate][:company]
+                      = session[:candidate][:role].to_s+' at '+session[:candidate][:company]
       .row
         .span7.offset1.info
           .pull-right.italic
