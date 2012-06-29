@@ -96,9 +96,21 @@
       %br/
         
       .pull-right
-        %p{ :style => 'font-size:14px; display:inline-block' } you can also
-        %a.btn{ :style => 'margin: -5px 10px 0 10px' }
-          .icon-share
-          Share this role
-          %span.caret
+        %p{ :style => 'margin-right: 5px; font-size:14px; display:inline-block' } you can also
+        .btn-group{ :style => 'display:inline-block' }
+          %a.btn.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-bottom: -10px'  }
+            %i.icon-share
+            Share this role
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              = link_to 'Email', '#'
+            %li
+              = link_to 'LinkedIn', '#'
+            %li
+              = link_to 'Twitter', '#'
+            %li
+              = link_to 'Facebook', '#'
+            %li
+              = link_to 'Google+', '#'
       

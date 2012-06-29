@@ -79,8 +79,20 @@
       %br/
       %br/
       .pull-right
-        %a.btn.btn-gigantic
-          .icon-share
-          Share
-          %span.caret
+        .btn-group{ :style => 'display:inline-block' }
+          %a.btn.btn-gigantic.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'padding-left: 15px; margin-bottom: -24px'  }
+            %i.icon-share
+            Share
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              = link_to 'Email', '#'
+            %li
+              = link_to 'LinkedIn', '#'
+            %li
+              = link_to 'Twitter', '#'
+            %li
+              = link_to 'Facebook', '#'
+            %li
+              = link_to 'Google+', '#'
         %a.btn.btn-gigantic.btn-success{ :href => candidate_matches_path, :style => 'margin-right:0' } I match!
