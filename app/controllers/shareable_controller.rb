@@ -1,8 +1,8 @@
 class ShareableController < ApplicationController
   
   before_filter       :set_titles
-  before_filter       :candidate_signup,          :only => :candidate_profile_public
-  skip_before_filter  :verify_authenticity_token, :only => [:candidate_profile_public, :candidate_profile_others]
+  before_filter       :candidate_signup,          :only => :candidate_profile
+  skip_before_filter  :verify_authenticity_token, :only => [:candidate_profile, :candidate_profile_public, :candidate_profile_others]
   
   def candidate_profile
     flash.now[:success] = params[:success] unless params[:success].nil?
