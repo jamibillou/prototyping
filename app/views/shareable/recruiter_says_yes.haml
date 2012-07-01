@@ -14,21 +14,21 @@
           .well
             .row
               .span1
-                = link_to image_tag('wansa.jpg'), candidate_profile_public_path
+                = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
               .span4
-                %h5 Wansa Sooksomwat said:
+                %h5 #{session[:candidate][:full_name]} said:
                 %br/
-                %h3 I'm keen to work for your company and would really love to go over a few ideas together soon.
+                %h3 Hi, I'm really keen to work for your company and would love to go over a few ideas together soon.
                 %br/
-                .btn.btn-large.btn-danger No, not interested
-                .btn.btn-large.btn-success Yes it'd be great!
+                .btn.btn-large.btn-danger.disabled No, not interested
+                .btn.btn-large.btn-success.disabled Yes it'd be great!
       
       .row
         .span7.offset1.success
           %i.icon-ok
-            You have accepted Wansa Sooksomwat's request.
-          .pull-right.italic
-            a few seconds ago
+            You have accepted #{session[:candidate][:full_name]}'s request.
+            .pull-right.italic
+              a few seconds ago
       %br/
       #dynamic_content
       .row

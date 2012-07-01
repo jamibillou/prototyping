@@ -27,9 +27,9 @@
                     = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
                   .span3
                     %h3 
-                      = session[:candidate][:full_name].empty? ? 'Wansa Sooksomwat' : session[:candidate][:full_name]
+                      = session[:candidate][:full_name]
                     %p
-                      = session[:candidate][:city]+','+session[:candidate][:country]
+                      = session[:candidate][:city]+', '+session[:candidate][:country]
                     %p
                       = session[:candidate][:role].to_s+' at '+session[:candidate][:company]
       .row

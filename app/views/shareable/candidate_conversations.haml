@@ -20,8 +20,8 @@
                 %br/
                 %h3  I'd really like to work for you. Can we talk?
                 %br/
-                .btn.btn-large.btn-danger No, not interested
-                .btn.btn-large.btn-success Yes it'd be great!
+                .btn.btn-large.btn-danger.disabled No, not interested
+                .btn.btn-large.btn-success.disabled Yes it'd be great!
 
       .row
         .span7.offset1.success
@@ -76,8 +76,8 @@
               .span3
                 %h5 Jonathan Ive said:
                 %p Shall we sit around a cup of coffee to discuss first?
-                .btn.btn-danger No
-                .btn.btn-success Yes
+                .btn.btn-danger.disabled No
+                .btn.btn-success.disabled Yes
       .row
         .span7.offset1.success
           %i.icon-ok
@@ -106,7 +106,7 @@
                 %p I've got to run but give me your Email address and I'll get back to you later today!
                 .input-append
                   %input.span2{ :size => '16', :type => 'text' }
-                  .btn.btn-primary{ :type => 'button', :style => 'margin-left:-5px' } Send
+                  .btn.btn-primary.disabled{ :type => 'button', :style => 'margin-left:-5px' } Send
       .row
         .span7.offset1.success
           %i.icon-envelope
@@ -125,5 +125,5 @@
                 %h5 Type your message:
                 %textarea#message.input-xlarge{ :rows => '4' }
                 %br/
-                %button.btn.btn-primary{ :type => 'submit', :onclick => "add_message('wansa.jpg')" } Send
+                %button.btn.btn-primary{ :type => 'submit', :onclick => "add_message('#{session[:candidate][:pic]}')" } Send
                 %button.btn{ :onclick => 'clean()' } Clear

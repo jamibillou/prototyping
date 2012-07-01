@@ -54,5 +54,5 @@
                 %h5 Type your message:
                 %textarea#message.input-xlarge{ :rows => '4' }
                 %br/
-                %button.btn.btn-primary{ :type => 'submit', :onclick => "add_message('wansa.jpg')" } Send
+                %button.btn.btn-primary{ :type => 'submit', :onclick => "add_message('#{session[:candidate][:pic]}')" } Send
                 %button.btn{ :onclick => 'clean()' } Clear    

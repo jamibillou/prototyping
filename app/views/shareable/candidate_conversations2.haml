@@ -20,8 +20,8 @@
                 %br/
                 %h3  I'm keen to work for your company and would really love to go over a few ideas together soon.
                 %br/
-                .btn.btn-large.btn-danger No, not interested
-                .btn.btn-large.btn-success Yes it'd be great!
+                .btn.btn-large.btn-danger.disabled No, not interested
+                .btn.btn-large.btn-success.disabled Yes it'd be great!
 
       .row
         .span7.offset1.danger
@@ -75,8 +75,8 @@
               .span3
                 %h5 You said:
                 %p Alright, no problem! Do you by any chance know anyone who could be interested?
-                .btn.btn-danger No
-                .btn.btn-success Yes
+                .btn.btn-danger.disabled No
+                .btn.btn-success.disabled Yes
       .row
         .span7.offset1.success
           %i.icon-ok
@@ -123,15 +123,15 @@
                     %span.caret
                   %ul.dropdown-menu
                     %li
-                      = link_to 'Email', '#'
+                      = link_to 'Email', candidate_profile_share_path
                     %li
-                      = link_to 'LinkedIn', '#'
+                      = link_to 'LinkedIn', candidate_profile_share_path
                     %li
-                      = link_to 'Twitter', '#'
+                      = link_to 'Twitter', candidate_profile_share_path
                     %li
-                      = link_to 'Facebook', '#'
+                      = link_to 'Facebook', candidate_profile_share_path
                     %li
-                      = link_to 'Google+', '#'
+                      = link_to 'Google+', candidate_profile_share_path
       
       .row
         .span5.offset1
@@ -181,5 +181,5 @@
                 %h5 Type your message:
                 %textarea#message.input-xlarge{ :rows => '4' }
                 %br/
-                %button.btn.btn-primary{ :type => 'submit', :onclick => "add_message('wansa.jpg')" } Send
+                %button.btn.btn-primary{ :type => 'submit', :onclick => "add_message('#{session[:candidate][:pic]}')" } Send
                 %button.btn{ :onclick => 'clean()' } Clear

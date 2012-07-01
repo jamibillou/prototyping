@@ -31,7 +31,7 @@
               %h3 
                 = session[:candidate][:full_name]
               %p
-                = session[:candidate][:city]+','+session[:candidate][:country]
+                = session[:candidate][:city]+', '+session[:candidate][:country]
               %p
                 = session[:candidate][:role].to_s+' at '+session[:candidate][:company]
       .row
@@ -117,7 +117,7 @@
         %br/
         %br/
         .pull-right
-          %a.btn.btn-gigantic.btn-danger{ :href => recruiter_says_no_path } Not interested
+          %a.btn.btn-gigantic.btn-danger{ :href => recruiter_isnt_interested_path } Not interested
           %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path, :style => 'margin-right:0' } This looks good!
           
         %br/
@@ -137,7 +137,7 @@
         .pull-right
           %p{ :style => 'margin-right: 5px; font-size:14px; display:inline-block' } you can also
           .btn-group{ :style => 'display:inline-block' }
-            %a.btn.dropdown-toggle{ "data-toggle" => "dropdown", :href => candidate_profile_share_path, :style => 'margin-bottom: -10px'  }
+            %a.btn.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-bottom: -10px'  }
               %i.icon-share
               Share this profile
               %span.caret

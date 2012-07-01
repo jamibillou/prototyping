@@ -1,4 +1,4 @@
-= render 'menu_candidate'
+= render 'menu_recruiter'
 
 %br/
 
@@ -8,28 +8,26 @@
       .row
         = render 'menu_candidate_interactions'
           
-    .span9
+    .span8
       .row
-        .span1.offset1.well
-          = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
-        .span1{ :style => 'width: 98px; margin: 40px 37px 0 25px' }
-          .lead.success
-            .icon-ok
-              matches
-        .span4
-          .card{ :style => 'margin: -4px 0 12px -15px' }
+        .span6.offset1
+          .well
             .row
-              .span4.well
-                .row
-                  .span1
-                    = image_tag('default_user.jpg')
-                  .span3
-                    %h3 Mobile Developer
-                    .lead 2 yrs experience, Bachelor's
+              .span1
+                = link_to image_tag('dom.jpg'), recruiter_profile_path
+              .span4
+                %h5 Dominic Matheron said:
+                %br/
+                %h3 Hi there, I'd really like you to come on board. Is this a role you'd be interested in?
+                %br/
+                .btn.btn-large.btn-danger.disabled No, not interested
+                .btn.btn-large.btn-success.disabled Yes it'd be great!
       .row
         .span7.offset1.success
-          .pull-right.italic
-            a few seconds ago
+          %i.icon-ok
+            You have accepted Dominic Matheron's request.
+            .pull-right.italic
+              a few seconds ago
       %br/
       #dynamic_content
       .row
@@ -44,4 +42,3 @@
                 %br/
                 %button.btn.btn-primary{ :type => 'submit', :onclick => "add_message('#{session[:candidate][:pic]}')" } Send
                 %button.btn{ :onclick => 'clean()' } Clear
-                

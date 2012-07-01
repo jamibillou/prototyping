@@ -77,8 +77,8 @@
       %br/
       %br/
       .pull-right
-        %a.btn.btn-gigantic.btn-danger{ :href => recruiter_says_no_path } Not interested
-        %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path, :style => 'margin-right:0' } I match!
+        %a.btn.btn-gigantic.btn-danger{ :href => candidate_says_no_path } No, not interested
+        %a.btn.btn-gigantic.btn-success{ :href => candidate_says_yes_path, :style => 'margin-right:0' } Yes it'd be great!
           
       %br/
       %br/
@@ -98,7 +98,7 @@
       .pull-right
         %p{ :style => 'margin-right: 5px; font-size:14px; display:inline-block' } you can also
         .btn-group{ :style => 'display:inline-block' }
-          %a.btn.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-bottom: -10px'  }
+          %a.btn.dropdown-toggle.disabled{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-bottom: -10px'  }
             %i.icon-share
             Share this role
             %span.caret

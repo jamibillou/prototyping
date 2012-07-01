@@ -31,7 +31,7 @@
               %h3 
                 = session[:candidate][:full_name]
               %p
-                = session[:candidate][:city]+','+session[:candidate][:country]
+                = session[:candidate][:city]+', '+session[:candidate][:country]
               %p
                 = session[:candidate][:role].to_s+' at '+session[:candidate][:company]
       .row
@@ -104,7 +104,7 @@
     %br/
 
     %h2{ :style => 'text-align:right' }
-      %textarea#candidate_catchphrase.lead{ :placeholder => 'Message for people your sharing this with', :rows => 4, :style => 'width:450px;', :name => '[candidate][catchphrase]' }
+      %textarea#candidate_catchphrase.lead{ :placeholder => "Message for people you're sharing this with", :rows => 4, :style => 'width:450px;', :name => '[candidate][catchphrase]' }
     .pull-right
       .btn.btn-gigantic.btn-danger.disabled Not interested
       .btn.btn-gigantic.btn-success.disabled{ :style => 'margin-right:0' } Sure let's talk!

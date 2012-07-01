@@ -10,9 +10,9 @@
           
     .span8      
       .row
-        .span7.offset1.info
-          %i.icon-ok
-            You started a discussion with #{session[:candidate][:full_name]}.
+        .span7.offset1.danger
+          %i.icon-remove
+            #{session[:candidate][:full_name]} was told that you are not interested.
           .pull-right.italic
             a few seconds ago
       %br/
