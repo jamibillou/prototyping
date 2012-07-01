@@ -132,24 +132,28 @@
 .modal.hide#facebook-modal
   .modal-header
     %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
-    %h2 Import from Facebook
+    %h3
+      = image_tag 'facebook.png', :style => 'margin-right:5px'
+      Import from Facebook
   .modal-body
-    %input{ :type => 'text', :placeholder => 'Email address', :style => 'width:250px; height:30px; font-size:15px' }
+    %input{ :type => 'text', :placeholder => 'Email address' }
     %br/
-    %input{ :type => 'password', :placeholder => 'Password', :style => 'width:250px; height:30px; font-size:15px' }
+    %input{ :type => 'password', :placeholder => 'Password' }
   .modal-footer
-    %a.btn.btn-large{ :href => '#', "data-dismiss" => 'modal' } Close
-    %a.btn.btn-large.btn-primary{ :href => '#', :onclick => "$('#facebook-modal').modal('hide'); import_data('candidate')" } Signin
+    %a.btn{ :href => '#', "data-dismiss" => 'modal' } Close
+    %a.btn.btn-primary{ :href => '#', :onclick => "$('#facebook-modal').modal('hide'); import_data('candidate')" } Sign in
     
 .modal.hide#linkedin-modal
   .modal-header
     %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
-    %h2 Import from LinkedIn
+    %h3
+      = image_tag 'linkedin.png', :style => 'margin-right:5px'
+      Import from LinkedIn
   .modal-body
-    %input{ :type => 'text', :placeholder => 'Email address', :style => 'width:250px; height:30px; font-size:15px' }
+    %input{ :type => 'text', :placeholder => 'Email address' }
     %br/
-    %input{ :type => 'password', :placeholder => 'Password', :style => 'width:250px; height:30px; font-size:15px' }
+    %input{ :type => 'password', :placeholder => 'Password' }
   .modal-footer
-    %a.btn.btn-large{ :href => '#', "data-dismiss" => 'modal' } Close
-    %a.btn.btn-large.btn-primary{ :href => '#', :onclick => "$('#linkedin-modal').modal('hide'); import_data('candidate')" } Signin
+    %a.btn{ :href => '#', "data-dismiss" => 'modal' } Close
+    %a.btn.btn-primary{ :href => '#', :onclick => "$('#linkedin-modal').modal('hide'); import_data('candidate')" } Sign in
   
