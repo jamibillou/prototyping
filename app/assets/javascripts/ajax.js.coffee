@@ -113,3 +113,10 @@
   $('#'+type+'_inter_skill_level_2').val('expert')
   $('#'+type+'_inter_skill_level_3').val('beginner')
   starred(type+'_pro_skill_star_2','star')
+  
+@toggleService = (service) ->
+  current = $('#'+service+' img').attr('src')
+  unless current is 'assets/'+service+'2.png'
+    $('#'+service+' img').attr('src','assets/'+service+'2.png')
+  else
+    $('#'+service+' img').attr('src','assets/'+service+'.png')

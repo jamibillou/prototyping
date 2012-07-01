@@ -87,10 +87,6 @@
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
   
   .span5.offset1
-  
-    %br/
-    %br/
-    %br/
     %br/   
     %br/
     %br/
@@ -102,27 +98,38 @@
     %br/
     %br/
     %br/
-
+    %br/
     %h2{ :style => 'text-align:right' }
       %textarea#candidate_catchphrase.lead{ :placeholder => "Message for people you're sharing this with", :rows => 4, :style => 'width:450px;', :name => '[candidate][catchphrase]' }
     .pull-right
-      .btn.btn-gigantic.btn-danger.disabled Not interested
-      .btn.btn-gigantic.btn-success.disabled{ :style => 'margin-right:0' } Sure let's talk!
-      
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      
-      %a.btn.btn-large.btn-primary.pull-right{ :href => '#'  }
-        .icon-ok
-        Share profile
+      .btn.btn-large.btn-danger.disabled Not interested
+      &nbsp;
+      .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Sure let's talk!
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    .pull-right
+      = link_to image_tag('linkedin.png'), '#', :onclick => "toggleService('linkedin')", :title => 'Share on LinkedIn', :id => 'linkedin'
+      &nbsp;
+      = link_to image_tag('twitter.png'), '#', :onclick => "toggleService('twitter')", :title => 'Share on Twitter', :id => 'twitter'
+      &nbsp;
+      = link_to image_tag('facebook.png'), '#', :onclick => "toggleService('facebook')", :title => 'Share on Facebook', :id => 'facebook'
+      &nbsp;
+      = link_to image_tag('google-plus.png'), '#', :onclick => "toggleService('google-plus')", :title => 'Share on Google+', :id => 'google-plus'
+    %br/
+    %br/
+    %br/
+    %br/
+    %a.btn.btn-gigantic.btn-primary.pull-right{ :href => '#', :style => 'margin-right:0'  }
+      .icon-share
+      Share profile
+        
