@@ -87,9 +87,6 @@
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
   
   .span5.offset1
-
-    %br/
-    %br/
     %br/   
     %br/
     %br/
@@ -102,23 +99,29 @@
     %br/
     %br/
     %br/
-  
+    %br/
+    %br/
+    %input#email_input{ :type => 'text', :placeholder => 'Email address(es)', :style => 'margin-left:10px' }
+    %a.btn.btn-mini.btn-primary{ :href => '#', :onclick => "insertEmails('email_input','email_display')", :style => 'margin: -8px 0 0 4px' } ok
+    #email_display.info{ :style => 'margin: 0 0 10px 10px' }
     %h2{ :style => 'text-align:right' }
-      .i.icon-comment
-      &nbsp;
-      = session[:candidate][:catchphrase]
-    %br/
-    %br/
+      %textarea#candidate_catchphrase.lead{ :placeholder => "Message for people you're sharing this with", :rows => 4, :style => 'width:450px;', :name => '[candidate][catchphrase]' }
     .pull-right
-      .btn-group{ :style => 'display:inline-block' }
-        %a.btn.btn-gigantic.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'padding-left: 15px; margin-bottom: -24px'  }
-          %i.icon-share
-          Share
-          %span.caret
-        %ul.dropdown-menu
-          %li
-            = link_to 'Email', candidate_profile_email_share_path
-          %li
-            = link_to 'Social networks', candidate_profile_social_share_path
-      %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path, :style => 'margin-right:0' } Let's talk!!
-            
+      .btn.btn-large.btn-danger.disabled Not interested
+      &nbsp;
+      .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Sure let's talk!
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %a.btn.btn-gigantic.btn-primary.pull-right{ :href => '#', :style => 'margin-right:0'  }
+      .icon-share
+      Share profile
+        

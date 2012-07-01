@@ -70,7 +70,7 @@
   $('#message').val($('#message').val()+text)
   
 @add_tools = (message) ->
-  tools = [ {regex: /\*No \/ Yes\*/g, code: "<div class='btn btn-danger'>No</div> <div class='btn btn-success'>Yes</div>"}, {regex: /\*Send\*/g, code: "<div class='input-append'><input class='span2' size='16' type='text'><div class='btn btn-primary' style='margin-left:-5px' type='button'>Send</div></div>"}, {regex: /\*Download my CV\*/g, code: "<div class='btn-group'><div class='btn'><i class='icon-download'></i> Download my CV</div></div>"}, {regex: /\*Share my profile\*/g, code: "<div class='btn-group'><a class='btn dropdown-toggle' data-toggle='dropdown' href='#'><i class='icon-share'></i> Share my profile <span class='caret'></span></a><ul class='dropdown-menu'><li><a href='/candidate_profile_share'>Email</a></li><li><a href='/candidate_profile_share'>LinkedIn</a></li><li><a href='/candidate_profile_share'>Twitter</a></li><li><a href='/candidate_profile_share'>Facebook</a></li><li><a href='/candidate_profile_share'>Google+</a></li></ul></div>"} ]
+  tools = [ {regex: /\*No \/ Yes\*/g, code: "<div class='btn btn-danger'>No</div> <div class='btn btn-success'>Yes</div>"}, {regex: /\*Send\*/g, code: "<div class='input-append'><input class='span2' size='16' type='text'><div class='btn btn-primary' style='margin-left:-5px' type='button'>Send</div></div>"}, {regex: /\*Download my CV\*/g, code: "<div class='btn-group'><div class='btn'><i class='icon-download'></i> Download my CV</div></div>"}, {regex: /\*Share my profile\*/g, code: "<div class='btn-group'><a class='btn dropdown-toggle' data-toggle='dropdown' href='#'><i class='icon-share'></i> Share my profile <span class='caret'></span></a><ul class='dropdown-menu'><li><a href='/candidate_profile_email_share'>Email</a></li><li><a href='/candidate_profile_social_share'>Social networks</a></li></ul></div>"} ]
   message = message.replace(tool.regex, tool.code) for tool in tools
   return message
 
@@ -120,3 +120,14 @@
   else
     $('#'+service+' img').attr('src', 'assets/'+service+'.png')
     $('#'+service).attr('href', '')
+
+@insertEmails = (input_id, insert_id) ->
+  if $('#'+input_id).val() isnt ''
+    addresses = $('#'+input_id).val().split(/[\s,;]+/)
+    for address in addresses
+      if $('#'+insert_id).html() is ''
+        $('#'+insert_id).html(address) 
+      else
+        $('#'+insert_id).html($('#'+insert_id).html()+' ; '+address) 
+    $('#'+input_id).val('')
+  
