@@ -4,6 +4,10 @@ class ShareableController < ApplicationController
   before_filter       :candidate_signup,          :only => :candidate_profile_public
   skip_before_filter  :verify_authenticity_token, :only => [:candidate_profile_public, :candidate_profile_others]
   
+  def candidate_profile
+    flash.now[:success] = params[:success] unless params[:success].nil?
+  end
+  
   def candidate_profile_email_share
     @default_message = "Hi, I was looking at this profile and thought you might be interested. What do you think?"
   end
