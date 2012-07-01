@@ -101,27 +101,33 @@
     %br/
     %br/
     %br/
-    %input#email_input{ :type => 'text', :placeholder => 'Email address(es)', :style => 'margin-left:10px' }
+    %input#email_input{ :type => 'text', :placeholder => 'Email address', :style => 'margin-left:10px' }
     %a.btn.btn-mini.btn-primary{ :href => '#', :onclick => "insertEmails('email_input','email_display')", :style => 'margin: -8px 0 0 4px' } ok
     #email_display.info{ :style => 'margin: 0 0 10px 10px' }
-    %h2{ :style => 'text-align:right' }
-      %textarea#candidate_catchphrase.lead{ :placeholder => "Message for people you're sharing this with", :rows => 4, :style => 'width:450px;', :name => '[candidate][catchphrase]' }
-    .pull-right
-      .btn.btn-large.btn-danger.disabled Not interested
-      &nbsp;
-      .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Sure let's talk!
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %a.btn.btn-gigantic.btn-primary.pull-right{ :href => '#', :style => 'margin-right:0'  }
-      .icon-share
-      Share profile
+   
+    %form{ :action => candidate_profile_others_path, :method => 'POST' }
+      %h2{ :style => 'text-align:right' }
+        %textarea#candidate_catchphrase.lead{ :placeholder => @default_message, :rows => 4, :style => 'width:450px;', :name => '[sharer][message]' }
+      .pull-right
+        .btn.btn-large.btn-danger.disabled Not interested
+        &nbsp;
+        .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Get in touch!
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %a.btn.btn-gigantic.btn-primary.pull-right{ :href => '#', :style => 'margin-right:0'  }
+        .icon-share
+        Share
+      %button.btn.btn-gigantic.pull-right{ :type => 'submit' }
+        .icon-eye-open
+        Preview
+    
         

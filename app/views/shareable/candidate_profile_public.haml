@@ -85,6 +85,11 @@
                 = session[:candidate][:inter_skill_3][:name]
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
+      .row
+        .span4
+          %a.btn.btn-gigantic.btn-primary{ :href => candidate_profile_path, :style => 'margin: 25px 0 0 -25px' }
+            .icon-eye-close
+            Close preview
   
   .span5.offset1
 

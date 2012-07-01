@@ -99,39 +99,44 @@
     %br/
     %br/
     %br/
-    %h2{ :style => 'text-align:right' }
-      %textarea#candidate_catchphrase.lead{ :placeholder => "Message for people you're sharing this with", :rows => 4, :style => 'width:450px;', :name => '[candidate][catchphrase]' }
-    .pull-right
-      .btn.btn-large.btn-danger.disabled Not interested
-      &nbsp;
-      .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Sure let's talk!
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    .pull-right
-      = link_to image_tag('linkedin.png'), '#linkedin-modal', "data-toggle" => 'modal', :onclick => "toggleService('linkedin')", :title => 'Share on LinkedIn', :id => 'linkedin'
-      &nbsp;
-      = link_to image_tag('twitter.png'), '#twitter-modal', "data-toggle" => 'modal', :onclick => "toggleService('twitter')", :title => 'Share on Twitter', :id => 'twitter'
-      &nbsp;
-      = link_to image_tag('facebook.png'), '#facebook-modal', "data-toggle" => 'modal', :onclick => "toggleService('facebook')", :title => 'Share on Facebook', :id => 'facebook'
-      &nbsp;
-      = link_to image_tag('google-plus.png'), '#google-plus-modal', "data-toggle" => 'modal', :onclick => "toggleService('google-plus')", :title => 'Share on Google+', :id => 'google-plus'
-    %br/
-    %br/
-    %br/
-    %br/
-    %a.btn.btn-gigantic.btn-primary.pull-right{ :href => '#', :style => 'margin-right:0'  }
-      .icon-share
-      Share profile
+    %form{ :action => candidate_profile_others_path, :method => 'POST' }
+      %h2{ :style => 'text-align:right' }
+        %textarea#candidate_catchphrase.lead{ :placeholder => @default_message, :rows => 4, :style => 'width:450px;', :name => '[sharer][message]' }
+      .pull-right
+        .btn.btn-large.btn-danger.disabled Not interested
+        &nbsp;
+        .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Get in touch!
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      .pull-right
+        = link_to image_tag('linkedin.png'), '#linkedin-modal', "data-toggle" => 'modal', :onclick => "toggleService('linkedin')", :title => 'Share on LinkedIn', :id => 'linkedin'
+        &nbsp;
+        = link_to image_tag('twitter.png'), '#twitter-modal', "data-toggle" => 'modal', :onclick => "toggleService('twitter')", :title => 'Share on Twitter', :id => 'twitter'
+        &nbsp;
+        = link_to image_tag('facebook.png'), '#facebook-modal', "data-toggle" => 'modal', :onclick => "toggleService('facebook')", :title => 'Share on Facebook', :id => 'facebook'
+        &nbsp;
+        = link_to image_tag('google-plus.png'), '#google-plus-modal', "data-toggle" => 'modal', :onclick => "toggleService('google-plus')", :title => 'Share on Google+', :id => 'google-plus'
+      %br/
+      %br/
+      %br/
+      %br/
+      %a.btn.btn-gigantic.btn-primary.pull-right{ :href => '#', :style => 'margin-right:0'  }
+        .icon-share
+        Share
+      %button.btn.btn-gigantic.pull-right{ :type => 'submit' }
+        .icon-eye-open
+        Preview
+    
 
 .modal.hide#linkedin-modal
   .modal-header

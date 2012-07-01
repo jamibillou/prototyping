@@ -85,6 +85,11 @@
                 = session[:candidate][:inter_skill_3][:name]
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
+      .row
+        .span4
+          %a.btn.btn-gigantic.btn-primary{ :href => candidate_profile_path, :style => 'margin: 25px 0 0 -25px' }
+            .icon-eye-close
+            Close preview
       
   .span7
     %br/
@@ -94,10 +99,10 @@
       .span3.offset4
         .row
           .span1
-            = image_tag 'loubi.jpg'
+            = image_tag 'dom.jpg'
           .span1
             %p{ :style => 'margin-top:-2px' } shared by:
-            %h3{ :style => 'line-height:24px' } Franck Sabattier
+            %h3{ :style => 'line-height:24px' } Dominic Matheron
     %br/
     %br/
     %br/
@@ -113,12 +118,12 @@
         %h2{ :style => 'text-align:right' }
           .i.icon-comment
           &nbsp;
-          Hey dude, I ran into this profile and thought you might be interested, what do you think?
+          = @message
         %br/
         %br/
         .pull-right
           %a.btn.btn-gigantic.btn-danger{ :href => recruiter_isnt_interested_path } Not interested
-          %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path, :style => 'margin-right:0' } This looks good!
+          %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path, :style => 'margin-right:0' } Get in touch!
           
         %br/
         %br/

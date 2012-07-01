@@ -2,11 +2,24 @@ class ShareableController < ApplicationController
   
   before_filter       :set_titles
   before_filter       :candidate_signup,          :only => :candidate_profile_public
-  skip_before_filter  :verify_authenticity_token, :only => :candidate_profile_public
-
+  skip_before_filter  :verify_authenticity_token, :only => [:candidate_profile_public, :candidate_profile_others]
+  
+  def candidate_profile_email_share
+    @default_message = "Hi, I was looking at this profile and thought you might be interested. What do you think?"
+  end
+  
+  def candidate_profile_social_share
+    @default_message = "Hi, I was looking at this profile and thought you might be interested. What do you think?"
+  end
+  
+  def candidate_profile_others
+    default_messagge = "Hi, I was looking at this profile and thought you might be interested. What do you think?"
+    @message = (params[:sharer].nil? || params[:sharer][:message].empty?) ? default_messagge : params[:sharer][:message]
+  end
+  
   private
   
-  	def candidate_signup
+    def candidate_signup
       if params[:candidate]
         if params[:candidate][:full_name].empty?
           session[:candidate] = default_candidate
