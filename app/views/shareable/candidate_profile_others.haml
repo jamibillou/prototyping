@@ -2,8 +2,8 @@
 
 .row
   .span5
-    .card
-      .row
+    .row
+      .card
         %ul.nav.nav-pills{ :style => 'margin-bottom:10px' }
           %li
             %a{ :href => '#' }
@@ -22,6 +22,15 @@
                 = link_to 'Twitter', '#'
               %li
                 = link_to 'Tumblr', '#'
+  .span2.offset4
+    .row
+      %a.btn.btn-primary.pull-right{ :href => candidate_profile_path }
+        .icon-eye-close
+        Close preview
+
+.row
+  .span5
+    .card
       .row
         .span4.well
           .row
@@ -85,16 +94,8 @@
                 = session[:candidate][:inter_skill_3][:name]
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
-      .row
-        .span4
-          %a.btn.btn-gigantic.btn-primary{ :href => @from_path, :style => 'margin: 25px 0 0 -25px' }
-            .icon-eye-close
-            Close preview
       
   .span7
-    %br/
-    %br/
-    %br/
     .row
       .span3.offset4
         .row
@@ -102,7 +103,7 @@
             = image_tag 'dom.jpg'
           .span1
             %p{ :style => 'margin-top:-2px' } shared by:
-            %h3{ :style => 'line-height:24px' } Dominic Matheron
+            %h3{ :style => 'font-size:14px; line-height:20px' } Dominic Matheron
     %br/
     %br/
     %br/

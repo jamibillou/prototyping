@@ -2,8 +2,8 @@
 
 .row
   .span5
-    .card
-      .row
+    .row
+      .card
         %ul.nav.nav-pills{ :style => 'margin-bottom:10px' }
           %li
             %a{ :href => '#' }
@@ -22,6 +22,15 @@
                 = link_to 'Twitter', '#'
               %li
                 = link_to 'Tumblr', '#'
+  .span6
+    .row
+      %a.btn.btn-primary.pull-right{ :href => candidate_profile_path, :style => 'margin:0' }
+        .icon-eye-close
+        Close preview
+
+.row
+  .span5
+    .card
       .row
         .span4.well
           .row
@@ -85,11 +94,6 @@
                 = session[:candidate][:inter_skill_3][:name]
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
-      .row
-        .span4
-          %a.btn.btn-gigantic.btn-primary{ :href => candidate_profile_social_share_you_path, :style => 'margin: 25px 0 0 -25px' }
-            .icon-eye-close
-            Close preview
   
   .span5.offset1
   
@@ -99,9 +103,6 @@
     %br/   
     %br/
     %br/
-    %br/
-    %br/
-    %br/       
     %br/
     %br/
     %br/
@@ -118,7 +119,6 @@
       %a.btn.btn-gigantic.btn-danger{ :href => recruiter_says_no_path } Not interested
       %a.btn.btn-gigantic.btn-success{ :href => recruiter_says_yes_path, :style => 'margin-right:0' } Let's talk!
       
-      %br/
       %br/
       %br/
       %br/
