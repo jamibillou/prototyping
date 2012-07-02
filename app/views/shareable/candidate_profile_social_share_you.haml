@@ -1,0 +1,196 @@
+= render 'menu_candidate'
+
+.row
+  .span5
+    .card
+      .row
+        %ul.nav.nav-pills{ :style => 'margin-bottom:10px' }
+          %li
+            %a{ :href => '#' }
+              %i.icon-download
+              Download CV
+              
+          %li.dropdown
+            %a.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#' }
+              %i.icon-globe
+              Elsewhere online
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                = link_to 'LinkedIn', '#'
+              %li
+                = link_to 'Twitter', '#'
+              %li
+                = link_to 'Tumblr', '#'
+      .row
+        .span4.well
+          .row
+            .span1
+              = link_to image_tag(session[:candidate][:pic]), candidate_profile_public_path
+            .span3
+              %h3 
+                = session[:candidate][:full_name]
+              %p
+                = session[:candidate][:city]+', '+session[:candidate][:country]
+              %p
+                = session[:candidate][:role].to_s+' at '+session[:candidate][:company]
+      .row
+        .span1.well
+          %h6
+            Experience
+          .gigantic 
+            = session[:candidate][:experience] == 1.to_s ? '1 yr' : session[:candidate][:experience].to_s+'yrs'
+        .span3.well{ :style => 'padding-right:0' }
+          %h6 
+            Education
+          .lead 
+            = session[:candidate][:education]
+      .row
+        .span4.well{ style: 'padding-bottom:0' }
+          %h6
+            Skills
+          .lead
+            .row
+              .span3
+                = session[:candidate][:pro_skill_1][:name]
+              .span1
+                = render 'progress_bar', :level => session[:candidate][:pro_skill_1][:level]
+            .row
+              .span3
+                = session[:candidate][:pro_skill_2][:name]
+              .span1
+                = render 'progress_bar', :level => session[:candidate][:pro_skill_2][:level]
+            .row
+              .span3
+                = session[:candidate][:pro_skill_3][:name]
+              .span1
+                = render 'progress_bar', :level => session[:candidate][:pro_skill_3][:level]
+      .row
+        .span4.well{ style: 'padding-bottom:0' }
+          %h6 
+            Qualities
+          .lead
+            .row
+              .span3
+                = session[:candidate][:inter_skill_1][:name]
+              .span1
+                = render 'progress_bar', :level => session[:candidate][:inter_skill_1][:level]
+            .row
+              .span3
+                = session[:candidate][:inter_skill_2][:name]
+              .span1
+                = render 'progress_bar', :level => session[:candidate][:inter_skill_2][:level]
+            .row
+              .span3
+                = session[:candidate][:inter_skill_3][:name]
+              .span1
+                = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
+  
+  .span5.offset1
+    %br/   
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/       
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
+    %form{ :action => candidate_profile_others_path, :method => 'POST' }
+      = hidden_field_tag :from_path, candidate_profile_social_share_others_path
+      %h2{ :style => 'text-align:right' }
+        %textarea#candidate_catchphrase.lead{ :placeholder => @default_message, :rows => 4, :style => 'width:450px;', :name => '[sharer][message]' }
+          = session[:sharer][:message] unless session[:sharer].nil?
+      .pull-right
+        .btn.btn-large.btn-danger.disabled Not interested
+        &nbsp;
+        .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Get in touch!
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      .pull-right
+        = link_to image_tag('linkedin.png'), '#linkedin-modal', "data-toggle" => 'modal', :onclick => "toggleService('linkedin')", :title => 'Share on LinkedIn', :id => 'linkedin'
+        &nbsp;
+        = link_to image_tag('twitter.png'), '#twitter-modal', "data-toggle" => 'modal', :onclick => "toggleService('twitter')", :title => 'Share on Twitter', :id => 'twitter'
+        &nbsp;
+        = link_to image_tag('facebook.png'), '#facebook-modal', "data-toggle" => 'modal', :onclick => "toggleService('facebook')", :title => 'Share on Facebook', :id => 'facebook'
+        &nbsp;
+        = link_to image_tag('google-plus.png'), '#google-plus-modal', "data-toggle" => 'modal', :onclick => "toggleService('google-plus')", :title => 'Share on Google+', :id => 'google-plus'
+      %br/
+      %br/
+      %br/
+      %br/
+      %a.btn.btn-gigantic.btn-primary.pull-right{ :href => candidate_profile_path(:success => "This profile was successfully shared on your social networks."), :style => 'margin-right:0'  }
+        .icon-share
+        Share
+      %button.btn.btn-gigantic.pull-right{ :type => 'submit' }
+        .icon-eye-open
+        Preview
+    
+
+.modal.hide#linkedin-modal
+  .modal-header
+    %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
+    %h3
+      = image_tag 'linkedin.png', :style => 'margin-right:5px'
+      Share on LinkedIn
+  .modal-body
+    %input{ :type => 'text', :placeholder => 'Email address' }
+    %br/
+    %input{ :type => 'password', :placeholder => 'Password' }
+  .modal-footer
+    %a.btn{ :href => '#', "data-dismiss" => 'modal' } Close
+    %a.btn.btn-primary{ :href => '#', :onclick => "$('#linkedin-modal').modal('hide')" } Sign in
+.modal.hide#twitter-modal
+  .modal-header
+    %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
+    %h3
+      = image_tag 'twitter.png', :style => 'margin-right:5px'
+      Share on Twitter
+  .modal-body
+    %input{ :type => 'text', :placeholder => 'Email address' }
+    %br/
+    %input{ :type => 'password', :placeholder => 'Password' }
+  .modal-footer
+    %a.btn{ :href => '#', "data-dismiss" => 'modal' } Close
+    %a.btn.btn-primary{ :href => '#', :onclick => "$('#twitter-modal').modal('hide')" } Sign in
+.modal.hide#facebook-modal
+  .modal-header
+    %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
+    %h3
+      = image_tag 'facebook.png', :style => 'margin-right:5px'
+      Share on Facebook
+  .modal-body
+    %input{ :type => 'text', :placeholder => 'Email address' }
+    %br/
+    %input{ :type => 'password', :placeholder => 'Password' }
+  .modal-footer
+    %a.btn{ :href => '#', "data-dismiss" => 'modal' } Close
+    %a.btn.btn-primary{ :href => '#', :onclick => "$('#facebook-modal').modal('hide')" } Sign in
+.modal.hide#google-plus-modal
+  .modal-header
+    %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
+    %h3
+      = image_tag 'google-plus.png', :style => 'margin-right:5px'
+      Share on Google+
+  .modal-body
+    %input{ :type => 'text', :placeholder => 'Email address' }
+    %br/
+    %input{ :type => 'password', :placeholder => 'Password' }
+  .modal-footer
+    %a.btn{ :href => '#', "data-dismiss" => 'modal' } Close
+    %a.btn.btn-primary{ :href => '#', :onclick => "$('#google-plus-modal').modal('hide')" } Sign in
+
+        

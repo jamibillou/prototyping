@@ -99,13 +99,20 @@
     %br/
     %br/
     %br/
-    %form{ :action => candidate_profile_others_path, :method => 'POST' }
+    %br/
+    %br/
+    %input#email_input{ :type => 'text', :placeholder => 'Email address', :style => 'margin-left:10px' }
+    %a.btn.btn-mini.btn-primary{ :href => '#', :onclick => "insertEmails('email_input','email_display')", :style => 'margin: -8px 0 0 4px' } ok
+    #email_display.info{ :style => 'margin: 0 0 10px 10px' }
+   
+    %form{ :action => candidate_profile_you_email_path, :method => 'POST' }
       %h2{ :style => 'text-align:right' }
-        %textarea#candidate_catchphrase.lead{ :placeholder => @default_message, :rows => 4, :style => 'width:450px;', :name => '[sharer][message]' }
+        %textarea#candidate_catchphrase.lead{ :placeholder => @default_message, :rows => 4, :style => 'width:450px;', :name => '[you][message]' }
+          = session[:you][:message] unless session[:you].nil?
       .pull-right
         .btn.btn-large.btn-danger.disabled Not interested
         &nbsp;
-        .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Get in touch!
+        .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Let's talk!
       %br/
       %br/
       %br/
@@ -117,78 +124,11 @@
       %br/
       %br/
       %br/
-      %br/
-      .pull-right
-        = link_to image_tag('linkedin.png'), '#linkedin-modal', "data-toggle" => 'modal', :onclick => "toggleService('linkedin')", :title => 'Share on LinkedIn', :id => 'linkedin'
-        &nbsp;
-        = link_to image_tag('twitter.png'), '#twitter-modal', "data-toggle" => 'modal', :onclick => "toggleService('twitter')", :title => 'Share on Twitter', :id => 'twitter'
-        &nbsp;
-        = link_to image_tag('facebook.png'), '#facebook-modal', "data-toggle" => 'modal', :onclick => "toggleService('facebook')", :title => 'Share on Facebook', :id => 'facebook'
-        &nbsp;
-        = link_to image_tag('google-plus.png'), '#google-plus-modal', "data-toggle" => 'modal', :onclick => "toggleService('google-plus')", :title => 'Share on Google+', :id => 'google-plus'
-      %br/
-      %br/
-      %br/
-      %br/
-      %a.btn.btn-gigantic.btn-primary.pull-right{ :href => candidate_profile_path(:success => "Your profile was successfully shared on your social networks."), :style => 'margin-right:0'  }
+      %a.btn.btn-gigantic.btn-primary.pull-right{ :href => candidate_profile_path(:success => "This profile was successfully shared by email."), :style => 'margin-right:0'  }
         .icon-share
         Share
       %button.btn.btn-gigantic.pull-right{ :type => 'submit' }
         .icon-eye-open
         Preview
     
-
-.modal.hide#linkedin-modal
-  .modal-header
-    %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
-    %h3
-      = image_tag 'linkedin.png', :style => 'margin-right:5px'
-      Share on LinkedIn
-  .modal-body
-    %input{ :type => 'text', :placeholder => 'Email address' }
-    %br/
-    %input{ :type => 'password', :placeholder => 'Password' }
-  .modal-footer
-    %a.btn{ :href => '#', "data-dismiss" => 'modal' } Close
-    %a.btn.btn-primary{ :href => '#', :onclick => "$('#linkedin-modal').modal('hide')" } Sign in
-.modal.hide#twitter-modal
-  .modal-header
-    %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
-    %h3
-      = image_tag 'twitter.png', :style => 'margin-right:5px'
-      Share on Twitter
-  .modal-body
-    %input{ :type => 'text', :placeholder => 'Email address' }
-    %br/
-    %input{ :type => 'password', :placeholder => 'Password' }
-  .modal-footer
-    %a.btn{ :href => '#', "data-dismiss" => 'modal' } Close
-    %a.btn.btn-primary{ :href => '#', :onclick => "$('#twitter-modal').modal('hide')" } Sign in
-.modal.hide#facebook-modal
-  .modal-header
-    %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
-    %h3
-      = image_tag 'facebook.png', :style => 'margin-right:5px'
-      Share on Facebook
-  .modal-body
-    %input{ :type => 'text', :placeholder => 'Email address' }
-    %br/
-    %input{ :type => 'password', :placeholder => 'Password' }
-  .modal-footer
-    %a.btn{ :href => '#', "data-dismiss" => 'modal' } Close
-    %a.btn.btn-primary{ :href => '#', :onclick => "$('#facebook-modal').modal('hide')" } Sign in
-.modal.hide#google-plus-modal
-  .modal-header
-    %button.close{ :type => 'button', "data-dismiss" => 'modal' } ×
-    %h3
-      = image_tag 'google-plus.png', :style => 'margin-right:5px'
-      Share on Google+
-  .modal-body
-    %input{ :type => 'text', :placeholder => 'Email address' }
-    %br/
-    %input{ :type => 'password', :placeholder => 'Password' }
-  .modal-footer
-    %a.btn{ :href => '#', "data-dismiss" => 'modal' } Close
-    %a.btn.btn-primary{ :href => '#', :onclick => "$('#google-plus-modal').modal('hide')" } Sign in
-
         

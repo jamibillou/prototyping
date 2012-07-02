@@ -2,23 +2,44 @@ class ShareableController < ApplicationController
   
   before_filter       :set_titles
   before_filter       :candidate_signup,          :only => :candidate_profile
-  skip_before_filter  :verify_authenticity_token, :only => [:candidate_profile, :candidate_profile_public, :candidate_profile_others]
+  skip_before_filter  :verify_authenticity_token
   
   def candidate_profile
     flash.now[:success] = params[:success] unless params[:success].nil?
   end
   
-  def candidate_profile_email_share
+  def candidate_profile_email_share_you
+    @default_message = "Hi, I'm really keen to work for your company and would love to go over a few ideas together soon."
+  end
+  
+  def candidate_profile_social_share_you
+    @default_message = "Hi everyone, I'm looking for work these days and was wondering if you might know of someone interested? Share my profile if so!"
+  end
+  
+  def candidate_profile_you_email
+    @default_message = "Hi, I'm really keen to work for your company and would love to go over a few ideas together soon."
+    session[:sharer] = params[:sharer] unless params[:sharer].nil?
+    @from_path = (params[:from_path].nil? ? candidate_profile_path : params[:from_path])
+  end
+  
+  def candidate_profile_you_social
+    @default_message = "Hi everyone, I'm looking for work these days and was wondering if you might know of someone interested? Share my profile if so!"
+    session[:sharer] = params[:sharer] unless params[:sharer].nil?
+    @from_path = (params[:from_path].nil? ? candidate_profile_path : params[:from_path])
+  end
+  
+  def candidate_profile_email_share_others
     @default_message = "Hi, I was looking at this profile and thought you might be interested. What do you think?"
   end
   
-  def candidate_profile_social_share
+  def candidate_profile_social_share_others
     @default_message = "Hi, I was looking at this profile and thought you might be interested. What do you think?"
   end
   
   def candidate_profile_others
-    default_messagge = "Hi, I was looking at this profile and thought you might be interested. What do you think?"
-    @message = (params[:sharer].nil? || params[:sharer][:message].empty?) ? default_messagge : params[:sharer][:message]
+    @default_message = "Hi, I was looking at this profile and thought you might be interested. What do you think?"
+    session[:sharer] = params[:sharer] unless params[:sharer].nil?
+    @from_path = (params[:from_path].nil? ? candidate_profile_path : params[:from_path])
   end
   
   private
