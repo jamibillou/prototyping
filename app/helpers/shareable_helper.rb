@@ -1,6 +1,10 @@
 module ShareableHelper
-
-  def candidate_signed? 
-    !session[:candidate].nil?
-  end	
+  
+  def candidate_demo?
+    session[:candidate_demo] == true
+  end
+  
+  def recruiter_demo?
+    session[:recruiter_demo] == true
+  end
 end

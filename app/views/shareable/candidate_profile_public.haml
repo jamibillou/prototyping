@@ -22,11 +22,12 @@
                 = link_to 'Twitter', '#'
               %li
                 = link_to 'Tumblr', '#'
-  .span6
-    .row
-      %a.btn.btn-primary.pull-right{ :href => candidate_profile_path, :style => 'margin:0' }
-        .icon-eye-close
-        Close preview
+  - if candidate_demo?
+    .span6
+      .row
+        %a.btn.btn-primary.pull-right{ :href => candidate_profile_path, :style => 'margin:0' }
+          .icon-eye-close
+          Close preview
 
 .row
   .span5
@@ -129,7 +130,7 @@
     %br/
     .pull-right
       .btn-group{ :style => 'display:inline-block' }
-        %a.btn.btn-gigantic.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'padding-left: 15px; margin-bottom: -24px'  }
+        %a.btn.btn-gigantic.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'padding-left: 15px; margin-bottom: -24px', :class => "#{'disabled' if candidate_demo?}"  }
           %i.icon-share
           Share
           %span.caret
@@ -138,7 +139,7 @@
             = link_to 'Email', candidate_profile_email_share_others_path
           %li
             = link_to 'Social networks', candidate_profile_social_share_others_path
-      %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path, :style => 'margin-right:-5px' } Let's talk!
+      %a.btn.btn-gigantic.btn-success{ :href => (candidate_demo? ? '#' : recruiter_starts_discussion_path), :style => 'margin-right:-5px', :class => "#{'disabled' if candidate_demo?}" } Let's talk!
       %br/
       %br/  
       

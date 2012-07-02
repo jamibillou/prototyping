@@ -22,11 +22,12 @@
                 = link_to 'Twitter', '#'
               %li
                 = link_to 'Tumblr', '#'
-  .span2.offset4
-    .row
-      %a.btn.btn-primary.pull-right{ :href => candidate_profile_path }
-        .icon-eye-close
-        Close preview
+  - if candidate_demo?
+    .span2.offset4
+      .row
+        %a.btn.btn-primary.pull-right{ :href => candidate_profile_path }
+          .icon-eye-close
+          Close preview
 
 .row
   .span5
@@ -135,8 +136,8 @@
         %br/
         %br/
         .pull-right
-          %a.btn.btn-gigantic.btn-danger{ :href => recruiter_isnt_interested_path } Not interested
-          %a.btn.btn-gigantic.btn-success{ :href => recruiter_starts_discussion_path, :style => 'margin-right:0' } Get in touch!
+          %a.btn.btn-gigantic.btn-danger{ :href => (candidate_demo? ? '#': recruiter_isnt_interested_path), :class => "#{'disabled' if candidate_demo?}" } Not interested
+          %a.btn.btn-gigantic.btn-success{ :href => (candidate_demo? ? '#': recruiter_starts_discussion_path), :style => 'margin-right:0', :class => "#{'disabled' if candidate_demo?}" } Get in touch!
           
         %br/
         %br/
@@ -155,7 +156,7 @@
         .pull-right
           %p{ :style => 'margin-right: 5px; font-size:14px; display:inline-block' } you can also
           .btn-group{ :style => 'display:inline-block' }
-            %a.btn.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-bottom: -10px'  }
+            %a.btn.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-bottom: -10px', :class => "#{'disabled' if candidate_demo?}" }
               %i.icon-share
               Share this profile
               %span.caret
