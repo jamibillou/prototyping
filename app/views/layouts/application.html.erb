@@ -30,7 +30,7 @@
                   <%= link_to 'Profile', candidate_profile_path %>
                 </li>
                 </li>
-                <li <%= "class='active'" unless request.fullpath.include?('candidate_profile') %>>
+                <li <%= "class='active'" unless request.fullpath.include?('candidate_profile') || request.fullpath.include?('signup') %>>
                   <%= link_to 'Interactions', candidate_conversations_path %>
                 </li>
               <% else %>
