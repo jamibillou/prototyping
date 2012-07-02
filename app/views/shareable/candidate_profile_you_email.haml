@@ -53,22 +53,16 @@
             .row
               .span3
                 = session[:candidate][:pro_skill_1][:name]
-                - if session[:candidate][:pro_star] == 'candidate_pro_skill_star_1'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:pro_skill_1][:level]
             .row
               .span3
                 = session[:candidate][:pro_skill_2][:name]
-                - if session[:candidate][:pro_star] == 'candidate_pro_skill_star_2'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:pro_skill_2][:level]
             .row
               .span3
                 = session[:candidate][:pro_skill_3][:name]
-                - if session[:candidate][:pro_star] == 'candidate_pro_skill_star_3'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:pro_skill_3][:level]
       .row
@@ -79,26 +73,29 @@
             .row
               .span3
                 = session[:candidate][:inter_skill_1][:name]
-                - if session[:candidate][:inter_star] == 'candidate_inter_skill_star_1'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_1][:level]
             .row
               .span3
                 = session[:candidate][:inter_skill_2][:name]
-                - if session[:candidate][:inter_star] == 'candidate_inter_skill_star_2'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_2][:level]
             .row
               .span3
                 = session[:candidate][:inter_skill_3][:name]
-                - if session[:candidate][:inter_star] == 'candidate_inter_skill_star_3'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
+      .row
+        .span4
+          %a.btn.btn-gigantic.btn-primary{ :href => candidate_profile_email_share_you_path, :style => 'margin: 25px 0 0 -25px' }
+            .icon-eye-close
+            Close preview
   
   .span5.offset1
+  
+    %br/
+    %br/
+    %br/
     %br/   
     %br/
     %br/
@@ -110,20 +107,17 @@
     %br/
     %br/
     %br/
+
+    %h2{ :style => 'text-align:right' }
+      .i.icon-comment
+      &nbsp;
+      Hi, I'm really keen to work for your company and would love to go over a few ideas together soon.
     %br/
     %br/
-    %br/
-    %input#email_input{ :type => 'text', :placeholder => 'Email address', :style => 'margin-left:10px' }
-    %a.btn.btn-mini.btn-primary{ :href => '#', :onclick => "insertEmails('email_input','email_display')", :style => 'margin: -8px 0 0 4px' } ok
-    #email_display.info{ :style => 'margin: 0 0 10px 10px' }
-   
-    %form{ :action => candidate_profile_others_path, :method => 'POST' }
-      %h2{ :style => 'text-align:right' }
-        %textarea#candidate_catchphrase.lead{ :placeholder => @default_message, :rows => 4, :style => 'width:450px;', :name => '[sharer][message]' }
-      .pull-right
-        .btn.btn-large.btn-danger.disabled Not interested
-        &nbsp;
-        .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Get in touch!
+    .pull-right
+      %a.btn.btn-gigantic.btn-danger{ :href => recruiter_says_no_path } Not interested
+      %a.btn.btn-gigantic.btn-success{ :href => recruiter_says_yes_path, :style => 'margin-right:0' } Let's talk!
+      
       %br/
       %br/
       %br/
@@ -135,11 +129,19 @@
       %br/
       %br/
       %br/
-      %a.btn.btn-gigantic.btn-primary.pull-right{ :href => candidate_profile_path(:success => "Your profile was successfully shared by email."), :style => 'margin-right:0'  }
-        .icon-share
-        Share
-      %button.btn.btn-gigantic.pull-right{ :type => 'submit' }
-        .icon-eye-open
-        Preview
+      %br/
+      %br/
+      
+    .pull-right
+      %p{ :style => 'margin-right: 5px; font-size:14px; display:inline-block' } you can also
+      .btn-group{ :style => 'display:inline-block' }
+        %a.btn.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-bottom: -10px'  }
+          %i.icon-share
+          Share my profile
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            = link_to 'Email', candidate_profile_email_share_others_path
+          %li
+            = link_to 'Social networks', candidate_profile_social_share_others_path
     
-        

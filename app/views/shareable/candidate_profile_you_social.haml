@@ -53,22 +53,16 @@
             .row
               .span3
                 = session[:candidate][:pro_skill_1][:name]
-                - if session[:candidate][:pro_star] == 'candidate_pro_skill_star_1'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:pro_skill_1][:level]
             .row
               .span3
                 = session[:candidate][:pro_skill_2][:name]
-                - if session[:candidate][:pro_star] == 'candidate_pro_skill_star_2'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:pro_skill_2][:level]
             .row
               .span3
                 = session[:candidate][:pro_skill_3][:name]
-                - if session[:candidate][:pro_star] == 'candidate_pro_skill_star_3'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:pro_skill_3][:level]
       .row
@@ -79,27 +73,27 @@
             .row
               .span3
                 = session[:candidate][:inter_skill_1][:name]
-                - if session[:candidate][:inter_star] == 'candidate_inter_skill_star_1'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_1][:level]
             .row
               .span3
                 = session[:candidate][:inter_skill_2][:name]
-                - if session[:candidate][:inter_star] == 'candidate_inter_skill_star_2'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_2][:level]
             .row
               .span3
                 = session[:candidate][:inter_skill_3][:name]
-                - if session[:candidate][:inter_star] == 'candidate_inter_skill_star_3'
-                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
+      .row
+        .span4
+          %a.btn.btn-gigantic.btn-primary{ :href => candidate_profile_social_share_you_path, :style => 'margin: 25px 0 0 -25px' }
+            .icon-eye-close
+            Close preview
   
   .span5.offset1
-
+  
+    %br/
     %br/
     %br/
     %br/   
@@ -113,41 +107,41 @@
     %br/
     %br/
     %br/
-    %br/
-  
+
     %h2{ :style => 'text-align:right' }
       .i.icon-comment
       &nbsp;
-      = session[:candidate][:catchphrase]
+      Hi, I'm really keen to work for your company and would love to go over a few ideas together soon.
     %br/
     %br/
-    .btn-group.pull-right{ :style => 'display:inline-block' }
-      %a.btn.btn-gigantic.btn-primary.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-right: 0; padding-left: 15px'  }
-        %i.icon-share
-        Share
-        %span.caret
-      %ul.dropdown-menu
-        %li
-          = link_to 'Email', candidate_profile_email_share_you_path
-        %li
-          = link_to 'Social networks', candidate_profile_social_share_you_path  
-
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-        
+    .pull-right
+      %a.btn.btn-gigantic.btn-danger{ :href => recruiter_says_no_path } Not interested
+      %a.btn.btn-gigantic.btn-success{ :href => recruiter_says_yes_path, :style => 'margin-right:0' } Let's talk!
+      
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      
     .pull-right
       %p{ :style => 'margin-right: 5px; font-size:14px; display:inline-block' } you can also
-      %a.btn{ :href => candidate_profile_public_path }
-        .icon-eye-open
-        Preview public profile
+      .btn-group{ :style => 'display:inline-block' }
+        %a.btn.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-bottom: -10px'  }
+          %i.icon-share
+          Share my profile
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            = link_to 'Email', candidate_profile_email_share_others_path
+          %li
+            = link_to 'Social networks', candidate_profile_social_share_others_path
+    

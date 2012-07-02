@@ -99,9 +99,6 @@
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
   
   .span5.offset1
-
-    %br/
-    %br/
     %br/   
     %br/
     %br/
@@ -114,40 +111,37 @@
     %br/
     %br/
     %br/
-  
-    %h2{ :style => 'text-align:right' }
-      .i.icon-comment
-      &nbsp;
-      = session[:candidate][:catchphrase]
     %br/
     %br/
-    .btn-group.pull-right{ :style => 'display:inline-block' }
-      %a.btn.btn-gigantic.btn-primary.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-right: 0; padding-left: 15px'  }
-        %i.icon-share
+    %input#email_input{ :type => 'text', :placeholder => 'Email address', :style => 'margin-left:10px' }
+    %a.btn.btn-mini.btn-primary{ :href => '#', :onclick => "insertEmails('email_input','email_display')", :style => 'margin: -8px 0 0 4px' } ok
+    #email_display.info{ :style => 'margin: 0 0 10px 10px' }
+   
+    %form{ :action => candidate_profile_others_path, :method => 'POST' }
+      = hidden_field_tag :from_path, candidate_profile_email_share_others_path
+      %h2{ :style => 'text-align:right' }
+        %textarea#candidate_catchphrase.lead{ :placeholder => @default_message, :rows => 4, :style => 'width:450px;', :name => '[sharer][message]' }
+          = session[:sharer][:message] unless session[:sharer].nil?
+      .pull-right
+        .btn.btn-large.btn-danger.disabled Not interested
+        &nbsp;
+        .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Get in touch!
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      %a.btn.btn-gigantic.btn-primary.pull-right{ :href => candidate_profile_path(:success => "This profile was successfully shared by email."), :style => 'margin-right:0'  }
+        .icon-share
         Share
-        %span.caret
-      %ul.dropdown-menu
-        %li
-          = link_to 'Email', candidate_profile_email_share_you_path
-        %li
-          = link_to 'Social networks', candidate_profile_social_share_you_path  
-
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-        
-    .pull-right
-      %p{ :style => 'margin-right: 5px; font-size:14px; display:inline-block' } you can also
-      %a.btn{ :href => candidate_profile_public_path }
+      %button.btn.btn-gigantic.pull-right{ :type => 'submit' }
         .icon-eye-open
-        Preview public profile
+        Preview
+    
+        

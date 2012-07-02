@@ -112,8 +112,10 @@
     %br/
     %br/
     %form{ :action => candidate_profile_others_path, :method => 'POST' }
+      = hidden_field_tag :from_path, candidate_profile_social_share_others_path
       %h2{ :style => 'text-align:right' }
         %textarea#candidate_catchphrase.lead{ :placeholder => @default_message, :rows => 4, :style => 'width:450px;', :name => '[sharer][message]' }
+          = session[:sharer][:message] unless session[:sharer].nil?
       .pull-right
         .btn.btn-large.btn-danger.disabled Not interested
         &nbsp;
@@ -142,7 +144,7 @@
       %br/
       %br/
       %br/
-      %a.btn.btn-gigantic.btn-primary.pull-right{ :href => candidate_profile_path(:success => "Your profile was successfully shared on your social networks."), :style => 'margin-right:0'  }
+      %a.btn.btn-gigantic.btn-primary.pull-right{ :href => candidate_profile_path(:success => "This profile was successfully shared on your social networks."), :style => 'margin-right:0'  }
         .icon-share
         Share
       %button.btn.btn-gigantic.pull-right{ :type => 'submit' }
