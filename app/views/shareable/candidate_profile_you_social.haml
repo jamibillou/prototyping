@@ -111,7 +111,7 @@
     %h2{ :style => 'text-align:right' }
       .i.icon-comment
       &nbsp;
-      Hi, I'm really keen to work for your company and would love to go over a few ideas together soon.
+      = (session[:you].nil? || session[:you][:message].blank?) ? @default_message : session[:you][:message]
     %br/
     %br/
     .pull-right

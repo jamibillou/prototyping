@@ -18,14 +18,12 @@ class ShareableController < ApplicationController
   
   def candidate_profile_you_email
     @default_message = "Hi, I'm really keen to work for your company and would love to go over a few ideas together soon."
-    session[:sharer] = params[:sharer] unless params[:sharer].nil?
-    @from_path = (params[:from_path].nil? ? candidate_profile_path : params[:from_path])
+    session[:you] = params[:you] unless params[:you].nil?
   end
   
   def candidate_profile_you_social
     @default_message = "Hi everyone, I'm looking for work these days and was wondering if you might know of someone interested? Share my profile if so!"
-    session[:sharer] = params[:sharer] unless params[:sharer].nil?
-    @from_path = (params[:from_path].nil? ? candidate_profile_path : params[:from_path])
+    session[:you] = params[:you] unless params[:you].nil?
   end
   
   def candidate_profile_email_share_others
