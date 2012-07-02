@@ -83,14 +83,6 @@
     do (div_id) ->
       $(div_id).show()
 
-@starred = (id,way) ->
-  if way is 'star'
-    $('#'+id).addClass('icon-star').removeClass('icon-star-empty')
-    $('#'+id).click -> starred(id,'unstar')
-  else
-    $('#'+id).addClass('icon-star-empty').removeClass('icon-star')
-    $('#'+id).click -> starred(id,'star')
-
 @import_data = (type) ->
   $('#'+type+'_full_name').val('Stefan Foutain')
   $('#'+type+'_city').val('Amsterdam')
@@ -106,13 +98,14 @@
   $('#'+type+'_pro_skill_level_1').val('intermediate')
   $('#'+type+'_pro_skill_level_2').val('expert')
   $('#'+type+'_pro_skill_level_3').val('expert')
+  toggleStar('candidate_pro_skill_star_3','pro')
   $('#'+type+'_inter_skill_1').val('Drive')
   $('#'+type+'_inter_skill_2').val('Optimism')
   $('#'+type+'_inter_skill_3').val('Ice breaker')
   $('#'+type+'_inter_skill_level_1').val('advanced')
   $('#'+type+'_inter_skill_level_2').val('expert')
   $('#'+type+'_inter_skill_level_3').val('beginner')
-  starred(type+'_pro_skill_star_2','star')
+  toggleStar('candidate_inter_skill_star_2','inter')
   
 @toggleService = (service) ->
   unless $('#'+service+' img').attr('src') is 'assets/'+service+'2.png'
@@ -120,6 +113,17 @@
   else
     $('#'+service+' img').attr('src', 'assets/'+service+'.png')
     $('#'+service).attr('href', '')
+
+@toggleStar = (id,type) =>
+  for i in [1,2,3]
+    unless 'candidate_'+type+'_skill_star_'+i is id
+      $('#candidate_'+type+'_skill_star_'+i).addClass('icon-star-empty').removeClass('icon-star')
+  if $('#'+id).attr('class') is 'icon-star-empty star' or $('#'+id).attr('class') is 'star icon-star-empty'
+    $('#'+id).addClass('icon-star').removeClass('icon-star-empty')
+    $('#'+type+'_star').val(id)
+  else
+    $('#'+id).addClass('icon-star-empty').removeClass('icon-star')
+    $('#'+type+'_star').val('')
 
 @insertEmails = (input_id, insert_id) ->
   if $('#'+input_id).val() isnt ''

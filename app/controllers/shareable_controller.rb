@@ -64,10 +64,12 @@ class ShareableController < ApplicationController
                :education => 'HBO Bachelor in Communication & Media', 
                :pro_skill_1 => { :name => 'External communication', :level => 'advanced'},
                :pro_skill_2 => { :name => 'Event planning', :level => 'advanced'},
-               :pro_skill_3 => { :name => 'Writing', :level => 'intermediate'},
+               :pro_skill_3 => { :name => 'Writing', :level => 'intermediate',},
+               :pro_star => 'candidate_pro_skill_star_2',
                :inter_skill_1 => { :name => 'Good team mate', :level => 'expert'},
                :inter_skill_2 => { :name => 'Attention to details', :level => 'intermediate'},
                :inter_skill_3 => { :name => 'Organization', :level => 'intermediate'},
+               :inter_star => 'candidate_inter_skill_star_1',
                :catchphrase => "Communications isn't what a company says, it's everything else it does." }
     end
 end
