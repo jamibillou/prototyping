@@ -5,3 +5,4 @@
 $ ->
   $('#candidate_catchphrase').focus()
   $('#email_input').focus()
+  $('#email_input').focusout -> insertEmails('email_input','email_display')
