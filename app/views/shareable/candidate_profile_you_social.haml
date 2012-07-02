@@ -62,16 +62,22 @@
             .row
               .span3
                 = session[:candidate][:pro_skill_1][:name]
+                - if session[:candidate][:pro_star] == 'candidate_pro_skill_star_1'
+                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:pro_skill_1][:level]
             .row
               .span3
                 = session[:candidate][:pro_skill_2][:name]
+                - if session[:candidate][:pro_star] == 'candidate_pro_skill_star_2'
+                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:pro_skill_2][:level]
             .row
               .span3
                 = session[:candidate][:pro_skill_3][:name]
+                - if session[:candidate][:pro_star] == 'candidate_pro_skill_star_3'
+                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:pro_skill_3][:level]
       .row
@@ -82,16 +88,22 @@
             .row
               .span3
                 = session[:candidate][:inter_skill_1][:name]
+                - if session[:candidate][:inter_star] == 'candidate_inter_skill_star_1'
+                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_1][:level]
             .row
               .span3
                 = session[:candidate][:inter_skill_2][:name]
+                - if session[:candidate][:inter_star] == 'candidate_inter_skill_star_2'
+                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_2][:level]
             .row
               .span3
                 = session[:candidate][:inter_skill_3][:name]
+                - if session[:candidate][:inter_star] == 'candidate_inter_skill_star_3'
+                  .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
   
