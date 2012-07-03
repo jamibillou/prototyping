@@ -26,6 +26,7 @@ BootstrapPrototyping::Application.routes.draw do
   match 'candidate_isnt_interested'             => 'shareable#candidate_isnt_interested'
   match 'candidate_says_yes'                    => 'shareable#candidate_says_yes'
   match 'candidate_says_no'                     => 'shareable#candidate_says_no'
+  match 'recruiter_signup'                      => 'shareable#recruiter_signup'
   match 'recruiter_profile'                     => 'shareable#recruiter_profile'
   match 'recruiter_says_yes'                    => 'shareable#recruiter_says_yes'
   match 'recruiter_says_no'                     => 'shareable#recruiter_says_no'

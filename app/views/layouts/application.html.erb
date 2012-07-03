@@ -70,7 +70,7 @@
                     <%= link_to 'candidate', (session[:candidate].nil? || request.fullpath == root_path ? candidate_signup_path : candidate_profile_path) %>
                   </li>
                   <li>
-                    <%= link_to 'recruiter', recruiter_profile_path %>
+                    <%= link_to 'recruiter', (session[:recruiter].nil? || request.fullpath == root_path ? recruiter_signup_path : recruiter_profile_path) %>
                   </li>
                 </ul>
               </li>
