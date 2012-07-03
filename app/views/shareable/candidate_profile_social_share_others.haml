@@ -95,55 +95,61 @@
           %a.google-plus-profile{ :href => '#' }
   
   .span5.offset1
+    .row
+      .span5
+        %a.btn.pull-right{ :href => '#', :onclick => "clickButton('preview')", :style => 'margin:0' }
+          .icon-eye-open
+          Preview
+    
     %br/   
     %br/
     %br/
     %br/
     %br/
-    %br/       
     %br/
     %br/
     %br/
     %br/
-    %form{ :action => candidate_profile_others_path, :method => 'POST' }
-      = hidden_field_tag :from_path, candidate_profile_social_share_others_path
-      %h2{ :style => 'text-align:right' }
-        %textarea#candidate_catchphrase.lead{ :placeholder => @default_message, :rows => 4, :style => 'width:450px;', :name => '[sharer][message]' }
-          = session[:sharer][:message] unless session[:sharer].nil?
-      .pull-right
-        .btn.btn-large.btn-danger.disabled Not interested
-        &nbsp;
-        .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Get in touch!
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      %br/
-      .pull-right
-        = link_to image_tag('linkedin.png'), '#linkedin-modal', "data-toggle" => 'modal', :onclick => "toggleService('linkedin')", :title => 'Share on LinkedIn', :id => 'linkedin'
-        &nbsp;
-        = link_to image_tag('twitter.png'), '#twitter-modal', "data-toggle" => 'modal', :onclick => "toggleService('twitter')", :title => 'Share on Twitter', :id => 'twitter'
-        &nbsp;
-        = link_to image_tag('facebook.png'), '#facebook-modal', "data-toggle" => 'modal', :onclick => "toggleService('facebook')", :title => 'Share on Facebook', :id => 'facebook'
-        &nbsp;
-        = link_to image_tag('google-plus.png'), '#google-plus-modal', "data-toggle" => 'modal', :onclick => "toggleService('google-plus')", :title => 'Share on Google+', :id => 'google-plus'
-      %br/
-      %br/
-      %br/
-      %br/
-      %a.btn.btn-gigantic.btn-primary.pull-right{ :href => candidate_profile_path(:success => "#{session[:candidate][:full_name]}'s profile was successfully shared on your social networks."), :style => 'margin-right:0'  }
-        .icon-share
-        Share
-      %button.btn.btn-gigantic.pull-right{ :type => 'submit' }
-        .icon-eye-open
-        Preview
     
+    .row
+      .span5
+        %form{ :action => candidate_profile_others_path, :method => 'POST' }
+          = hidden_field_tag :from_path, candidate_profile_social_share_others_path
+          %h2{ :style => 'text-align:right' }
+            %textarea#candidate_catchphrase.lead{ :placeholder => @default_message, :rows => 4, :style => 'width:450px;', :name => '[sharer][message]' }
+              = session[:sharer][:message] unless session[:sharer].nil?
+          .pull-right
+            .btn.btn-large.btn-danger.disabled Not interested
+            &nbsp;
+            .btn.btn-large.btn-success.disabled{ :style => 'margin-right:0' } Get in touch!
+          %br/
+          %br/
+          %br/
+          %br/
+          %br/
+          %br/
+          %br/
+          %br/
+          %br/
+          %br/
+          .pull-right
+            = link_to image_tag('linkedin.png'), '#linkedin-modal', "data-toggle" => 'modal', :onclick => "toggleService('linkedin')", :title => 'Share on LinkedIn', :id => 'linkedin'
+            &nbsp;
+            = link_to image_tag('twitter.png'), '#twitter-modal', "data-toggle" => 'modal', :onclick => "toggleService('twitter')", :title => 'Share on Twitter', :id => 'twitter'
+            &nbsp;
+            = link_to image_tag('facebook.png'), '#facebook-modal', "data-toggle" => 'modal', :onclick => "toggleService('facebook')", :title => 'Share on Facebook', :id => 'facebook'
+            &nbsp;
+            = link_to image_tag('google-plus.png'), '#google-plus-modal', "data-toggle" => 'modal', :onclick => "toggleService('google-plus')", :title => 'Share on Google+', :id => 'google-plus'
+          %br/
+          %br/
+          %br/
+          %br/
+          %a.btn.btn-gigantic.btn-primary.pull-right{ :href => candidate_profile_path(:success => "#{session[:candidate][:full_name]}'s profile was successfully shared on your social networks."), :style => 'margin-right:0'  }
+            .icon-share
+            Share
+          %button.btn.btn-gigantic.pull-right.hidden#preview{ :type => 'submit' }
+            .icon-eye-open
+            Preview
 
 .modal.hide#linkedin-modal
   .modal-header

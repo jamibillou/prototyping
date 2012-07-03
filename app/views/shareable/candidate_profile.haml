@@ -95,7 +95,11 @@
           %a.google-plus-profile{ :href => '#' }
   
   .span5.offset1
-
+    .row
+      %a.btn.pull-right{ :href => candidate_profile_public_path, :style => 'margin:0' }
+        .icon-eye-open
+        Preview
+        
     %br/
     %br/
     %br/   
@@ -108,40 +112,21 @@
     %br/
     %br/
     %br/
-  
-    %h2{ :style => 'text-align:right' }
-      .i.icon-comment
-      &nbsp;
-      = session[:candidate][:catchphrase]
-    %br/
-    %br/
-    .btn-group.pull-right{ :style => 'display:inline-block' }
-      %a.btn.btn-gigantic.btn-primary.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-right: 0; padding-left: 15px'  }
-        %i.icon-share
-        Share
-        %span.caret
-      %ul.dropdown-menu
-        %li
-          = link_to 'Email', candidate_profile_email_share_you_path
-        %li
-          = link_to 'Social networks', candidate_profile_social_share_you_path  
-
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
-        
-    .pull-right
-      %p{ :style => 'margin-right: 5px; font-size:14px; display:inline-block' } you can also
-      %a.btn{ :href => candidate_profile_public_path }
-        .icon-eye-open
-        Preview public profile
+    
+    .row
+      %h2{ :style => 'text-align:right' }
+        .i.icon-comment
+        &nbsp;
+        = session[:candidate][:catchphrase]
+      %br/
+      %br/
+      .btn-group.pull-right{ :style => 'display:inline-block' }
+        %a.btn.btn-gigantic.btn-primary.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-right: 0; padding-left: 15px'  }
+          %i.icon-share
+          Share
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            = link_to 'Email', candidate_profile_email_share_you_path
+          %li
+            = link_to 'Social networks', candidate_profile_social_share_you_path

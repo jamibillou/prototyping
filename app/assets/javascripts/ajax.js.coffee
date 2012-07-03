@@ -134,4 +134,7 @@
       else
         $('#'+insert_id).html($('#'+insert_id).html()+' ; '+address) 
     $('#'+input_id).val('')
+
+@clickButton = (id) ->
+  $('#'+id).click()
   

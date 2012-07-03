@@ -113,26 +113,24 @@
     %br/
     %br/
     %br/
-  
-    %h2{ :style => 'text-align:right' }
-      .i.icon-comment
-      &nbsp;
-      = session[:candidate][:catchphrase]
     %br/
-    %br/
-    .pull-right
-      .btn-group{ :style => 'display:inline-block' }
-        %a.btn.btn-gigantic.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'padding-left: 15px; margin-bottom: -24px', :class => "#{'disabled' if candidate_demo?}"  }
-          %i.icon-share
-          Share
-          %span.caret
-        %ul.dropdown-menu
-          %li
-            = link_to 'Email', candidate_profile_email_share_others_path
-          %li
-            = link_to 'Social networks', candidate_profile_social_share_others_path
-      %a.btn.btn-gigantic.btn-success{ :href => (candidate_demo? ? '#' : recruiter_starts_discussion_path), :style => 'margin-right:-5px', :class => "#{'disabled' if candidate_demo?}" } Let's talk!
+    
+    .row
+      %h2{ :style => 'text-align:right' }
+        .i.icon-comment
+        &nbsp;
+        = session[:candidate][:catchphrase]
       %br/
-      %br/  
-      
-            
+      %br/
+      .pull-right
+        .btn-group{ :style => 'display:inline-block' }
+          %a.btn.btn-gigantic.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'padding-left: 15px; margin-bottom: -24px', :class => "#{'disabled' if candidate_demo?}"  }
+            %i.icon-share
+            Share
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              = link_to 'Email', candidate_profile_email_share_others_path
+            %li
+              = link_to 'Social networks', candidate_profile_social_share_others_path
+        %a.btn.btn-gigantic.btn-success{ :href => (candidate_demo? ? '#' : recruiter_starts_discussion_path), :style => 'margin-right:-5px', :class => "#{'disabled' if candidate_demo?}" } Let's talk!
