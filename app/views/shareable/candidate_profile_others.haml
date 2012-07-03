@@ -2,35 +2,6 @@
 
 .row
   .span5
-    .row
-      .card
-        %ul.nav.nav-pills{ :style => 'margin-bottom:10px' }
-          %li
-            %a{ :href => '#' }
-              %i.icon-download
-              Download CV
-              
-          %li.dropdown
-            %a.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#' }
-              %i.icon-globe
-              Elsewhere online
-              %b.caret
-            %ul.dropdown-menu
-              %li
-                = link_to 'LinkedIn', '#'
-              %li
-                = link_to 'Twitter', '#'
-              %li
-                = link_to 'Tumblr', '#'
-  - if candidate_demo?
-    .span2.offset4
-      .row
-        %a.btn.btn-primary.pull-right{ :href => candidate_profile_path }
-          .icon-eye-close
-          Close preview
-
-.row
-  .span5
     .card
       .row
         .span4.well
@@ -107,8 +78,26 @@
                   .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
+      .row
+        .span4{ :style => 'margin: 20px 0 0 0; padding: 10px' }
+          %h6 Elsewhere online
+          %a.linkedin-profile{ :href => '#' }
+          &nbsp;
+          %a.twitter-profile{ :href => '#' }
+          &nbsp;
+          %a.facebook-profile{ :href => '#' }
+          &nbsp;
+          %a.google-plus-profile{ :href => '#' }
       
   .span7
+    - if candidate_demo?
+      .row
+        .span6
+          %a.btn.btn-primary.pull-right{ :href => candidate_profile_path }
+            .icon-eye-close
+            Close preview
+      %br/
+    
     .row
       .span3.offset4
         .row
@@ -120,7 +109,6 @@
     %br/
     %br/
     %br/
-    %br/       
     %br/
     %br/
     %br/
@@ -139,7 +127,6 @@
           %a.btn.btn-gigantic.btn-danger{ :href => (candidate_demo? ? '#': recruiter_isnt_interested_path), :class => "#{'disabled' if candidate_demo?}" } Not interested
           %a.btn.btn-gigantic.btn-success{ :href => (candidate_demo? ? '#': recruiter_starts_discussion_path), :style => 'margin-right:0', :class => "#{'disabled' if candidate_demo?}" } Get in touch!
           
-        %br/
         %br/
         %br/
         %br/

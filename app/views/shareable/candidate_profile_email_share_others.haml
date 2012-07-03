@@ -4,25 +4,6 @@
   .span5
     .card
       .row
-        %ul.nav.nav-pills{ :style => 'margin-bottom:10px' }
-          %li
-            %a{ :href => '#' }
-              %i.icon-download
-              Download CV
-              
-          %li.dropdown
-            %a.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#' }
-              %i.icon-globe
-              Elsewhere online
-              %b.caret
-            %ul.dropdown-menu
-              %li
-                = link_to 'LinkedIn', '#'
-              %li
-                = link_to 'Twitter', '#'
-              %li
-                = link_to 'Tumblr', '#'
-      .row
         .span4.well
           .row
             .span1
@@ -97,6 +78,16 @@
                   .icon-star
               .span1
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
+      .row
+        .span4{ :style => 'margin: 20px 0 0 0; padding: 10px' }
+          %h6 Elsewhere online
+          %a.linkedin-profile{ :href => '#' }
+          &nbsp;
+          %a.twitter-profile{ :href => '#' }
+          &nbsp;
+          %a.facebook-profile{ :href => '#' }
+          &nbsp;
+          %a.google-plus-profile{ :href => '#' }
   
   .span5.offset1
     %br/   
@@ -105,8 +96,6 @@
     %br/
     %br/
     %br/       
-    %br/
-    %br/
     %br/
     %br/
     %br/
