@@ -80,7 +80,12 @@
                 = render 'progress_bar', :level => session[:candidate][:inter_skill_3][:level]
       .row
         .span4{ :style => 'margin: 20px 0 0 0; padding: 10px' }
-          %h6 Elsewhere online
+          %h6 More about #{session[:candidate][:full_name].split.first}
+          .btn.btn-large.pull-left
+            .icon-download
+            Download CV
+          &nbsp;
+          &nbsp;
           %a.linkedin-profile{ :href => '#' }
           &nbsp;
           %a.twitter-profile{ :href => '#' }
