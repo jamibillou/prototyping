@@ -114,10 +114,10 @@
     $('#'+service+' img').attr('src', 'assets/'+service+'.png')
     $('#'+service).attr('href', '')
 
-@toggleStar = (id,type) =>
+@toggleStar = (id,type,profile) =>
   for i in [1,2,3]
-    unless 'candidate_'+type+'_skill_star_'+i is id
-      $('#candidate_'+type+'_skill_star_'+i).addClass('icon-star-empty').removeClass('icon-star')
+    unless profile+'_'+type+'_star_'+i is id
+      $('#'+profile+'_'+type+'_star_'+i).addClass('icon-star-empty').removeClass('icon-star')
   if $('#'+id).attr('class') is 'icon-star-empty star' or $('#'+id).attr('class') is 'star icon-star-empty'
     $('#'+id).addClass('icon-star').removeClass('icon-star-empty')
     $('#'+type+'_star').val(id)

@@ -28,15 +28,15 @@
                 %input#skill_star{ :type => 'hidden', :name => '[recruiter][skill_star]'}
                 .span3
                   %input#recruiter_skill_1{ :type => 'text', :name => '[recruiter][skill_1]', :style => 'font-size:15px' }
-                  .icon-star-empty.star#recruiter_skill_star_1{ :onclick => "toggleRecruiterStar('recruiter_skill_star_1','skill')" }
+                  .icon-star-empty.star#recruiter_skill_star_1{ :onclick => "toggleStar('recruiter_skill_star_1','skill','recruiter')" }
               .row
                 .span3
                   %input#recruiter_skill_2{ :type => 'text', :name => '[recruiter][skill_2]', :style => 'font-size:15px' }
-                  .icon-star-empty.star#recruiter_skill_star_2{ :onclick => "toggleRecruiterStar('recruiter_skill_star_2','skill')" }
+                  .icon-star-empty.star#recruiter_skill_star_2{ :onclick => "toggleStar('recruiter_skill_star_2','skill','recruiter')" }
               .row
                 .span3
                   %input#recruiter_skill_3{ :type => 'text', :name => '[recruiter][skill_3]', :style => 'font-size:15px' }
-                  .icon-star-empty.star#recruiter_skill_star_3{ :onclick => "toggleRecruiterStar('recruiter_skill_star_3','skill')" }
+                  .icon-star-empty.star#recruiter_skill_star_3{ :onclick => "toggleStar('recruiter_skill_star_3','skill','recruiter')" }
               
         .row
           .span4.well{ style: 'padding-bottom:0' }
@@ -47,15 +47,15 @@
                 %input#quality_star{ :type => 'hidden', :name => '[recruiter][inter_star]'}
                 .span3
                   %input#recruiter_quality_1{ :type => 'text', :name => '[recruiter][quality_1]', :style => 'font-size:15px' }
-                  .icon-star-empty.star#recruiter_quality_star_1{ :onclick => "toggleRecruiterStar('recruiter_inter_skill_star_1','quality')" }
+                  .icon-star-empty.star#recruiter_quality_star_1{ :onclick => "toggleStar('recruiter_quality_star_1','quality','recruiter')" }
               .row
                 .span3
                   %input#recruiter_quality_2{ :type => 'text', :name => '[recruiter][quality_2]', :style => 'font-size:15px' }
-                  .icon-star-empty.star#recruiter_quality_star_2{ :onclick => "toggleRecruiterStar('recruiter_inter_skill_star_2','quality')" }
+                  .icon-star-empty.star#recruiter_quality_star_2{ :onclick => "toggleStar('recruiter_quality_star_2','quality','recruiter')" }
               .row
                 .span3
                   %input#recruiter_quality_3{ :type => 'text', :name => '[recruiter][quality_3]', :style => 'font-size:15px' }
-                  .icon-star-empty.star#recruiter_quality_star_3{ :onclick => "toggleRecruiterStar('recruiter_quality_star_3','quality')" }
+                  .icon-star-empty.star#recruiter_quality_star_3{ :onclick => "toggleStar('recruiter_quality_star_3','quality','recruiter')" }
         .row
           .span4.well{ style: 'padding-bottom:0' }
             %h6
@@ -92,13 +92,14 @@
               .span3.well
                 %h6
                   Skills
+                %input#profile_1_star{ :type => 'hidden', :name => '[recruiter][profile_1_star]'}
                 %input{ :type => 'text', :name => '[recruiter][profile_1][skill_1]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_1_star_1{ :onclick => "toggleRecruiterStar('recruiter_profile_1_star_1','profile_1')" }
+                .icon-star-empty.star#recruiter_profile_1_star_1{ :onclick => "toggleStar('recruiter_profile_1_star_1','profile_1','recruiter')" }
                 %input{ :type => 'text', :name => '[recruiter][profile_1][skill_2]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_1_star_2{ :onclick => "toggleRecruiterStar('recruiter_profile_1_star_2','profile_1')" }
+                .icon-star-empty.star#recruiter_profile_1_star_2{ :onclick => "toggleStar('recruiter_profile_1_star_2','profile_1','recruiter')" }
                 %input{ :type => 'text', :name => '[recruiter][profile_1][skill_3]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_1_star_1{ :onclick => "toggleRecruiterStar('recruiter_profile_1_star_1','profile_1')" }
-          .card{:style => 'float:right;'}
+                .icon-star-empty.star#recruiter_profile_1_star_3{ :onclick => "toggleStar('recruiter_profile_1_star_3','profile_1','recruiter')" }
+          .card.hidden#profile_2{:style => 'float:right;'}
             .row
               .span3.well
                 .row
@@ -122,15 +123,18 @@
               .span3.well
                 %h6
                   Skills
+                %input#profile_2_star{ :type => 'hidden', :name => '[recruiter][profile_2_star]'}
                 %input{ :type => 'text', :name => '[recruiter][profile_2][skill_1]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_2_star_1{ :onclick => "toggleRecruiterStar('recruiter_profile_1_star_1','profile_2')" }
+                .icon-star-empty.star#recruiter_profile_2_star_1{ :onclick => "toggleStar('recruiter_profile_2_star_1','profile_2','recruiter')" }
                 %input{ :type => 'text', :name => '[recruiter][profile_2][skill_2]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_2_star_2{ :onclick => "toggleRecruiterStar('recruiter_profile_2_star_2','profile_2')" }                
+                .icon-star-empty.star#recruiter_profile_2_star_2{ :onclick => "toggleStar('recruiter_profile_2_star_2','profile_2','recruiter')" }                
                 %input{ :type => 'text', :name => '[recruiter][profile_2][skill_3]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_2_star_3{ :onclick => "toggleRecruiterStar('recruiter_profile_2_star_3','profile_2')" }                
+                .icon-star-empty.star#recruiter_profile_2_star_3{ :onclick => "toggleStar('recruiter_profile_2_star_3','profile_2','recruiter')" }                
       .row
-        .span4
+        .span5
           .pull-right
+            %input.btn.btn-primary{ :type => 'button', :value => 'Add another profile', :onclick => "$('#profile_2').removeClass('hidden')" }               
+            %strong OR
             %button.btn.btn-gigantic.btn-primary{ :type => 'submit' } Save your profile!
 
 .modal.hide#facebook-modal
