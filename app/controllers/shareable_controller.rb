@@ -1,8 +1,9 @@
 class ShareableController < ApplicationController
   
   before_filter       :set_titles
-  before_filter       :signup_candidate, :only => :candidate_profile
-  after_filter        :candidate_demo,   :only => :candidate_signup
+  before_filter       :signup_candidate,  :only => :candidate_profile
+  after_filter        :candidate_demo,    :only => :candidate_signup
+  after_filter        :recruiter_demo,    :only => :recruiter_profile
   skip_before_filter  :verify_authenticity_token
   
   def candidate_profile
@@ -60,23 +61,44 @@ class ShareableController < ApplicationController
     end
 
     def default_candidate
-      { :pic => 'wansa.jpg', :full_name => 'Wansa Sooksomwat', :city => 'Amsterdam', :country => 'Netherlands', 
-      :role => 'Retail Sales', :company => 'Esprit', :experience => '1', 
-      :education => 'HBO Bachelor in Communication & Media', 
-      :pro_skill_1 => { :name => 'External communication', :level => 'advanced'},
-      :pro_skill_2 => { :name => 'Event planning', :level => 'advanced'},
-      :pro_skill_3 => { :name => 'Writing', :level => 'intermediate',},
-      :pro_star => 'candidate_pro_skill_star_2',
-      :inter_skill_1 => { :name => 'Good team mate', :level => 'expert'},
-      :inter_skill_2 => { :name => 'Attention to details', :level => 'intermediate'},
-      :inter_skill_3 => { :name => 'Organization', :level => 'intermediate'},
-      :inter_star => 'candidate_inter_skill_star_1',
-      :catchphrase => "Communications isn't what a company says, it's everything else it does." }
+      if session[:candidate_demo]
+        { :pic => 'wansa.jpg', :full_name => 'Wansa Sooksomwat', :city => 'Amsterdam', :country => 'Netherlands', 
+        :role => 'Retail Sales', :company => 'Esprit', :experience => '1', 
+        :education => 'HBO Bachelor in Communication & Media', 
+        :pro_skill_1 => { :name => 'External communication', :level => 'advanced'},
+        :pro_skill_2 => { :name => 'Event planning', :level => 'advanced'},
+        :pro_skill_3 => { :name => 'Writing', :level => 'intermediate',},
+        :pro_star => 'candidate_pro_skill_star_2',
+        :inter_skill_1 => { :name => 'Good team mate', :level => 'expert'},
+        :inter_skill_2 => { :name => 'Attention to details', :level => 'intermediate'},
+        :inter_skill_3 => { :name => 'Organization', :level => 'intermediate'},
+        :inter_star => 'candidate_inter_skill_star_1',
+        :catchphrase => "Communications isn't what a company says, it's everything else it does." }
+      elsif session[:recruiter_demo]
+        { :pic => 'carole.jpg', :full_name => 'Carole Dhelens', :city => 'Marseille', :country => 'France', 
+        :role => 'Pharmacist resident', :company => 'Hopital de Marseille', :experience => '2', 
+        :education => 'PhD in Pharmacy', 
+        :pro_skill_1 => { :name => 'Team working', :level => 'advanced'},
+        :pro_skill_2 => { :name => 'Patient pool management', :level => 'beginner'},
+        :pro_skill_3 => { :name => 'Writing', :level => 'expert'},
+        :pro_star => 'candidate_pro_skill_star_3',
+        :inter_skill_1 => { :name => 'Hard worker', :level => 'expert'},
+        :inter_skill_2 => { :name => 'Organization', :level => 'intermediate'},
+        :inter_skill_3 => { :name => 'Patience', :level => 'intermediate'},
+        :inter_star => 'candidate_inter_skill_star_1',
+        :catchphrase => "I've almost finished my complete pharmacist studies, and I'm looking for a first fulltime job." }
+      end
     end
     
     def candidate_demo
       session[:candidate_demo] = true
-      session[:recruiter].destroy unless session[:recruiter].nil?
       session[:recruiter_demo] = false
+      session[:recruiter] = nil unless session[:recruiter].nil?
+    end
+
+    def recruiter_demo
+      session[:candidate_demo] = false
+      session[:recruiter_demo] = true
+      session[:candidate] = default_candidate     
     end
 end

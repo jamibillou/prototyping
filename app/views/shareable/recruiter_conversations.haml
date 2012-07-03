@@ -12,7 +12,7 @@
     
       .row
         .span1.offset1.well
-          = image_tag 'carole.jpg'
+          = link_to image_tag('carole.jpg'), candidate_profile_public_path
         .span1{ :style => 'width: 98px; margin: 40px 37px 0 25px' }
           .lead.success
             .icon-ok
@@ -37,7 +37,7 @@
           .well
             .row
               .span1
-                = image_tag('carole.jpg')
+                = link_to image_tag('carole.jpg'), candidate_profile_public_path
               .span3
                 %h5 Carole Delhens said:
                 %p Good afternoon. I just saw your Graphic Designer position and I think I've got what it takes. Please have a look and let me know!

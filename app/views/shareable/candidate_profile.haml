@@ -120,13 +120,27 @@
         = session[:candidate][:catchphrase]
       %br/
       %br/
-      .btn-group.pull-right{ :style => 'display:inline-block' }
-        %a.btn.btn-gigantic.btn-primary.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-right: 0; padding-left: 15px'  }
-          %i.icon-share
-          Share
-          %span.caret
-        %ul.dropdown-menu
-          %li
-            = link_to 'Email', candidate_profile_email_share_you_path
-          %li
-            = link_to 'Social networks', candidate_profile_social_share_you_path
+      -if session[:recruiter_demo]
+        .pull-right
+          .btn-group{ :style => 'display:inline-block' }
+            %a.btn.btn-gigantic.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'padding-left: 15px; margin-bottom: -24px', :class => "#{'disabled' if candidate_demo?}"  }
+              %i.icon-share
+              Share
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                = link_to 'Email', candidate_profile_email_share_others_path
+              %li
+                = link_to 'Social networks', candidate_profile_social_share_others_path
+          %a.btn.btn-gigantic.btn-success{ :href => (candidate_demo? ? '#' : recruiter_starts_discussion_path), :style => 'margin-right:-5px', :class => "#{'disabled' if candidate_demo?}" } Let's talk!
+      - else
+        .btn-group.pull-right{ :style => 'display:inline-block' }
+          %a.btn.btn-gigantic.btn-primary.dropdown-toggle{ "data-toggle" => "dropdown", :href => '#', :style => 'margin-right: 0; padding-left: 15px'  }
+            %i.icon-share
+            Share
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              = link_to 'Email', candidate_profile_email_share_you_path
+            %li
+              = link_to 'Social networks', candidate_profile_social_share_you_path
