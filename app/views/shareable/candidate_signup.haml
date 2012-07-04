@@ -9,25 +9,25 @@
     .span5
       .card
         .row
-          .span4.well
+          .span4.well{ style: 'padding-bottom:9px' }
             .row
               .span1
                 = image_tag('default_user.jpg', :id => 'candidate_picture')
               .span3
-                %input#candidate_full_name{ :type => 'text', :placeholder => 'Full name', :style => 'height:13px; font-size:15px', :name => '[candidate][full_name]' }
+                %input#candidate_full_name{ :type => 'text', :placeholder => 'Full name', :style => 'height:13px; font-size:15px; font-weight:bold', :name => '[candidate][full_name]' }
                 %br/
-                %input#candidate_city.input-small{    :type => 'text', :placeholder => 'City', :style => 'height:9px; margin-top: -4px; font-size:15px;', :name => '[candidate][city]' }
-                %input#candidate_country.input-small{ :type => 'text', :placeholder => 'Country', :style => 'width: 105px; height:9px; margin-top: -4px; font-size:15px;', :name => '[candidate][country]' }
-                %input#candidate_role.input-small{    :type => 'text', :placeholder => 'Role', :style => 'height:9px; margin-top: -4px; font-size:15px;', :name => '[candidate][role]' }
-                %input#candidate_company.input-small{ :type => 'text', :placeholder => 'Company', :style => 'width: 105px; height:9px; margin-top: -4px; font-size:15px;', :name => '[candidate][company]' }
+                %input#candidate_city.input-small{    :type => 'text', :placeholder => 'City', :style => 'height:9px; margin-top: -4px; font-size:14px;', :name => '[candidate][city]' }
+                %input#candidate_country.input-small{ :type => 'text', :placeholder => 'Country', :style => 'width: 105px; height:9px; margin-top: -4px; font-size:14px;', :name => '[candidate][country]' }
+                %input#candidate_role.input-small{    :type => 'text', :placeholder => 'Role', :style => 'height:9px; margin-top: -4px; font-size:14px;', :name => '[candidate][role]' }
+                %input#candidate_company.input-small{ :type => 'text', :placeholder => 'Company', :style => 'width: 105px; height:9px; margin-top: -4px; font-size:14px;', :name => '[candidate][company]' }
                 
         .row
-          .span1.well
+          .span1.well{ style: 'padding-bottom:7px' }
             %h6
               Experience
             %input#candidate_experience{ :type => 'text', :style => 'height:30px; width:40px; margin-bottom:0;  font-size:30px; font-weight:bold', :name => '[candidate][experience]' }
             %h2 yrs
-          .span3.well{ :style => 'padding-right:0' }
+          .span3.well{ :style => 'padding-right:0; padding-bottom:7px' }
             %h6 
               Highest Education
             %textarea#candidate_education.lead{ :rows => 2, :style => 'margin-bottom:12px; width:240px;', :name => '[candidate][education]' }

@@ -1,28 +1,29 @@
 %br/
 .header  
   %h1 Complete you profile!
-%br/ 
+%br/
+
 %form{ :action => recruiter_profile_path, :method => 'POST' }
   = hidden_field_tag :success, 'Welcome to Engaccino!'
   .row
-    .span5
+    .span4
       .card
         .row
-          .span4.well
+          .span3.well{ style: 'padding-bottom:9px' }
             .row
               .span1
                 = image_tag('default_user.jpg', :id => 'recruiter_picture')
-              .span3
-                %input#recruiter_full_name{ :type => 'text', :placeholder => 'Full name', :style => 'height:13px; font-size:15px', :name => '[recruiter][full_name]' }
+              .span2
+                %input.input-medium#recruiter_full_name{ :type => 'text', :placeholder => 'Full name', :style => 'height:13px; font-size:15px; font-weight:bold', :name => '[recruiter][full_name]' }
                 %br/
-                %input#recruiter_company{ :type => 'text', :placeholder => 'Company', :style => 'height:13px; font-size:15px', :name => '[recruiter][company]' }
+                %input.input-medium#recruiter_company{ :type => 'text', :placeholder => 'Company', :style => 'height:9px; font-size:14px; margin-top: -4px', :name => '[recruiter][company]' }
                 %br/
-                %input#recruiter_city.input-small{ :type => 'text', :placeholder => 'City', :style => 'height:9px; margin-top: -4px; font-size:15px;', :name => '[recruiter][city]' }
-                %input#recruiter_country.input-small{ :type => 'text', :placeholder => 'Country', :style => 'width: 105px; height:9px; margin-top: -4px; font-size:15px;', :name => '[recruiter][country]' }
+                %input#recruiter_city.input-mini{ :type => 'text', :placeholder => 'City', :style => 'height:9px; margin-top: -4px; font-size:14px;', :name => '[recruiter][city]' }
+                %input#recruiter_country.input-mini{ :type => 'text', :placeholder => 'Country', :style => 'width: 75px; height:9px; margin-top: -4px; font-size:14px;', :name => '[recruiter][country]' }
         .row
-          .span4.well{ style: 'padding-bottom:0' }
+          .span3.well{ style: 'padding-bottom:0' }
             %h6
-              Skills
+              Roles you often look for
             .lead
               .row
                 %input#skill_star{ :type => 'hidden', :name => '[recruiter][skill_star]'}
@@ -37,11 +38,10 @@
                 .span3
                   %input#recruiter_skill_3{ :type => 'text', :name => '[recruiter][skill_3]', :style => 'font-size:15px' }
                   .icon-star-empty.star#recruiter_skill_star_3{ :onclick => "toggleStar('recruiter_skill_star_3','skill','recruiter')" }
-              
         .row
-          .span4.well{ style: 'padding-bottom:0' }
+          .span3.well{ style: 'padding-bottom:0' }
             %h6 
-              Qualities
+              Qualities you care about in a candidate
             .lead
               .row
                 %input#quality_star{ :type => 'hidden', :name => '[recruiter][inter_star]'}
@@ -57,85 +57,109 @@
                   %input#recruiter_quality_3{ :type => 'text', :name => '[recruiter][quality_3]', :style => 'font-size:15px' }
                   .icon-star-empty.star#recruiter_quality_star_3{ :onclick => "toggleStar('recruiter_quality_star_3','quality','recruiter')" }
         .row
-          .span4.well{ style: 'padding-bottom:0' }
+          .span3.well{ style: 'padding-bottom:0' }
             %h6
-              Flexible on
-            %input#flexible_1{ :type => 'text', :name => '[recruiter][flexible_1]', :style => 'font-size:15px' }
-            %input#flexible_2{ :type => 'text', :name => '[recruiter][flexible_2]', :style => 'font-size:15px' }
-            %input#flexible_3{ :type => 'text', :name => '[recruiter][flexible_3]', :style => 'font-size:15px' }
+              Points you are flexible on
+            .lead
+              .row
+                .span2
+                  %input#flexible_1{ :type => 'text', :name => '[recruiter][flexible_1]', :style => 'font-size:15px' }
+              .row
+                .span2
+                  %input#flexible_2{ :type => 'text', :name => '[recruiter][flexible_2]', :style => 'font-size:15px' }
+              .row
+                .span2
+                  %input#flexible_3{ :type => 'text', :name => '[recruiter][flexible_3]', :style => 'font-size:15px' }
     
-    .span5
-      %h2{ :style => 'margin-bottom:10px' } Looking for:
+    .span8
       .row
-        .span8
+        .span4
+          %h2{ :style => 'margin-bottom:10px; display:inline-block' } Looking for:
+          %a.btn.btn-mini.pull-right{ :href => '#', :onclick => "$('#profile_2').removeClass('hidden')", :style => 'margin: 10px 60px 0 0' }
+            .icon-plus
+            &nbsp; add more
+      .row
+        .span4
           .card{:style => 'float:left;'}
             .row
-              .span3.well
+              .span3.well{ style: 'padding-bottom:9px' }
                 .row
                   .span1
                     = image_tag('default_user.jpg')
                   .span2
-                    %input.input-medium{ :type => 'text', :placeholder => 'Job title', :style => 'height:13px; font-size:15px', :name => '[recruiter][profile_1][title]' }
-                    %input.input-small{ :type => 'text', :placeholder => 'City', :style => 'height:9px; margin-top: -4px; font-size:15px;', :name => '[recruiter][profile_1][city]' }
-                    %input.input-small{ :type => 'text', :placeholder => 'Country', :style => 'height:9px; margin-top: -4px; font-size:15px;', :name => '[recruiter][profile_1][country]' }
+                    %input.input-medium{ :type => 'text', :placeholder => 'Job title', :style => 'height:13px; font-size:15px; font-weight:bold', :name => '[recruiter][profile_1][title]' }
+                    %input.input-medium{ :type => 'text', :placeholder => 'City', :style => 'height:9px; margin-top: -4px; font-size:14px;', :name => '[recruiter][profile_1][city]' }
+                    %input.input-medium{ :type => 'text', :placeholder => 'Country', :style => 'height:9px; margin-top: -4px; font-size:14px;', :name => '[recruiter][profile_1][country]' }
             .row
-              .span1.well
+              .span1.well{ style: 'padding-bottom:7px' }
                 %h6
                   Experience
                   %input{ :type => 'text', :style => 'height:30px; width:40px; margin-bottom:-10px; margin-top: 5px;  font-size:30px; font-weight:bold', :name => '[recruiter][profile_1][experience]' }
                   %h2 yrs
-              .span2.well{ :style => 'padding-right:0' }
+              .span2.well{ :style => 'padding-right:0; padding-bottom:7px' }
                 %h6 
                   Education
-                %textarea{ :rows => 3, :name => '[recruiter][profile_1][experience]', :style => 'width: 150px; margin-top: -5px; margin-bottom: 12px;' }
+                %textarea{ :rows => 3, :name => '[recruiter][profile_1][experience]', :style => 'width: 140px; margin-top: -5px; margin-bottom: 12px;' }
             .row
-              .span3.well
+              .span3.well{ style: 'padding-bottom:0px' }
                 %h6
                   Skills
-                %input#profile_1_star{ :type => 'hidden', :name => '[recruiter][profile_1_star]'}
-                %input{ :type => 'text', :name => '[recruiter][profile_1][skill_1]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_1_star_1{ :onclick => "toggleStar('recruiter_profile_1_star_1','profile_1','recruiter')" }
-                %input{ :type => 'text', :name => '[recruiter][profile_1][skill_2]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_1_star_2{ :onclick => "toggleStar('recruiter_profile_1_star_2','profile_1','recruiter')" }
-                %input{ :type => 'text', :name => '[recruiter][profile_1][skill_3]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_1_star_3{ :onclick => "toggleStar('recruiter_profile_1_star_3','profile_1','recruiter')" }
-          .card.hidden#profile_2{:style => 'float:right;'}
+                .lead
+                  .row
+                    .span3
+                      %input#profile_1_star{ :type => 'hidden', :name => '[recruiter][profile_1_star]'}
+                      %input{ :type => 'text', :name => '[recruiter][profile_1][skill_1]', :style => 'font-size:15px' }
+                      .icon-star-empty.star#recruiter_profile_1_star_1{ :onclick => "toggleStar('recruiter_profile_1_star_1','profile_1','recruiter')" }
+                  .row
+                    .span3
+                      %input{ :type => 'text', :name => '[recruiter][profile_1][skill_2]', :style => 'font-size:15px' }
+                      .icon-star-empty.star#recruiter_profile_1_star_2{ :onclick => "toggleStar('recruiter_profile_1_star_2','profile_1','recruiter')" }
+                  .row
+                    .span3
+                      %input{ :type => 'text', :name => '[recruiter][profile_1][skill_3]', :style => 'font-size:15px' }
+                      .icon-star-empty.star#recruiter_profile_1_star_3{ :onclick => "toggleStar('recruiter_profile_1_star_3','profile_1','recruiter')" }
+        .span4
+          .card.hidden#profile_2
             .row
-              .span3.well
+              .span3.well{ style: 'padding-bottom:9px' }
                 .row
                   .span1
                     = image_tag('default_user.jpg')
                   .span2
-                    %input.input-medium{ :type => 'text', :placeholder => 'Job title', :style => 'height:13px; font-size:15px', :name => '[recruiter][profile_2][title]' }
-                    %input.input-small{ :type => 'text', :placeholder => 'City', :style => 'height:9px; margin-top: -4px; font-size:15px;', :name => '[recruiter][profile_2][city]' }
-                    %input.input-small{ :type => 'text', :placeholder => 'Country', :style => 'height:9px; margin-top: -4px; font-size:15px;', :name => '[recruiter][profile_2][country]' }
+                    %input.input-medium{ :type => 'text', :placeholder => 'Job title', :style => 'height:13px; font-size:15px; font-weight:bold', :name => '[recruiter][profile_2][title]' }
+                    %input.input-medium{ :type => 'text', :placeholder => 'City', :style => 'height:9px; margin-top: -4px; font-size:14px;', :name => '[recruiter][profile_2][city]' }
+                    %input.input-medium{ :type => 'text', :placeholder => 'Country', :style => 'height:9px; margin-top: -4px; font-size:14px;', :name => '[recruiter][profile_2][country]' }
             .row
-              .span1.well
+              .span1.well{ style: 'padding-bottom:7px' }
                 %h6
                   Experience
                   %input{ :type => 'text', :style => 'height:30px; width:40px; margin-bottom:-10px; margin-top: 5px;  font-size:30px; font-weight:bold', :name => '[recruiter][profile_2][experience]' }
                   %h2 yrs
-              .span2.well{ :style => 'padding-right:0' }
+              .span2.well{ :style => 'padding-right:0; padding-bottom:7px' }
                 %h6 
                   Education
-                %textarea{ :rows => 3, :name => '[recruiter][profile_2][experience]', :style => 'width: 150px; margin-top: -5px; margin-bottom: 12px;' }
+                %textarea{ :rows => 3, :name => '[recruiter][profile_2][experience]', :style => 'width: 140px; margin-top: -5px; margin-bottom: 12px;' }
             .row
-              .span3.well
+              .span3.well{ style: 'padding-bottom:0' }
                 %h6
                   Skills
-                %input#profile_2_star{ :type => 'hidden', :name => '[recruiter][profile_2_star]'}
-                %input{ :type => 'text', :name => '[recruiter][profile_2][skill_1]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_2_star_1{ :onclick => "toggleStar('recruiter_profile_2_star_1','profile_2','recruiter')" }
-                %input{ :type => 'text', :name => '[recruiter][profile_2][skill_2]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_2_star_2{ :onclick => "toggleStar('recruiter_profile_2_star_2','profile_2','recruiter')" }                
-                %input{ :type => 'text', :name => '[recruiter][profile_2][skill_3]', :style => 'font-size:15px' }
-                .icon-star-empty.star#recruiter_profile_2_star_3{ :onclick => "toggleStar('recruiter_profile_2_star_3','profile_2','recruiter')" }                
+                .lead
+                  .row
+                    .span3
+                      %input#profile_2_star{ :type => 'hidden', :name => '[recruiter][profile_2_star]'}
+                      %input{ :type => 'text', :name => '[recruiter][profile_2][skill_1]', :style => 'font-size:15px' }
+                      .icon-star-empty.star#recruiter_profile_2_star_1{ :onclick => "toggleStar('recruiter_profile_2_star_1','profile_2','recruiter')" }
+                  .row
+                    .span3
+                      %input{ :type => 'text', :name => '[recruiter][profile_2][skill_2]', :style => 'font-size:15px' }
+                      .icon-star-empty.star#recruiter_profile_2_star_2{ :onclick => "toggleStar('recruiter_profile_2_star_2','profile_2','recruiter')" }
+                  .row
+                    .span3
+                      %input{ :type => 'text', :name => '[recruiter][profile_2][skill_3]', :style => 'font-size:15px' }
+                      .icon-star-empty.star#recruiter_profile_2_star_3{ :onclick => "toggleStar('recruiter_profile_2_star_3','profile_2','recruiter')" }       
       .row
-        .span5
-          .pull-right
-            %input.btn.btn-primary{ :type => 'button', :value => 'Add another profile', :onclick => "$('#profile_2').removeClass('hidden')" }               
-            %strong OR
-            %button.btn.btn-gigantic.btn-primary{ :type => 'submit' } Save your profile!
+        .span4
+          %button.btn.btn-gigantic.btn-primary.pull-right{ :type => 'submit', :style => 'margin: 60px 60px 0 0' } Save your profile!
 
 .modal.hide#facebook-modal
   .modal-header
