@@ -1,8 +1,9 @@
 class ShareableController < ApplicationController
   
   before_filter       :set_titles
-  before_filter       :signup_candidate, :candidate_demo,  :only => :candidate_profile
-  before_filter       :recruiter_demo,                     :only => :recruiter_profile
+  before_filter       :signup_candidate, :only => :candidate_profile
+  after_filter        :candidate_demo,   :only => :candidate_signup
+  after_filter        :recruiter_demo,   :only => :recruiter_signup
   skip_before_filter  :verify_authenticity_token
   
   def candidate_profile
