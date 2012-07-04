@@ -1,9 +1,8 @@
 class ShareableController < ApplicationController
   
   before_filter       :set_titles
-  before_filter       :signup_candidate,  :only => :candidate_profile
-  after_filter        :candidate_demo,    :only => :candidate_signup
-  after_filter        :recruiter_demo,    :only => :recruiter_profile
+  before_filter       :signup_candidate, :candidate_demo,  :only => :candidate_profile
+  before_filter       :recruiter_demo,                     :only => :recruiter_profile
   skip_before_filter  :verify_authenticity_token
   
   def candidate_profile
@@ -26,6 +25,10 @@ class ShareableController < ApplicationController
   def candidate_profile_you_social
     @default_message = "Hi everyone, I'm looking for work these days and was wondering if you might know of someone interested? Share my profile if so!"
     session[:you] = params[:you] unless params[:you].nil?
+  end
+  
+  def candidate_profile_public
+    flash.now[:success] = params[:success] unless params[:success].nil?
   end
   
   def candidate_profile_email_share_others
