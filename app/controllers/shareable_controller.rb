@@ -2,6 +2,7 @@ class ShareableController < ApplicationController
   
   before_filter       :set_titles
   before_filter       :signup_candidate, :only => :candidate_profile
+  before_filter       :signup_recruiter, :only => :recruiter_profile
   after_filter        :candidate_demo,   :only => :candidate_signup
   after_filter        :recruiter_demo,   :only => :recruiter_signup
   skip_before_filter  :verify_authenticity_token
@@ -98,6 +99,41 @@ class ShareableController < ApplicationController
       session[:candidate_demo] = true
       session[:recruiter_demo] = false
       session[:recruiter] = nil unless session[:recruiter].nil?
+    end
+
+    def signup_recruiter
+      if params[:recruiter]
+        if params[:recruiter][:full_name].empty?
+          session[:recruiter] = default_recruiter
+        else
+          session[:recruiter] = params[:recruiter]
+          session[:recruiter][:pic] = 'default_user.jpg'
+        end
+      end
+    end
+
+    def default_recruiter
+      { :pic => 'dom.jpg', :full_name => 'Dominic Matheron', :company => 'Viadeo', :city => 'Amsterdam',
+        :country => 'Netherlands', 
+        :role_1 => { :name => 'Programmers', :level => 'required' }, 
+        :role_2 => { :name => 'Designers', :level => 'intermediate' }, 
+        :role_3 => { :name => 'Copywriters', :level => 'not_a_priority' },
+        :quality_1 => { :name => 'Honesty', :level => 'urgent' }, 
+        :quality_2 => { :name => 'Friendliness', :level => 'required' }, 
+        :quality_3 => { :name => 'Punctuality', :level => 'intermediate' }, 
+        :quality_star => 'recruiter_quality_star_1', :flexible_1 => 'Education',
+        :profile_1 => { :title => 'Graphic Designer', :city => 'Amsterdam', :country => 'Netherlands', :experience => '5yrs',
+                        :education => 'HBO or similar degree', :skill_1 => 'Visual Design', :skill_2 => 'Interaction Design',
+                        :skill_3 => 'Quick Prototyping'},
+        :profile_2 => { :title => 'Mobile Developer', :city => 'Amsterdam', :country => 'Netherlands', :experience => '2yrs',
+                        :education => 'Bachelor in sone serious school', :skill_1 => 'iOS', :skill_2 => 'Android',
+                        :skill_3 => 'Extremely Rigorous', :star => 'recruiter_profile_2_star_3'},
+        :profile_3 => { :title => 'Project Manager', :city => 'Paris', :country => 'France', :experience => '5-8y',
+                        :education => 'Experience is the key here', :skill_1 => 'Experienced at Scaling', :skill_2 => 'Agile',
+                        :skill_3 => 'Open to oustide input', :star => 'recruiter_profile_3_star_3'},
+        :profile_4 => { :title => 'Italian Copywriter', :city => 'Paris', :country => 'France', :experience => '1yr',
+                        :education => 'Master in Translation', :skill_1 => 'Native Speaker', :skill_2 => 'Intelligent',
+                        :skill_3 => 'Flexible', :star => 'recruiter_profile_4_star_1'} }
     end
 
     def recruiter_demo

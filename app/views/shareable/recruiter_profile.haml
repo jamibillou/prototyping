@@ -37,270 +37,327 @@
     .span3.well
       .row
         .span1
-          = link_to image_tag('dom.jpg'), recruiter_profile_path
+          = link_to image_tag(session[:recruiter][:pic]), recruiter_profile_path
         .span2
-          %h3 Dominic Matheron
-          .lead{ style: 'margin-bottom:0' } Viadeo
-          %i Amsterdam, Netherlands
+          %h3
+            = session[:recruiter][:full_name]
+          .lead{ style: 'margin-bottom:0' }
+            = session[:recruiter][:company]
+          %i 
+            = session[:recruiter][:city]+', '+session[:recruiter][:country]
   .row
     .span3.well{ style: 'padding-bottom:0' }
       %h6 Recruits
       .lead
         .row
           .span2
-            Programmers
+            = session[:recruiter][:role_1][:name]
+            - if session[:recruiter][:role_star] == 'recruiter_role_star_1'
+              .icon-star
           .span1
-            .progress.progress-striped.progress-success
-              .bar{ :style => 'width:80%' }
+            = render 'progress_bar', :level => session[:recruiter][:role_1][:level]
         .row
           .span2
-            Designers
-            
+            = session[:recruiter][:role_2][:name]
+            - if session[:recruiter][:role_star] == 'recruiter_role_star_2'
+              .icon-star            
           .span1
-            .progress.progress-striped
-              .bar{ :style => 'width:60%' }
+            = render 'progress_bar', :level => session[:recruiter][:role_2][:level]
         .row
           .span2
-            Copywriters
+            = session[:recruiter][:role_3][:name]
+            - if session[:recruiter][:role_star] == 'recruiter_role_star_3'
+              .icon-star
           .span1
-            .progress.progress-striped.progress-danger
-              .bar{ :style => 'width:30%' }
+            = render 'progress_bar', :level => session[:recruiter][:role_3][:level]
   .row
     .span3.well{ style: 'padding-bottom:0' }
       %h6 Cares about
       .lead
         .row
           .span2
-            Honesty
-            .icon-star
+            = session[:recruiter][:quality_1][:name]
+            - if session[:recruiter][:quality_star] == 'recruiter_quality_star_1'
+              .icon-star
           .span1
-            .progress.progress-striped.progress-warning
-              .bar{ :style => 'width:100%' }
+            = render 'progress_bar', :level => session[:recruiter][:quality_1][:level]
         .row
           .span2
-            Friendliness
+            = session[:recruiter][:quality_2][:name]
+            - if session[:recruiter][:quality_star] == 'recruiter_quality_star_2'
+              .icon-star
           .span1
-            .progress.progress-striped.progress-success
-              .bar{ :style => 'width:80%' }
+            = render 'progress_bar', :level => session[:recruiter][:quality_2][:level]
         .row
           .span2
-            Punctuality
+            = session[:recruiter][:quality_3][:name]
+            - if session[:recruiter][:quality_star] == 'recruiter_quality_star_3'
+              .icon-star
           .span1
-            .progress.progress-striped
-              .bar{ :style => 'width:60%' }
+            = render 'progress_bar', :level => session[:recruiter][:quality_3][:level]
   .row
     .span3.well{ style: 'padding-bottom:0' }
       %h6 Flexible on
-      .lead{ :style => 'margin-bottom: 30px' }
-        Education
+      .lead{ :style => 'margin-bottom: 20px' }
+        - unless session[:recruiter][:flexible_1].nil?
+          .row{ :style => 'margin-bottom: 10px' }
+            .span2
+              = session[:recruiter][:flexible_1]
+        - unless session[:recruiter][:flexible_2].nil?
+          .row{ :style => 'margin-bottom: 10px' }
+            .span2
+              = session[:recruiter][:flexible_2]
+        - unless session[:recruiter][:flexible_3].nil?
+          .row{ :style => 'margin-bottom: 10px' }
+            .span2
+              = session[:recruiter][:flexible_3]
 
 .span8
   %h2{ :style => 'margin-bottom:10px' } Looking for:
   .row
-    .span4
-      .card
-        .row
-          .span3.well
-            .row
-              .span1
-                = link_to image_tag('default_user.jpg'), recruiter_profile_gd_public_path
-              .span2
-                %h3 Graphic Designer
-                %p Amsterdam, Netherlands
-        .row
-          .span1.well
-            %h6
-              Experience
-            .gigantic 5yrs
-          .span2.well{ :style => 'padding-right:0' }
-            %h6 
-              Education
-            .lead HBO or similar degree
-        .row
-          .span3.well
-            %h6
-              Skills
-            .lead
-              Visual Design
-              %br/
-              Interaction Design
-              %br/
-              Quick Prototyping
-        .row
-          .span3
-            .pull-right{ :style => 'margin-right: -15px' }
-              .btn-group{ :style => 'margin-top: 6px; display: inline-block' }
-                %a.btn.btn-large.dropdown-toggle.disabled{ "data-toggle" => "dropdown", :href => '#' }
-                  %i.icon-share
-                  Share
-                  %span.caret
-                %ul.dropdown-menu
-                  %li
-                    = link_to 'Email', '#'
-                  %li
-                    = link_to 'LinkedIn', '#'
-                  %li
-                    = link_to 'Twitter', '#'
-                  %li
-                    = link_to 'Facebook', '#'
-                  %li
-                    = link_to 'Google+', '#'
-              %a.btn.btn-large.btn-success{ :href => candidate_matches_path, :style => 'margin: -32px 0 0 2px' } I match!
-    .span4
-      .card
-        .row
-          .span3.well
-            .row
-              .span1
-                = link_to image_tag('default_user.jpg'), recruiter_profile_md_public_path
-              .span2
-                %h3 Mobile Developer
-                %p Amsterdam, Netherlands
-        .row
-          .span1.well
-            %h6
-              Experience
-            .gigantic 2yrs
-          .span2.well{ :style => 'padding-right:0' }
-            %h6 
-              Education
-            .lead Bachelor in sone serious school
-        .row
-          .span3.well
-            %h6
-              Skills
-            .lead
-              iOS
-              %br/
-              Android
-              %br/
-              Extremely Rigorous
-              .icon-star
-        .row
-          .span3
-            .pull-right{ :style => 'margin-right: -15px' }
-              .btn-group{ :style => 'margin-top: 6px; display: inline-block' }
-                %a.btn.btn-large.dropdown-toggle.disabled{ "data-toggle" => "dropdown", :href => '#' }
-                  %i.icon-share
-                  Share
-                  %span.caret
-                %ul.dropdown-menu
-                  %li
-                    = link_to 'Email', '#'
-                  %li
-                    = link_to 'LinkedIn', '#'
-                  %li
-                    = link_to 'Twitter', '#'
-                  %li
-                    = link_to 'Facebook', '#'
-                  %li
-                    = link_to 'Google+', '#'
-              %a.btn.btn-large.btn-success{ :href => candidate_matches2_path, :style => 'margin: -32px 0 0 2px' } I match!      
-              %br/
-              %br/
-              %br/
-              %br/
-  
+    - unless session[:recruiter][:profile_1].nil?
+      .span4
+        .card
+          .row
+            .span3.well
+              .row
+                .span1
+                  = link_to image_tag('default_user.jpg'), recruiter_profile_gd_public_path
+                .span2
+                  %h3
+                    = session[:recruiter][:profile_1][:title]
+                  %p 
+                    = session[:recruiter][:profile_1][:city]+', '+session[:recruiter][:profile_1][:country]
+          .row
+            .span1.well
+              %h6
+                Experience
+              .gigantic
+                = session[:recruiter][:profile_1][:experience]
+            .span2.well{ :style => 'padding-right:0' }
+              %h6 
+                Education
+              .lead 
+                = session[:recruiter][:profile_1][:education]
+          .row
+            .span3.well
+              %h6
+                Skills
+              .lead
+                = session[:recruiter][:profile_1][:skill_1]
+                - if session[:recruiter][:profile_1][:star] == 'recruiter_profile_1_star_1'
+                  .icon-star
+                %br/
+                = session[:recruiter][:profile_1][:skill_2]
+                - if session[:recruiter][:profile_1][:star] == 'recruiter_profile_1_star_2'
+                  .icon-star
+                %br/
+                = session[:recruiter][:profile_1][:skill_3]
+                - if session[:recruiter][:profile_1][:star] == 'recruiter_profile_1_star_3'
+                  .icon-star
+          .row
+            .span3
+              .pull-right{ :style => 'margin-right: -15px' }
+                .btn-group{ :style => 'margin-top: 6px; display: inline-block' }
+                  %a.btn.btn-large.dropdown-toggle.disabled{ "data-toggle" => "dropdown", :href => '#' }
+                    %i.icon-share
+                    Share
+                    %span.caret
+                  %ul.dropdown-menu
+                    %li
+                      = link_to 'Email', '#'
+                    %li
+                      = link_to 'LinkedIn', '#'
+                    %li
+                      = link_to 'Twitter', '#'
+                    %li
+                      = link_to 'Facebook', '#'
+                    %li
+                      = link_to 'Google+', '#'
+                %a.btn.btn-large.btn-success{ :href => candidate_matches_path, :style => 'margin: -32px 0 0 2px' } I match!
+    - unless session[:recruiter][:profile_2].nil? || session[:recruiter][:profile_2][:title].empty?
+      .span4
+        .card
+          .row
+            .span3.well
+              .row
+                .span1
+                  = link_to image_tag('default_user.jpg'), recruiter_profile_gd_public_path
+                .span2
+                  %h3
+                    = session[:recruiter][:profile_2][:title]
+                  %p 
+                    = session[:recruiter][:profile_2][:city]+', '+session[:recruiter][:profile_2][:country]
+          .row
+            .span1.well
+              %h6
+                Experience
+              .gigantic
+                = session[:recruiter][:profile_2][:experience]
+            .span2.well{ :style => 'padding-right:0' }
+              %h6 
+                Education
+              .lead 
+                = session[:recruiter][:profile_2][:education]
+          .row
+            .span3.well
+              %h6
+                Skills
+              .lead
+                = session[:recruiter][:profile_2][:skill_1]
+                - if session[:recruiter][:profile_2][:star] == 'recruiter_profile_2_star_1'
+                  .icon-star
+                %br/
+                = session[:recruiter][:profile_2][:skill_2]
+                - if session[:recruiter][:profile_2][:star] == 'recruiter_profile_2_star_2'
+                  .icon-star
+                %br/
+                = session[:recruiter][:profile_2][:skill_3]
+                - if session[:recruiter][:profile_2][:star] == 'recruiter_profile_2_star_3'
+                  .icon-star
+          .row
+            .span3
+              .pull-right{ :style => 'margin-right: -15px' }
+                .btn-group{ :style => 'margin-top: 6px; display: inline-block' }
+                  %a.btn.btn-large.dropdown-toggle.disabled{ "data-toggle" => "dropdown", :href => '#' }
+                    %i.icon-share
+                    Share
+                    %span.caret
+                  %ul.dropdown-menu
+                    %li
+                      = link_to 'Email', '#'
+                    %li
+                      = link_to 'LinkedIn', '#'
+                    %li
+                      = link_to 'Twitter', '#'
+                    %li
+                      = link_to 'Facebook', '#'
+                    %li
+                      = link_to 'Google+', '#'
+                %a.btn.btn-large.btn-success{ :href => candidate_matches2_path, :style => 'margin: -32px 0 0 2px' } I match!     
+                %br/
+                %br/
+                %br/
+                %br/
   .row
-    .span4
-      .card
-        .row
-          .span3.well
-            .row
-              .span1
-                = link_to image_tag('default_user.jpg'), recruiter_profile_pm_public_path
-              .span2
-                %h3 Project Manager
-                %p Paris, France
-        .row
-          .span1.well
-            %h6
-              Experience
-            .gigantic
-              5-8y
-          .span2.well{ :style => 'padding-right:0' }
-            %h6 
-              Education
-            .lead Experience is the key here
-        .row
-          .span3.well
-            %h6
-              Skills
-            .lead
-              Experienced at Scaling
-              %br/
-              Agile
-              %br/
-              Open to oustide input
-              .icon-star
-        .row
-          .span3
-            .pull-right{ :style => 'margin-right: -15px' }
-              .btn-group{ :style => 'margin-top: 6px; display: inline-block' }
-                %a.btn.btn-large.dropdown-toggle.disabled{ "data-toggle" => "dropdown", :href => '#' }
-                  %i.icon-share
-                  Share
-                  %span.caret
-                %ul.dropdown-menu
-                  %li
-                    = link_to 'Email', '#'
-                  %li
-                    = link_to 'LinkedIn', '#'
-                  %li
-                    = link_to 'Twitter', '#'
-                  %li
-                    = link_to 'Facebook', '#'
-                  %li
-                    = link_to 'Google+', '#'
-              %a.btn.btn-large.btn-success{ :href => candidate_matches3_path, :style => 'margin: -32px 0 0 2px' } I match!
-    .span4
-      .card
-        .row
-          .span3.well
-            .row
-              .span1
-                = link_to image_tag('default_user.jpg'), recruiter_profile_ic_public_path
-              .span2
-                %h3 Italien Copywriter
-                %p Paris, France
-        .row
-          .span1.well
-            %h6
-              Experience
-            .gigantic 1 yr
-          .span2.well{ :style => 'padding-right:0' }
-            %h6 
-              Education
-            .lead Master in Translation
-        .row
-          .span3.well
-            %h6
-              Skills
-            .lead
-              Native Speaker
-              .icon-star
-              %br/
-              Intelligent
-              %br/
-              Flexible
-        .row
-          .span3
-            .pull-right{ :style => 'margin-right: -15px' }
-              .btn-group{ :style => 'margin-top: 6px; display: inline-block' }
-                %a.btn.btn-large.dropdown-toggle.disabled{ "data-toggle" => "dropdown", :href => '#' }
-                  %i.icon-share
-                  Share
-                  %span.caret
-                %ul.dropdown-menu
-                  %li
-                    = link_to 'Email', '#'
-                  %li
-                    = link_to 'LinkedIn', '#'
-                  %li
-                    = link_to 'Twitter', '#'
-                  %li
-                    = link_to 'Facebook', '#'
-                  %li
-                    = link_to 'Google+', '#'
-              %a.btn.btn-large.btn-success{ :href => candidate_matches4_path, :style => 'margin: -32px 0 0 2px' } I match!
+    - unless session[:recruiter][:profile_3].nil?
+      .span4
+        .card
+          .row
+            .span3.well
+              .row
+                .span1
+                  = link_to image_tag('default_user.jpg'), recruiter_profile_gd_public_path
+                .span2
+                  %h3
+                    = session[:recruiter][:profile_3][:title]
+                  %p 
+                    = session[:recruiter][:profile_3][:city]+', '+session[:recruiter][:profile_3][:country]
+          .row
+            .span1.well
+              %h6
+                Experience
+              .gigantic
+                = session[:recruiter][:profile_3][:experience]
+            .span2.well{ :style => 'padding-right:0' }
+              %h6 
+                Education
+              .lead 
+                = session[:recruiter][:profile_3][:education]
+          .row
+            .span3.well
+              %h6
+                Skills
+              .lead
+                = session[:recruiter][:profile_3][:skill_1]
+                - if session[:recruiter][:profile_3][:star] == 'recruiter_profile_3_star_1'
+                  .icon-star
+                %br/
+                = session[:recruiter][:profile_3][:skill_2]
+                - if session[:recruiter][:profile_3][:star] == 'recruiter_profile_3_star_2'
+                  .icon-star
+                %br/
+                = session[:recruiter][:profile_3][:skill_3]
+                - if session[:recruiter][:profile_3][:star] == 'recruiter_profile_3_star_3'
+                  .icon-star
+          .row
+            .span3
+              .pull-right{ :style => 'margin-right: -15px' }
+                .btn-group{ :style => 'margin-top: 6px; display: inline-block' }
+                  %a.btn.btn-large.dropdown-toggle.disabled{ "data-toggle" => "dropdown", :href => '#' }
+                    %i.icon-share
+                    Share
+                    %span.caret
+                  %ul.dropdown-menu
+                    %li
+                      = link_to 'Email', '#'
+                    %li
+                      = link_to 'LinkedIn', '#'
+                    %li
+                      = link_to 'Twitter', '#'
+                    %li
+                      = link_to 'Facebook', '#'
+                    %li
+                      = link_to 'Google+', '#'
+                %a.btn.btn-large.btn-success{ :href => candidate_matches3_path, :style => 'margin: -32px 0 0 2px' } I match!
+    - unless session[:recruiter][:profile_4].nil?
+      .span4
+        .card
+          .row
+            .span3.well
+              .row
+                .span1
+                  = link_to image_tag('default_user.jpg'), recruiter_profile_gd_public_path
+                .span2
+                  %h3
+                    = session[:recruiter][:profile_4][:title]
+                  %p 
+                    = session[:recruiter][:profile_4][:city]+', '+session[:recruiter][:profile_4][:country]
+          .row
+            .span1.well
+              %h6
+                Experience
+              .gigantic
+                = session[:recruiter][:profile_4][:experience]
+            .span2.well{ :style => 'padding-right:0' }
+              %h6 
+                Education
+              .lead 
+                = session[:recruiter][:profile_4][:education]
+          .row
+            .span3.well
+              %h6
+                Skills
+              .lead
+                = session[:recruiter][:profile_4][:skill_1]
+                - if session[:recruiter][:profile_4][:star] == 'recruiter_profile_4_star_1'
+                  .icon-star
+                %br/
+                = session[:recruiter][:profile_4][:skill_2]
+                - if session[:recruiter][:profile_4][:star] == 'recruiter_profile_4_star_2'
+                  .icon-star
+                %br/
+                = session[:recruiter][:profile_4][:skill_3]
+                - if session[:recruiter][:profile_4][:star] == 'recruiter_profile_4_star_3'
+                  .icon-star
+          .row
+            .span3
+              .pull-right{ :style => 'margin-right: -15px' }
+                .btn-group{ :style => 'margin-top: 6px; display: inline-block' }
+                  %a.btn.btn-large.dropdown-toggle.disabled{ "data-toggle" => "dropdown", :href => '#' }
+                    %i.icon-share
+                    Share
+                    %span.caret
+                  %ul.dropdown-menu
+                    %li
+                      = link_to 'Email', '#'
+                    %li
+                      = link_to 'LinkedIn', '#'
+                    %li
+                      = link_to 'Twitter', '#'
+                    %li
+                      = link_to 'Facebook', '#'
+                    %li
+                      = link_to 'Google+', '#'
+                %a.btn.btn-large.btn-success{ :href => candidate_matches4_path, :style => 'margin: -32px 0 0 2px' } I match!
         

@@ -1,12 +1,15 @@
-- if level == 'beginner'
-  .progress.progress-striped
-    .bar{ :style => 'width:40%' }
+- if level == 'not_a_priority'
+	.progress.progress-striped.progress-danger
+		.bar{ :style => 'width:30%' }
+- elsif level == 'beginner'
+	.progress.progress-striped
+		.bar{ :style => 'width:40%' }
 - elsif level == 'intermediate'
-  .progress.progress-striped
-    .bar{ :style => 'width:60%' }
-- elsif level == 'advanced'
-  .progress.progress-striped.progress-success
-    .bar{ :style => 'width:80%' }
-- elsif level == 'expert'
-  .progress.progress-striped.progress-warning
-    .bar{ :style => 'width:100%' }
+	.progress.progress-striped
+		.bar{ :style => 'width:60%' }
+- elsif level == 'advanced' || level == 'required'
+	.progress.progress-striped.progress-success
+		.bar{ :style => 'width:80%' }
+- elsif level == 'expert' || level == 'urgent'
+	.progress.progress-striped.progress-warning
+		.bar{ :style => 'width:100%' }
