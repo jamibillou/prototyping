@@ -24,8 +24,10 @@
                   .span1
                     = image_tag('default_user.jpg')
                   .span3
-                    %h3 Italian Copywriter
-                    .lead 1 yr experience, Master's
+                    %h3
+                      = session[:recruiter][:profile_4][:title]
+                    .lead 
+                      = session[:recruiter][:profile_4][:experience]+' experience, '+session[:recruiter][:profile_4][:education]
       .row
         .span7.offset1.success
           .pull-right.italic

@@ -63,6 +63,7 @@ class ShareableController < ApplicationController
           session[:candidate][:pic] = 'default_user.jpg'
         end
       end
+      session[:recruiter] = default_recruiter
     end
 
     def default_candidate
@@ -110,6 +111,7 @@ class ShareableController < ApplicationController
           session[:recruiter][:pic] = 'default_user.jpg'
         end
       end
+      session[:candidate] = default_candidate
     end
 
     def default_recruiter

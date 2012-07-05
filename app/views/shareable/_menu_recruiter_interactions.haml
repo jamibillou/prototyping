@@ -4,9 +4,15 @@
       %select#select01.span2{ :onchange => "filter_role()"}
         %option{ :value =>'0' } All roles
         %option{ :value =>'1' } Open applications
-        %option{ :value =>'2' } Graphic designer
-        %option{ :value =>'3' } Mobile developer
-        %option{ :value =>'4' } Project manager
+        - unless session[:recruiter][:profile_1].nil?
+          %option{ :value =>'2' }
+            = session[:recruiter][:profile_1][:title]
+        - unless session[:recruiter][:profile_2].nil?
+          %option{ :value =>'3' }
+            = session[:recruiter][:profile_2][:title]
+        - unless session[:recruiter][:profile_3].nil?
+          %option{ :value =>'4' }
+            = session[:recruiter][:profile_3][:title]
   %li.nav-header
     %i.icon-comment
     Conversations

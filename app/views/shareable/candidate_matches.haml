@@ -22,10 +22,12 @@
               .span4.well
                 .row
                   .span1
-                    = link_to image_tag('default_user.jpg'), recruiter_profile_gd_public_path
+                    = link_to image_tag('default_user.jpg'), recruiter_profile_1_public_path
                   .span3
-                    %h3 Graphic Designer
-                    .lead 5 yrs experience, HBO
+                    %h3
+                      = session[:recruiter][:profile_1][:title]
+                    .lead 
+                      = session[:recruiter][:profile_1][:experience]+' experience, '+session[:recruiter][:profile_1][:education]
       .row
         .span7.offset1.success
           .pull-right.italic

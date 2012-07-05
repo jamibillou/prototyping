@@ -24,8 +24,10 @@
                   .span1
                     = image_tag('default_user.jpg')
                   .span3
-                    %h3 Mobile Developer
-                    .lead 2 yrs experience, Bachelor's
+                    %h3
+                      = session[:recruiter][:profile_2][:title]
+                    .lead 
+                      = session[:recruiter][:profile_2][:experience]+' experience, '+session[:recruiter][:profile_2][:education]                    
       .row
         .span7.offset1.success
           .pull-right.italic

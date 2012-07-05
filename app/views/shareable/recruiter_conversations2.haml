@@ -40,7 +40,7 @@
           .well
             .row
               .span1
-                = link_to image_tag('dom.jpg'), recruiter_profile_path
+                = link_to image_tag(session[:recruiter][:pic]), recruiter_profile_path
               .span3
                 #buttons
                   %button.btn.btn-success{ :onclick => "accept('Caroline Berne')" } Accept application
