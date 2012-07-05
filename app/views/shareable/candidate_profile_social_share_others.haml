@@ -144,7 +144,7 @@
           %br/
           %br/
           %br/
-          %a.btn.btn-gigantic.btn-primary.pull-right{ :href => candidate_profile_public_path(:success => "#{session[:candidate][:full_name]}'s profile was successfully shared on your social networks."), :style => 'margin-right:0'  }
+          %a.btn.btn-gigantic.btn-primary.pull-right{ :href => recruiter_profile_path(:success => "#{session[:candidate][:full_name]}'s profile was successfully shared on your social networks."), :style => 'margin-right:0'  }
             .icon-share
             Share
           %button.btn.btn-gigantic.pull-right.hidden#preview{ :type => 'submit' }

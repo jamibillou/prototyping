@@ -3,8 +3,8 @@ class ShareableController < ApplicationController
   before_filter       :set_titles
   before_filter       :signup_candidate, :only => :candidate_profile
   before_filter       :signup_recruiter, :only => :recruiter_profile
-  after_filter        :candidate_demo,   :only => :candidate_signup
-  after_filter        :recruiter_demo,   :only => :recruiter_signup
+  before_filter       :candidate_demo,   :only => :candidate_signup
+  before_filter       :recruiter_demo,   :only => :recruiter_signup
   skip_before_filter  :verify_authenticity_token
   
   def candidate_profile
@@ -46,6 +46,10 @@ class ShareableController < ApplicationController
     session[:sharer] = params[:sharer] unless params[:sharer].nil?
     @from_path = (params[:from_path].nil? ? candidate_profile_path : params[:from_path])
   end
+
+  def recruiter_profile
+    flash.now[:success] = params[:success] unless params[:success].nil?
+  end
   
   private
     
@@ -62,8 +66,8 @@ class ShareableController < ApplicationController
           session[:candidate] = params[:candidate]
           session[:candidate][:pic] = 'default_user.jpg'
         end
-      end
-      session[:recruiter] = default_recruiter
+      end      
+      session[:recruiter] = default_recruiter if session[:candidate_demo]
     end
 
     def default_candidate
@@ -111,7 +115,7 @@ class ShareableController < ApplicationController
           session[:recruiter][:pic] = 'default_user.jpg'
         end
       end
-      session[:candidate] = default_candidate
+      session[:candidate] = default_candidate if session[:recruiter_demo]
     end
 
     def default_recruiter
