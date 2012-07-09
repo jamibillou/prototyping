@@ -79,6 +79,17 @@
           .row{ :style => 'margin-bottom: 10px' }
             .span2
               = session[:recruiter][:flexible_3]
+  .row
+    .span4{ :style => 'margin: 20px 0 0 0; padding: 10px' }
+      %h6 More about #{session[:recruiter][:full_name].split.first}
+      %a.linkedin-profile{ :href => '#' }
+      &nbsp;
+      %a.twitter-profile{ :href => '#' }
+      &nbsp;
+      %a.facebook-profile{ :href => '#' }
+      &nbsp;
+      %a.google-plus-profile{ :href => '#' }
+  
 
 .span8
   %h2{ :style => 'margin-bottom:10px' } Looking for:
