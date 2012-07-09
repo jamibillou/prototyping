@@ -22,7 +22,7 @@
     <div class='navbar navbar-fixed-top'>
       <div class='navbar-inner'>
         <div class='container-fluid'>
-          <%= link_to "Engaccino", root_path, :class => 'brand' %>
+          <%= link_to "Engaccino", (session[:mode] == 'demo' ? '#' : root_path), :class => 'brand' %>
           <% if session[:mode] == 'demo' %>
             <ul class='nav'>
               <% if session[:candidate_demo] %>
