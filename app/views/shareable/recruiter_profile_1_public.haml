@@ -59,9 +59,6 @@
   %br/
   %br/
   %br/
-  %br/       
-  %br/
-  %br/
   %br/
   %br/
   %br/
@@ -77,7 +74,7 @@
       %br/
       .pull-right
         .btn-group{ :style => 'display:inline-block' }
-          %a.btn.btn-gigantic.dropdown-toggle.disabled{ "data-toggle" => "dropdown", :href => '#', :style => 'padding-left: 15px; margin-bottom: -24px'  }
+          %a.btn.btn-gigantic.dropdown-toggle{ :class => "#{'disabled' if session[:recruiter_demo]}", "data-toggle" => "dropdown", :href => '#', :style => 'padding-left: 15px; margin-bottom: -24px'  }
             %i.icon-share
             Share
             %span.caret
@@ -92,4 +89,4 @@
               = link_to 'Facebook', '#'
             %li
               = link_to 'Google+', '#'
-        %a.btn.btn-gigantic.btn-success{ :href => candidate_matches_path, :style => 'margin-right:0' } I match!
+        %a.btn.btn-gigantic.btn-success{ :href => (session[:recruiter_demo] ? '#' : candidate_matches_path), :class => "#{'disabled' if session[:recruiter_demo]}", :style => 'margin-right:0' } I match!
