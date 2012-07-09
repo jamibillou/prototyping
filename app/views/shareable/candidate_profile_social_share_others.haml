@@ -21,7 +21,7 @@
             Experience
           .gigantic 
             = session[:candidate][:experience] == 1.to_s ? '1 yr' : session[:candidate][:experience].to_s+'yrs'
-        .span3.well{ :style => 'padding-right:0' }
+        .span3.well{ :style => 'min-height:92px; padding-right:0' }
           %h6 
             Education
           .lead 
